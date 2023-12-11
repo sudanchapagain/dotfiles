@@ -1,29 +1,15 @@
 # .files
 
-personal dotfiles repository. managed via GNU stow.
+personal .files repository. currently neovim init.lua config only.
 
-## Neovim
+## NeoVim
 
-Trying to have things small, clean, & personal. Current plugins includes the basic **[Lazy.nvim](https://github.com/folke/lazy.nvim)** as plugin manager, **[Mason](https://github.com/williamboman/mason.nvim)** for package management of various components, **[Telescope](https://github.com/nvim-telescope/telescope.nvim)** for navigation, **[Harpoon](https://github.com.ThePrimeagen/harpoon)** by primeagen too.
+Trying to keep things as minimal as possible for now so that i can create a truly personalized development environment where i will be adding things as i need them.
 
-## VSCode
-
-Using vscodium. not much changes compared to defaults except for VIM motions, clang formatter instead GCC.
-
-## Hyprland & family
-
-Simple config with hyprlock, hypridle, hyprpaper. Minimal waybar and wofi. 
-
-## Alacritty
-
-minimal. only colors & fonts have changed almost all other is default config.
-
-## Tmux
-
-still learning.
-
-## Btop
-
-only theme.
-
-
+### Current Plugins
+- **[Lazy.Nvim](https://github.com/folke/lazy.nvim)** as plugin manager.
+- **[Mason](https://github.com/williamboman/mason.nvim)** for LSP, DAP, Linter, & Formatter package management.
+- **[Telescope](https://github.com/nvim-telescope/telescope.nvim)** for navigation.
+- **[TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)** for code parsing.
+- **[Sainnhe/Sonokai](https://github.com/sainnhe/sonokai)** as theme.
+- and few more. 
