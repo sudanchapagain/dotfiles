@@ -1,4 +1,6 @@
--- VIM
+-------------------------------------------------
+--                     VIM
+------------------------------------------------
 -- Set the global leader key
 vim.g.mapleader = ' '
 -- Set the local leader key
