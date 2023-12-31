@@ -1,12 +1,16 @@
 -------------------------------------------------
 --                     VIM
 ------------------------------------------------
+
 -- Set the global leader key
 vim.g.mapleader = ' '
 -- Set the local leader key
 vim.g.maplocalleader = ' '
 
--- EDITOR
+------------------------------------------------
+--                   EDITOR
+------------------------------------------------
+
 -- line numbers in the gutter.
 vim.opt.number = true
 -- relative line numbers.
@@ -26,8 +30,6 @@ vim.opt.expandtab = true
 vim.opt.shiftround = true
 -- smart auto-indenting.
 vim.opt.smartindent = true
-
--- MORE EDITOR
 -- incremental searching. As you type a search pattern highlights the matching text in real-time.
 vim.opt.incsearch = true
 -- sets the default file format to Windows (CRLF) line endings.
@@ -45,8 +47,10 @@ vim.g.airline_section_z = '%{&fileformat}'
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
+------------------------------------------------
+--                   EDITOR
+------------------------------------------------
 
--- LAZY.NVIM Package Manager
 -- Check if lazy is installed if not git clone it.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
