@@ -1,7 +1,11 @@
 # .files
 
-personal dotfiles repository. currently neovim config only.
+personal dotfiles repository.
 
 ## Neovim
 
 Trying to have things small, clean, & personal. Current plugins includes the basic **[Lazy.nvim](https://github.com/folke/lazy.nvim)** as plugin manager, **[Mason](https://github.com/williamboman/mason.nvim)** for package management of various components, **[Telescope](https://github.com/nvim-telescope/telescope.nvim)** for navigation, **[Harpoon](https://github.com.ThePrimeagen/harpoon)** by primeagen too.
+
+## VSCode
+
+Using vscodium. not much changes compared to defaults except for VIM motions, clang formatter instead GCC.
