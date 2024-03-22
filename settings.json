@@ -1,0 +1,139 @@
+{
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "editor.linkedEditing": true,
+    "editor.accessibilitySupport": "off",
+    "editor.formatOnSave": true,
+    "breadcrumbs.enabled": true,
+  
+    "editor.fontSize": 16,
+    "editor.fontFamily": "\"CommitMono\",\"JetBrainsMono Nerd Font\", JetBrains Mono,monospace",
+    "terminal.integrated.fontFamily": "\"JetBrainsMono Nerd Font\", JetBrains Mono,monospace",
+    "markdown.preview.fontFamily": "Inter",
+  
+    "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
+    "markdown.preview.breaks": true,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.preview.typographer": true,
+  
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+  
+    "files.exclude": {
+      "**/.git": false
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[c]": {
+      "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cpp]": {
+      "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[astro]": {
+      "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "[lua]": {
+      "editor.defaultFormatter": "sumneko.lua"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[go]": {
+      "editor.defaultFormatter": "golang.go"
+    },
+    "[markdown]": {
+      "editor.wordWrap": "on"
+    },
+    "[odin]": {
+      "editor.defaultFormatter": "DanielGavin.ols"
+    },
+    "workbench.colorTheme": "Rosé Pine",
+    "editor.wordWrap": "on",
+  
+    "extensions.experimental.affinity": {
+      "asvetliakov.vscode-neovim": 1
+    },
+    "markyMarkdown.bookmarks.levelRange": "1..6",
+    "markyMarkdown.sectionNumbering.levelRange": "1..6",
+    "markyMarkdown.tableOfContents.levelRange": "1..6",
+    "markdown.validate.enabled": true,
+    "markyMarkdown.tableOfContents.label": "# Contents",
+    "markyMarkdown.tableOfContents.listType": "ordered list",
+  
+    "vim.easymotion": true,
+    "editor.suggest.insertMode": "replace",
+    "launch": {},
+    "[json]": {},
+    "update.showReleaseNotes": false,
+    "zenMode.hideLineNumbers": false,
+    "editor.lineNumbers": "relative",
+  
+    "vim.leader": "<Space>",
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+      { "before": ["leader", "v"], "commands": [":vsplit"] },
+      { "before": ["leader", "s"], "commands": [":split"] },
+  
+      {
+        "before": ["leader", "h"],
+        "commands": ["workbench.action.focusLeftGroup"]
+      },
+      {
+        "before": ["leader", "j"],
+        "commands": ["workbench.action.focusBelowGroup"]
+      },
+      {
+        "before": ["leader", "k"],
+        "commands": ["workbench.action.focusAboveGroup"]
+      },
+      {
+        "before": ["leader", "l"],
+        "commands": ["workbench.action.focusRightGroup"]
+      },
+      // NICE TO HAVE
+      { "before": ["leader", "w"], "commands": [":w!"] },
+      { "before": ["leader", "q"], "commands": [":q!"] },
+      { "before": ["leader", "x"], "commands": [":x!"] },
+      {
+        "before": ["[", "d"],
+        "commands": ["editor.action.marker.prev"]
+      },
+      {
+        "before": ["]", "d"],
+        "commands": ["editor.action.marker.next"]
+      },
+      {
+        "before": ["<leader>", "c", "a"],
+        "commands": ["editor.action.quickFix"]
+      },
+      { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+      { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+      {
+        "before": ["g", "h"],
+        "commands": ["editor.action.showDefinitionPreviewHover"]
+      }
+    ],
+    "vim.visualModeKeyBindings": [
+      // Stay in visual mode while indenting
+      { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+      { "before": [">"], "commands": ["editor.action.indentLines"] },
+      // Move selected lines while staying in visual mode
+      { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+      { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+      // toggle comment selection
+      { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    ]
+  }
+  
