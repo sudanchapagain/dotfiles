@@ -1,6 +1,6 @@
 # .files
 
-personal dotfiles repository.
+personal dotfiles repository. managed via GNU stow.
 
 ## Neovim
 
@@ -9,3 +9,21 @@ Trying to have things small, clean, & personal. Current plugins includes the bas
 ## VSCode
 
 Using vscodium. not much changes compared to defaults except for VIM motions, clang formatter instead GCC.
+
+## Hyprland & family
+
+Simple config with hyprlock, hypridle, hyprpaper. Minimal waybar and wofi. 
+
+## Alacritty
+
+minimal. only colors & fonts have changed almost all other is default config.
+
+## Tmux
+
+still learning.
+
+## Btop
+
+only theme.
+
+
