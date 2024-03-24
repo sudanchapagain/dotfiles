@@ -42,6 +42,7 @@ vim.opt.mouse = ""
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.o.clipboard = "unnamedplus"
+vim.cmd([[set clipboard+=unnamedplus]])
 
 --                EDITOR UI
 ------------------------------------------------
