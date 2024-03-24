@@ -42,6 +42,7 @@ vim.opt.mouse = ""
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.o.clipboard = "unnamedplus"
+vim.cmd([[set clipboard+=unnamedplus]])
 
 --                EDITOR UI
 ------------------------------------------------
@@ -363,6 +364,7 @@ require("lazy").setup({
 					null_ls.builtins.formatting.markdownlint,
 					null_ls.builtins.diagnostics.eslint_d,
 					null_ls.builtins.formatting.prettierd,
+					null_ls.builtins.formatting.nixpkgs_fmt,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
