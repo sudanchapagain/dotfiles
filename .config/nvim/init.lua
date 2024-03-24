@@ -42,7 +42,6 @@ vim.opt.mouse = ""
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.o.clipboard = "unnamedplus"
-vim.cmd([[set clipboard+=unnamedplus]])
 
 --                EDITOR UI
 ------------------------------------------------
@@ -51,6 +50,13 @@ vim.opt.pumheight = 10
 vim.opt.conceallevel = 0
 vim.opt.signcolumn = "yes"
 vim.cmd([[autocmd FileType markdown,text setlocal spell]])
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("hi! Normal guibg=NONE ctermbg=NONE")
+    vim.cmd("hi! NonText guibg=NONE ctermbg=NONE")
+  end,
+})
 
 --                Keymaps
 -------------------------------------------------
