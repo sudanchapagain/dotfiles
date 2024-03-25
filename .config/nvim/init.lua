@@ -42,6 +42,7 @@ vim.opt.mouse = ""
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.o.clipboard = "unnamedplus"
+vim.cmd([[set clipboard+=unnamedplus]])
 
 --                EDITOR UI
 ------------------------------------------------
@@ -50,6 +51,13 @@ vim.opt.pumheight = 10
 vim.opt.conceallevel = 0
 vim.opt.signcolumn = "yes"
 vim.cmd([[autocmd FileType markdown,text setlocal spell]])
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("hi! Normal guibg=NONE ctermbg=NONE")
+    vim.cmd("hi! NonText guibg=NONE ctermbg=NONE")
+  end,
+})
 
 --                Keymaps
 -------------------------------------------------
@@ -363,6 +371,7 @@ require("lazy").setup({
 					null_ls.builtins.formatting.markdownlint,
 					null_ls.builtins.diagnostics.eslint_d,
 					null_ls.builtins.formatting.prettierd,
+					null_ls.builtins.formatting.nixpkgs_fmt,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
