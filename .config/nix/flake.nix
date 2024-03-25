@@ -32,7 +32,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, unstable, home-manager, hyprland, ... }@inputs:
     let
       inherit (self) outputs;
       systems = [
@@ -60,5 +60,6 @@
           ];
         };
       };
+
     };
 }

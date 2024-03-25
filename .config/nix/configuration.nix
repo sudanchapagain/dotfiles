@@ -1,26 +1,27 @@
 { config, pkgs, ... }:
 let
   cursor-theme = import ./default.nix { };
-  nix-software-center = import
-    (builtins.fetchTarball {
-      url = "https://github.com/snowfallorg/nix-software-center/archive/refs/tags/0.1.2.tar.gz";
-      sha256 = "xiqF1mP8wFubdsAQ1BmfjzCgOD3YZf7EGWl9i69FTls=";
-    })
-    { };
-
-  nixos-conf-editor-flake = import (pkgs.fetchFromGitHub {
-    owner = "snowfallorg";
-    repo = "nixos-conf-editor";
-    rev = "0.1.2";
-    sha256 = "sha256-/ktLbmF1pU3vFHeGooDYswJipNE2YINm0WpF9Wd1gw8=";
-  });
+  #  nix-software-center = import
+  #    (builtins.fetchTarball {
+  #      url = "https://github.com/snowfallorg/nix-software-center/archive/refs/tags/0.1.2.tar.gz";
+  #      sha256 = "xiqF1mP8wFubdsAQ1BmfjzCgOD3YZf7EGWl9i69FTls=";
+  #    })
+  #    { };
+  #
+  #  nixos-conf-editor-flake = import (pkgs.fetchFromGitHub {
+  #    owner = "snowfallorg";
+  #    repo = "nixos-conf-editor";
+  #    rev = "0.1.2";
+  #    sha256 = "sha256-/ktLbmF1pU3vFHeGooDYswJipNE2YINm0WpF9Wd1gw8=";
+  #  });
 
 in
 {
   imports =
     [
       ./hardware-configuration.nix
-      #./home.nix
+      ./home.nix
+      ./default.nix
     ];
 
   # documentation.nixos.enable = false;
@@ -57,6 +58,23 @@ in
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+    };
+  };
+
+  security.polkit.enable = true;
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
     };
   };
 
@@ -106,9 +124,11 @@ in
   };
 
   security.rtkit.enable = true;
-
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware = {
+    pulseaudio.enable = false;
+    bluetooth.enable = true;
+  };
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -126,40 +146,21 @@ in
       jq
       eza
       fzf
-
-      cowsay
-      file
       which
       tree
-      gnused
-      gnutar
-      gawk
-      zstd
-      gnupg
       nix-output-monitor
-
       glow
       btop
-      iotop
-      iftop
-
-      strace
-      ltrace
-      lsof
-
-      sysstat
-      lm_sensors
-      ethtool
-      pciutils
-      usbutils
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nix-software-center
-    nixos-conf-editor-flake.packages.${system}.nixos-conf-editor
+    #nix-software-center
+    #nixos-conf-editor-flake.packages.${system}.nixos-conf-editor
+    polkit
+    polkit_gnome
     neovim
     sof-firmware
     starship
@@ -189,10 +190,10 @@ in
     xwayland
     pipewire
     stow
-    hyprlock
-    hypridle
-    hyprpaper
-    hyprpicker
+    #    hyprlock
+    #    hypridle
+    #    hyprpaper
+    #    hyprpicker
     refind
     vscodium
     efibootmgr
@@ -210,7 +211,7 @@ in
     luarocks
 
     gnomeExtensions.blur-my-shell
-    #    gnomeExtensions.
+    # gnomeExtensions.
   ];
 
   programs = {
@@ -265,7 +266,6 @@ in
     };
   };
 
-
   services = {
     #    openssh.enable = true;
     dbus.enable = true;
@@ -279,7 +279,5 @@ in
       ]);
     };
   };
-
-
 
 }

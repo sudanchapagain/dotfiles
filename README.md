@@ -1,29 +1,13 @@
-# .files
+<h1><i><center>dotfiles</center></i></h1>
 
-personal dotfiles repository. managed via GNU stow.
+personal dotfiles repository for nixos and windows (only few tools for windows) which is managed with GNU stow. trying to keep all config/changes clean, simple, & minimal as much as possible to be closer to original/bare program currently using the followings:
 
-## Neovim
-
-Trying to have things small, clean, & personal. Current plugins includes the basic **[Lazy.nvim](https://github.com/folke/lazy.nvim)** as plugin manager, **[Mason](https://github.com/williamboman/mason.nvim)** for package management of various components, **[Telescope](https://github.com/nvim-telescope/telescope.nvim)** for navigation, **[Harpoon](https://github.com.ThePrimeagen/harpoon)** by primeagen too.
-
-## VSCode
-
-Using vscodium. not much changes compared to defaults except for VIM motions, clang formatter instead GCC.
-
-## Hyprland & family
-
-Simple config with hyprlock, hypridle, hyprpaper. Minimal waybar and wofi. 
-
-## Alacritty
-
-minimal. only colors & fonts have changed almost all other is default config.
-
-## Tmux
-
-still learning.
-
-## Btop
-
-only theme.
-
-
+| tool              | desc                                                                      |
+| ----------------- | ------------------------------------------------------------------------- |
+| Alacritty         | rosepine colorscheme & minor changes config.                              |
+| Tmux              | still learning                                                            |
+| btop              | rosepine colorscheme                                                      |
+| starship          | nothing special                                                           |
+| Neovim            | plugins includes lazy package manager, mason, telescope, harpoon and etc. |
+| VSCode            | vscodium with VIM motions, clang formatter instead GCC.                   |
+| Hyprland & family | simple config with hyprlock, hypridle, hyprpaper. Minimal waybar and wofi.|
