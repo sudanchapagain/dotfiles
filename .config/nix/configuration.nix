@@ -78,7 +78,6 @@ in
     };
   };
 
-
   networking = {
     hostName = "crimson";
     networkmanager.enable = true;
