@@ -1,11 +1,11 @@
-*<h1 align="center">dotfiles</h1>*
+<h1 align="center"><i>dotfiles</i></h1>
 
 **personal** dotfiles repository for nix-os and windows cli programs. managed with GNU stow in linux.
 
 > [!WARNING]  
-> config might not work on your system as it doesn't even work as i want in mine. mostly cause programs like alacritty have conflicting config in both alacritty's config and home-manager config. so, it's probably best not to copy it over. also, i've decided i won't be doing any more tweaks or additions to hyprland. it has become a bit too much for me to handle all the small stuff.
+> config might not work on your system as something have conflicting configuration like alacritty has config in both `~/.config/alacritty` and home-manager's config & the hyprland setup isn't complete.
 
-trying to keep all config/changes clean, simple, & minimal as much as possible to be closer to original/bare program currently using the followings:
+trying to keep all config/changes simple & minimal as much as possible to be closer to original/bare program currently using the followings:
 
 | tool              | desc                                                                      |
 | ----------------- | ------------------------------------------------------------------------- |
@@ -17,7 +17,4 @@ trying to keep all config/changes clean, simple, & minimal as much as possible t
 | VSCode            | vscodium with VIM motions, clang formatter instead GCC.                   |
 | Hyprland & family | simple config with hyprlock, hypridle, hyprpaper. Minimal waybar and wofi.|
 
-> [!NOTE]
-> **FOR ME**
-> - rewrite configs of applications/tools to nix after flake based system config is completed.
-> - fix and add hyprland and et. config. basic things aren't working.
+
