@@ -1,6 +1,4 @@
-<div align="center">
-# *dotfiles*
-</div>
+<h1 align="center"><i>dotfiles</i></h1>
 
 **personal** dotfiles repository for nix-os and windows cli programs. managed with GNU
 stow in linux.
@@ -16,9 +14,10 @@ a incomplete hyprland setup also exists and might switch to it after fixing all 
 minor things, alacritty as terminal emulator with tmux for multiplexing & starship as
 prompt, neovim as text editor, vscodium still as primary code editor with VIM motions,
 
-> [!TODO]
-> - switch whole system config to flake
-> - starship doesn't work inside tmux
-> - .bashrc isn't being used (could be nix home-manager coflict, or symbolic link)
-> - switch simple configs like .gitconfig, btop, neofetch, alacritty to home-manager
-> - make tmux, hypr better
+## things to do (to-do)
+```diff
+- 1. switch whole system config to flake
+- 2. .bashrc isn't being used (could be nix home-manager coflict, or symbolic link)
+3. starship doesn't work inside tmux (probably is because of 2. )
++ 4. switch simple configs like .gitconfig, btop, neofetch, alacritty to home-manager
+````
