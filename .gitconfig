@@ -1,9 +1,0 @@
-[user]
-	name = Sudan Chapagain
-	email = 101015050+sudanchapagain@users.noreply.github.com
-[credential]
-	helper = store
-[http]
-	postBuffer = 157286400
-[pack]
-	window = 1

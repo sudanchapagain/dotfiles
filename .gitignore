@@ -1,1 +1,5 @@
-.config/tmux/plugins/
+home/tmux/plugins/
+wallpaper
+zreference
+flake.lock
+system/hardware-configuration.nix
