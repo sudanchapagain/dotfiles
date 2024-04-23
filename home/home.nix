@@ -10,6 +10,7 @@
     ./gnome.nix
     ./hyprland.nix
     #./nvim
+    #./nixvim.nix
     ./starship.nix
   ];
 

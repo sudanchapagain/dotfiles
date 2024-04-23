@@ -2,20 +2,22 @@
   description = "System configuration";
 
   inputs = {
-    # NIX RELATED
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
-    impermanence.url = "github:nix-community/impermanence";
+
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # EXTRA
+    impermanence.url = "github:nix-community/impermanence";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = inputs@{ nixpkgs, home-manager, impermanence, lanzaboote, ... }: {

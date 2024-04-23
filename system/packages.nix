@@ -30,13 +30,11 @@
     starship
 
     # LANGUAGES
-    eslint_d
     go
     lua
     luarocks
     nixd
     nixpkgs-fmt
-    nodePackages.fixjson
     nodejs
     odin
 
@@ -68,6 +66,7 @@
     gnome.gnome-shell-extensions
     gnomeExtensions.blur-my-shell
     gnomeExtensions.pop-shell
+    gnomeExtensions.color-picker
     gnome.gnome-tweaks
   ];
 
