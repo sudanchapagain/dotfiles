@@ -1,5 +1,5 @@
 <div align="center">
-<h1><i>dotfiles</i></h1>
+<h1>dotfiles</h1>
 dotfiles for nixos, alacritty, tmux, starship, neovim, etc.
 </div>
 
