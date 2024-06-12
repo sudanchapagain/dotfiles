@@ -1,10 +1,10 @@
-{ lib, config, pkgs, ...}:
+{ lib, config, pkgs, ... }:
 {
   services = {
     xserver = {
       enable = true;
       xkb.layout = "us";
-      xkbVariant = "";
+      xkb.variant = "";
       desktopManager.gnome.enable = true;
       displayManager.gdm = {
         enable = true;
@@ -13,7 +13,10 @@
     };
 
     gnome = {
-      core-developer-tools.enable = true; # enables builder, sysprof etc.
+      core-developer-tools.enable = false; # enables builder, sysprof etc.
+      # False because builder is broken somehow, install builder from flatpak
+      # flatpak install flathub org.gnome.Builder
+      # flatpak install flathub re.sonny.Workbench
       gnome-keyring.enable = true;
     };
   };

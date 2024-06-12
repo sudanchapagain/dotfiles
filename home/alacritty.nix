@@ -19,16 +19,16 @@
         multiplier = 3;
       };
 
-      font = {
-         normal.family = "JetBrainsMono Nerd Font";
-         normal.style = "Regular";
-         bold.family = "JetBrainsMobo Nerd Font";
-         bold.style = "Bold";
-         italic.family = "JetBrainsMono Nerd Font";
-         italic.style = "Italic";
-         bold_italic.family = "JetBrainsMono Nerd Font";
-         bold_italic.style = "Bold Italic";
-      };
+      #font = {
+      # normal.family = "JetBrainsMono Nerd Font";
+      # normal.style = "Regular";
+      # bold.family = "JetBrainsMobo Nerd Font";
+      # bold.style = "Bold";
+      # italic.family = "JetBrainsMono Nerd Font";
+      # italic.style = "Italic";
+      # bold_italic.family = "JetBrainsMono Nerd Font";
+      # bold_italic.style = "Bold Italic";
+      #};
 
       colors = {
         draw_bold_text_with_bright_colors = true;

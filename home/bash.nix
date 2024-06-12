@@ -9,10 +9,11 @@
     shellOptions = [ "checkwinsize" ];
     shellAliases = {
       code = "codium $@";
-      ls = "eza -g --icons";
-      ll = "eza -lg --icons";
-      l = "eza -lga --icons";
+      ls = "eza -g --icons --hyperlink";
+      ll = "eza -lg --icons --hyperlink";
+      l = "eza -lga --icons --hyperlink";
       sysbuild = "sudo nixos-rebuild switch --flake ~/dotfiles/";
+      sbuild = "sudo nixos-rebuild switch --flake ~/dotfiles/ --specialisation eos";
     };
     bashrcExtra =
       #Start tmux and starship

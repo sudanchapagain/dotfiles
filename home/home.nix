@@ -1,4 +1,4 @@
-{ lib, home-manager, impermanence, lanzaboote, config, pkgs, ... }:
+{ lib, home-manager, impermanence, lanzaboote, config, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -8,10 +8,9 @@
     #./firefox.nix
     ./git.nix
     ./gnome.nix
-    ./hyprland.nix
-    #./nvim
-    #./nixvim.nix
+    ./nvim.nix
     ./starship.nix
+    #./sway.nix
   ];
 
   home.username = "crimson";
@@ -31,8 +30,9 @@
     recursive = true;
   };
 
-  home.file.".config/wofi" = {
-    source = ./wofi;
-    recursive = true;
-  };
+  #home.file.".config/wofi" = {
+  #  source = ./wofi;
+  #  recursive = true;
+  #};
+
 }

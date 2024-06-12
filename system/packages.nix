@@ -1,44 +1,64 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    # IMPORTANT
+  gcc
+    glib
+    glib.dev
+    gtk4
+    libadwaita
+    meson
+
     alacritty
     neovim
     firefox
+
+    # TEXT
+    vscodium
+    texliveMinimal
+    neovim
+
+    # MEDIA
+    celluloid
+    ffmpeg
+    yt-dlp
+
+    # PRODUCTIVITY
+    anytype
+    emote
+
+    # DESKTOP
+    home-manager
+    starship
+    wofi
     tmux
 
-    # GENERAL GUI
-    celluloid
-    emote
-    gitkraken
-    home-manager
-    hyprland
-    vscodium
-    wofi
-
-    # GENERAL CLI
+    # UTILITIES
     bat
     btop
     eza
     fd
-    ffmpeg
     fzf
     glow
     jq
     neofetch
     ripgrep
-    starship
 
-    # LANGUAGES
+    # DEV
+    erlang
+    gitkraken
+    gleam
     go
+    kotlin
     lua
     luarocks
-    nixd
-    nixpkgs-fmt
     nodejs
     odin
+    ols
+    sysprof
+    toolbox
+    yt-dlp
 
-    # CORE
+    # SYSTEM COMPONENTS
     busybox
     flatpak
     fontconfig
@@ -47,8 +67,6 @@
     gnumake
     efibootmgr
     pipewire
-    polkit
-    polkit_gnome
     refind
     sof-firmware
     wayland-protocols
@@ -57,7 +75,6 @@
     wlroots
     xdg-desktop-portal-gtk
     xdg-desktop-portal
-    xdg-desktop-portal-hyprland
     xdg-utils
     xwayland
 
@@ -68,10 +85,10 @@
     gnomeExtensions.pop-shell
     gnomeExtensions.color-picker
     gnome.gnome-tweaks
+    gnome.dconf-editor
   ];
 
   programs = {
-    hyprland.enable = true;
     sway = {
       enable = true;
       extraPackages = with pkgs; [
@@ -86,6 +103,10 @@
         wl-clipboard
       ];
     };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
   };
 
   environment = {
@@ -94,6 +115,7 @@
         (with pkgs; [
           gnome-tour
           gnome-connections
+          gedit
         ])
         ++
         (with pkgs.gnome; [
@@ -103,10 +125,9 @@
           gnome-music
           gnome-weather
           cheese
-          gedit
           geary
           epiphany
-          evince
+          #evince
           totem
         ]);
     };

@@ -7,8 +7,8 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-      font-awesome
-      liberation_ttf
+      #font-awesome
+      #liberation_ttf
       inter
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];

@@ -4,6 +4,7 @@
     hideMounts = true;
     directories = [
       "/var/log"
+      "/var/lib/flatpak"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
     ];
@@ -18,6 +19,8 @@
         ".mozilla/firefox"
         ".local/share/nvim"
         ".local/share/Trash"
+        ".local/share/gnome-builder"
+        "./home/crimson/.local/share/flatpak"
         ".config/VSCodium"
         ".vscode-oss"
         ".ssh"
