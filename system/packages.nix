@@ -3,8 +3,10 @@
   environment.systemPackages = with pkgs; [
     emacs
     gcc
-    clang
+    clang-tools
     cloc
+
+    # GNOME DEVELOPMENT
     glib
     glib.dev
     gtk4

@@ -1,12 +1,8 @@
 -- TEMPORARY. To force learn hjkl movement.
--- vim.api.nvim_set_keymap("n", "<Up>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Down>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Left>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Right>", "<Nop>", { noremap = true, silent = true })
-
--- force learn C-b & C-f to move cursor in insert mode or use normal mode
--- vim.api.nvim_set_keymap("i", "<Left>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Up>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Down>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Left>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Right>", "<Nop>", { noremap = true, silent = true })
 
 --                     VIM
 ------------------------------------------------
@@ -58,7 +54,7 @@ vim.cmd([[autocmd FileType markdown,text setlocal spell]])
 -- browse
 vim.keymap.set("n", "<space>b", ":Telescope file_browser<CR>")
 
--- Search
+-- Search and Replace for text in cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Select all from any mode.
@@ -267,10 +263,10 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>a", mark.add_file)
       vim.keymap.set("n", "<leader>z", mark.rm_file)
       vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
-      vim.keymap.set("n", "<C-s>", function()
+      vim.keymap.set("n", "<C-n>", function()
         ui.nav_next()
       end)
-      vim.keymap.set("n", "<C-a>", function()
+      vim.keymap.set("n", "<C-p>", function()
         ui.nav_prev()
       end)
     end,
@@ -339,12 +335,8 @@ require("lazy").setup({
 
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
       vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "gD", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
-      vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {})
     end,
   },
 
@@ -519,10 +511,13 @@ require("lazy").setup({
     opts = {},
     config = function()
       vim.keymap.set("n", "B", function()
-        require("trouble").toggle()
+        require("trouble").toggle() -- TODO -> ADD MODE.
       end)
     end,
   },
+
+  --                GIT SIGNS
+  ------------------------------------------------ 
   {
     "lewis6991/gitsigns.nvim",
     config = function()
