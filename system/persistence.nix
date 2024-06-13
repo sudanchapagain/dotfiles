@@ -20,7 +20,7 @@
         ".local/share/nvim"
         ".local/share/Trash"
         ".local/share/gnome-builder"
-        "./home/crimson/.local/share/flatpak"
+        ".local/share/flatpak"
         ".config/VSCodium"
         ".vscode-oss"
         ".ssh"

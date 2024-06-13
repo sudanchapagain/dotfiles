@@ -7,6 +7,7 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
+      jetbrains-mono
       #font-awesome
       #liberation_ttf
       inter
@@ -17,7 +18,7 @@
       enable = true;
       defaultFonts = {
         serif = [ "Noto Serif" ];
-        monospace = [ "JetBrainsMono" ];
+        monospace = [ "JetBrains Mono" ];
         sansSerif = [ "Inter" "Noto Sans" ];
         emoji = [ "Noto Color Emoji" ];
       };

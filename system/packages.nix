@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-  gcc
+    emacs
+    gcc
+    clang
+    cloc
     glib
     glib.dev
     gtk4
@@ -56,6 +59,7 @@
     ols
     sysprof
     toolbox
+    vala
     yt-dlp
 
     # SYSTEM COMPONENTS
