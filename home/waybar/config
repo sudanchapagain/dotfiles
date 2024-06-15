@@ -20,7 +20,7 @@
     "disable-scroll": true
   },
   "clock": {
-    "format": "{:%a %d %b, %I:%M %p}",
+    "format": "{:%a %b %d   %I:%M %p}",
     "tooltip": false
   },
   "battery": {

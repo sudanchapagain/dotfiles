@@ -23,11 +23,13 @@
         titlebar = false;
         border = 2;
       };
+      floating.titlebar = false;
 
       gaps = {
         smartBorders = "on";
         smartGaps = true;
-        inner = 8;
+        outer = 1;
+        inner = 4;
       };
 
       keybindings = {
@@ -85,16 +87,16 @@
         "Mod4+Shift+9" = "move container to workspace number 9";
 
         # Audio
-        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +10%";
-        "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -10%";
+        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +2%";
+        "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
         "XF86AudioMute" = "exec set-volume toggle-mute";
         "XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
         "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 
-        "XF86MonBrightnessDown" = "exec brightnessctl set 15%-";
-        "XF86MonBrightnessUp" = "exec brightnessctl set +15%";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 2%-";
+        "XF86MonBrightnessUp" = "exec brightnessctl set 2%+";
       };
     };
   };

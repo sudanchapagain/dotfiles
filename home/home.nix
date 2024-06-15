@@ -37,9 +37,9 @@
     recursive = true;
   };
 
-  #home.file.".config/wofi" = {
-  #  source = ./wofi;
-  #  recursive = true;
-  #};
+  home.file.".config/emacs" = {
+    source = ./emacs;
+    recursive = true;
+  };
 
 }
