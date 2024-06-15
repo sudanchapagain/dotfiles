@@ -5,7 +5,6 @@
     ./alacritty.nix
     ./bash.nix
     ./btop.nix
-    #./emacs.nix
     #./firefox.nix
     ./git.nix
     ./gnome.nix
@@ -37,7 +36,7 @@
     recursive = true;
   };
 
-  home.file.".config/emacs" = {
+  home.file.".emacs.d" = {
     source = ./emacs;
     recursive = true;
   };
