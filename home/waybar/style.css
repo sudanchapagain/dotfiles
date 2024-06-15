@@ -29,18 +29,11 @@ window#waybar.solo {
 
 #workspaces button {
   padding: 0 5px;
-  margin: 5px 0px;
-  border-radius: 50%;
-  color: rgba(217, 216, 216, 0.4);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 #workspaces button.visible {
-  color: rgb(219, 219, 219);
-}
-
-#workspaces button.focused {
-  border: 1px solid rgba(217, 216, 216, 1);
-  /*border-bottom: 3px solid rgba(217, 216, 216, 0);*/
+  color: rgb(255, 255, 255);
 }
 
 #workspaces button.urgent {
@@ -48,7 +41,8 @@ window#waybar.solo {
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0);
 }
 
 #mode,
@@ -66,7 +60,7 @@ window#waybar.solo {
 }
 
 #battery {
-  margin: 10px;
+  margin-right: 20px;
 }
 
 #battery.warning {

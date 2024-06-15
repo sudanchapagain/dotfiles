@@ -8,7 +8,7 @@
         dynamic_padding = true;
         dimensions = { columns = 200; lines = 50; };
         padding = { x = 10; y = 10; };
-        opacity = 1;
+        opacity = 0.95;
         #blur = true;
         dynamic_title = true;
         decorations_theme_variant = "Dark";
