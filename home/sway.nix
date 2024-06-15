@@ -33,11 +33,12 @@
       keybindings = {
         "Mod4+Return" = "exec ${terminal}";
         "Mod4+F" = "exec firefox";
+        "Mod4+s" = "exec grim";
         "Mod4+Shift+q" = "kill";
         "Mod4+d" = "exec ${menu}";
         "Mod4+Shift+e" = "exec swaymsg exit";
         #"Mod4+space" = "exec ${menu}";
-        "Mod4+C" = "exec codium .";
+        "Mod4+C" = "exec codium . --ozone-platform=wayland";
         "Mod4+Shift+R" = "reload";
         "Mod4+Shift+S" = "grim -g '$(slurp)'";
 

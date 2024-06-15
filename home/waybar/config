@@ -29,13 +29,13 @@
       "warning": 35,
       "critical": 20
     },
-    "format": "{icon}   {capacity}%",
+    "format": "{icon}  {capacity}%",
     "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
     "format-charging": " {capacity}%",
     "format-full": " Charged",
@@ -52,23 +52,18 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-alt-click": "click-right",
-    "format-muted": " Muted",
+    "format-muted": "Muted",
     "format-icons": {
       "phone": [
         " ",
         " ",
-        " ",
         " "
       ],
       "default": [
         "",
         "",
-        "",
         ""
       ]
     },
-    "scroll-step": 10,
-    "on-click": "pavucontrol",
-    "tooltip": false
   }
 }
