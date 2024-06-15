@@ -56,6 +56,8 @@
     kotlin
     lua
     luarocks
+    nixpkgs-fmt
+    nixpkgs-lint
     nodejs
     odin
     ols
@@ -98,14 +100,22 @@
     sway = {
       enable = true;
       extraPackages = with pkgs; [
-        wofi
+        brightnessctl
+        eww
+        hyprpicker
+        playerctl
+        pulseaudio
         swaybg
         swaylock
         swayidle
+        swww
+        ulauncher
+        waybar
         xwayland
         mako
         grim
         slurp
+        cliphist
         wl-clipboard
       ];
     };

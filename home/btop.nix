@@ -1,19 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  xdg.configFile."btop/themes/rose-pine.theme".text =
+  xdg.configFile."btop/themes/mellow.theme".text =
     builtins.readFile (pkgs.fetchFromGitHub
       {
-        owner = "rose-pine";
-        repo = "btop";
-        rev = "6d6abdc0a8c8bcd3b056d9fe3256cfbe7e359312";
-        sha256 = "sha256-sShQYfsyR5mq/e+pjeIsFzVZv3tCpQEdGC9bnTKlQ5c=";
-      } + "/rose-pine.theme");
+        owner = "sudanchapagain";
+        repo = "mellow-btop";
+        rev = "01fa19355b6b1a41f6c354352eebd376674bdbcb";
+        sha256 = "sha256-O1Em+joLriYa6tJdp4Jk5bb8voNroFgD8SBYJ8jLmwg=";
+      } + "/mellow-invisible.theme");
 
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "rose-pine";
+      color_theme = "mellow";
       vim_keys = true;
       rounded_corners = true;
     };

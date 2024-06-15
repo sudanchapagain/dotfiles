@@ -16,13 +16,14 @@
     ];
     users.crimson = {
       directories = [
-        ".mozilla/firefox"
         ".local/share/nvim"
         ".local/share/Trash"
         ".local/share/gnome-builder"
         ".local/share/flatpak"
         ".config/VSCodium"
+        ".mozilla/firefox"
         ".vscode-oss"
+        ".emacs.d"
         ".ssh"
         "Downloads"
         "Documents"

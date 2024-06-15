@@ -5,12 +5,13 @@
     ./alacritty.nix
     ./bash.nix
     ./btop.nix
+    #./emacs.nix
     #./firefox.nix
     ./git.nix
     ./gnome.nix
     ./nvim.nix
     ./starship.nix
-    #./sway.nix
+    ./sway.nix
   ];
 
   home.username = "crimson";
@@ -24,6 +25,12 @@
     source = ./tmux;
     recursive = true;
   };
+
+  home.file.".config/waybar" =
+    {
+      source = ./waybar;
+      recursive = true;
+    };
 
   home.file.".config/nvim" = {
     source = ./nvim;

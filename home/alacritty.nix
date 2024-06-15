@@ -8,7 +8,7 @@
         dynamic_padding = true;
         dimensions = { columns = 200; lines = 50; };
         padding = { x = 10; y = 10; };
-        opacity = 1;
+        opacity = 0.85; # 1;
         #blur = true;
         dynamic_title = true;
         decorations_theme_variant = "Dark";
@@ -20,14 +20,14 @@
       };
 
       font = {
-       normal.family = "JetBrainsMono Nerd Font";
-       normal.style = "Regular";
-       bold.family = "JetBrainsMono Nerd Font";
-       bold.style = "Bold";
-       italic.family = "JetBrainsMono Nerd Font";
-       italic.style = "Italic";
-       bold_italic.family = "JetBrainsMono Nerd Font";
-       bold_italic.style = "Bold Italic";
+        normal.family = "JetBrainsMono Nerd Font";
+        normal.style = "Regular";
+        bold.family = "JetBrainsMono Nerd Font";
+        bold.style = "Bold";
+        italic.family = "JetBrainsMono Nerd Font";
+        italic.style = "Italic";
+        bold_italic.family = "JetBrainsMono Nerd Font";
+        bold_italic.style = "Bold Italic";
       };
 
       colors = {
@@ -35,7 +35,7 @@
 
         primary = {
           foreground = "#c9c7cd";
-          background = "#121212";
+          background = "#161617";
         };
 
         cursor = {

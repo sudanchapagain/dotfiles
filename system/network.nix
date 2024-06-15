@@ -1,6 +1,6 @@
-{ lib, config, pkgs, ...}:
+{ lib, config, pkgs, ... }:
 {
-    networking = {
+  networking = {
     hostName = "crimson";
     networkmanager.enable = true;
     enableIPv6 = false;
