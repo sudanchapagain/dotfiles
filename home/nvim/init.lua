@@ -13,9 +13,9 @@ vim.g.maplocalleader = " "
 ------------------------------------------------
 vim.opt.number = true
 vim.opt.numberwidth = 4
---vim.opt.relativenumber = true
---vim.opt.colorcolumn = "80"
---vim.opt.cursorline = true
+vim.opt.relativenumber = true
+vim.opt.colorcolumn = "80"
+vim.opt.cursorline = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.tabstop = 2
@@ -47,7 +47,6 @@ vim.opt.pumheight = 10
 vim.opt.conceallevel = 0
 vim.opt.signcolumn = "yes"
 vim.cmd([[autocmd FileType markdown,text setlocal spell]])
-vim.cmd([[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]])
 
 --                Keymaps
 -------------------------------------------------
@@ -244,6 +243,22 @@ require("lazy").setup({
   "mbbill/undotree",
   "nvim-telescope/telescope-file-browser.nvim",
 
+  {
+    "xiyaowong/transparent.nvim",
+    config = function()
+    require("transparent").setup({
+      groups = {
+      'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+     'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+     'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+      'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
+      'EndOfBuffer',
+    },
+    extra_groups = {},
+    exclude_groups = {},
+    })
+    end,
+  },
   {
     "LintaoAmons/easy-commands.nvim",
     event = "VeryLazy",
