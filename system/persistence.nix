@@ -1,6 +1,6 @@
-{ lib, config, pkgs, ...}:
+{ lib, config, pkgs, ... }:
 {
-    environment.persistence."/nix/persist" = {
+  environment.persistence."/nix/persist" = {
     hideMounts = true;
     directories = [
       "/var/log"
@@ -21,6 +21,7 @@
         ".local/share/gnome-builder"
         ".local/share/flatpak"
         ".config/VSCodium"
+        ".config/zsh/"
         ".mozilla/firefox"
         ".vscode-oss"
         ".emacs.d"
@@ -33,10 +34,7 @@
         "Videos"
         "Templates"
       ];
-      files = [
-        ".bash_history"
-        ".zsh_history"
-      ];
+      files = [ ];
     };
   };
 }

@@ -28,6 +28,7 @@
 (global-hl-line-mode +1)
 (line-number-mode +1)
 (column-number-mode t)
+(setq-default fill-column 80)
 
 ;; Show file path at the top
 (setq frame-title-format
@@ -132,3 +133,6 @@
 (straight-use-package 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (diminish 'flycheck-mode)
+
+(provide 'init)
+;;; init.el ends here
