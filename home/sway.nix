@@ -23,13 +23,28 @@
         titlebar = false;
         border = 2;
       };
-      floating.titlebar = false;
+      floating = {
+        titlebar = false;
+        border = 0;
+      };
 
       gaps = {
         smartBorders = "on";
         smartGaps = true;
         outer = 1;
         inner = 4;
+      };
+
+      input = {
+        "type:touchpad" = {
+          tap = "enabled";
+          tap_button_map = "lrm";
+          natural_scroll = "enabled";
+          dwt = "enabled";
+          middle_emulation = "enabled";
+          scroll_method = "two_finger";
+          pointer_accel = "0";
+        };
       };
 
       keybindings = {
@@ -99,5 +114,10 @@
         "XF86MonBrightnessUp" = "exec brightnessctl set 2%+";
       };
     };
+
+    extraConfig = ''
+      bindgesture swipe:right workspace prev
+      bindgesture swipe:left workspace next
+    '';
   };
 }

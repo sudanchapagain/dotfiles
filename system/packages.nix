@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    pandoc
     emacs
     gcc
     clang-tools
@@ -49,13 +50,9 @@
     ripgrep
 
     # DEV
-    erlang
     gitkraken
-    gleam
     go
     kotlin
-    lua
-    luarocks
     nixpkgs-fmt
     nixpkgs-lint
     nodejs
@@ -64,7 +61,6 @@
     sysprof
     toolbox
     vala
-    yt-dlp
 
     # SYSTEM COMPONENTS
     busybox

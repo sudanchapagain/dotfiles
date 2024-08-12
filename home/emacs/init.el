@@ -46,6 +46,8 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'mellow t)
+;;(load-theme 'isohedron t)
+;;(load-theme 'floraverse t)
 
 ;; FIXED temp directory
 (setq backup-directory-alist
@@ -133,6 +135,9 @@
 (straight-use-package 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (diminish 'flycheck-mode)
+
+;; autothemer
+;;(straight-use-package 'autothemer)
 
 (provide 'init)
 ;;; init.el ends here

@@ -34,7 +34,10 @@
         "Videos"
         "Templates"
       ];
-      files = [ ];
+      files = [
+        ".zsh_history"
+      ];
     };
   };
 }
+
