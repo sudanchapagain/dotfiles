@@ -1,15 +1,10 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    pandoc
     emacs
-    gcc
-    clang-tools
-    cloc
 
     # GNOME DEVELOPMENT
     glib
-    glib.dev
     gtk4
     libadwaita
     meson
@@ -20,7 +15,6 @@
 
     # TEXT
     vscodium
-    texliveMinimal
     neovim
 
     # MEDIA
@@ -28,8 +22,6 @@
     ffmpeg
     yt-dlp
 
-    # PRODUCTIVITY
-    anytype
     emote
 
     # DESKTOP
@@ -42,25 +34,18 @@
     bat
     btop
     eza
-    fd
     fzf
-    glow
-    jq
     neofetch
     ripgrep
 
     # DEV
-    gitkraken
     go
-    kotlin
     nixpkgs-fmt
     nixpkgs-lint
     nodejs
     odin
     ols
     sysprof
-    toolbox
-    vala
 
     # SYSTEM COMPONENTS
     busybox
@@ -97,22 +82,14 @@
       enable = true;
       extraPackages = with pkgs; [
         brightnessctl
-        eww
-        hyprpicker
         playerctl
         pulseaudio
         swaybg
         swaylock
         swayidle
-        swww
         ulauncher
         waybar
         xwayland
-        mako
-        grim
-        slurp
-        cliphist
-        wl-clipboard
       ];
     };
     neovim = {
