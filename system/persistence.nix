@@ -6,6 +6,7 @@
       "/var/log"
       "/var/lib/flatpak"
       "/var/lib/systemd/coredump"
+      "/var/lib/nixos"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
@@ -20,6 +21,7 @@
         ".local/share/Trash"
         ".local/share/gnome-builder"
         ".local/share/flatpak"
+        ".local/share/gnome-shell/extensions/"
         ".config/VSCodium"
         ".config/zsh/"
         ".mozilla/firefox"
