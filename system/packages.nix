@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    emacs
-
     # GNOME DEVELOPMENT
     glib
     gtk4
@@ -10,12 +8,8 @@
     meson
 
     alacritty
-    neovim
     firefox
-
-    # TEXT
     vscodium
-    neovim
 
     # MEDIA
     celluloid

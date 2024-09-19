@@ -27,13 +27,8 @@
     recursive = true;
   };
 
-  home.file.".config/nvim" = {
-    source = ./nvim;
-    recursive = true;
-  };
-
-  home.file.".emacs.d" = {
-    source = ./emacs;
+  home.file.".config/helix" = {
+    source = ./helix;
     recursive = true;
   };
 
