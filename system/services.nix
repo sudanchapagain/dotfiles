@@ -5,21 +5,14 @@
       enable = true;
       xkb.layout = "us";
       xkb.variant = "";
-      desktopManager.gnome.enable = true;
-      displayManager.gdm = {
+      desktopManager.pantheon = {
         enable = true;
-        wayland = true;
+        extraWingpanelIndicators = with pkgs; [ wingpanel-indicator-ayatana ];
+        extraSwitchboardPlugs = [ ];
       };
+      displayManager.lightdm.enable = true;
     };
-
-    gnome = {
-      core-developer-tools.enable = false; # enables builder, sysprof etc.
-      # False because builder is broken somehow, install builder from flatpak
-      # flatpak install flathub org.gnome.Builder
-      # flatpak install flathub re.sonny.Workbench
-      gnome-keyring.enable = true;
-    };
-  };
+ };
 
   xdg.portal = {
     enable = true;

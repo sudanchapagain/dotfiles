@@ -2,7 +2,6 @@
 {
   imports = [
     ./boot.nix
-    ./eos.nix
     ./fonts.nix
     ./general.nix
     ./hardware-configuration.nix

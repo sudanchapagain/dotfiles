@@ -20,7 +20,6 @@
         ".local/share/Trash"
         ".local/share/gnome-builder"
         ".local/share/flatpak"
-        ".local/share/gnome-shell/extensions/"
         ".config/VSCodium"
         ".config/zsh/"
         ".ssh"

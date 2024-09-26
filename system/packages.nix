@@ -39,7 +39,6 @@
     tmux
 
     # UTILITIES
-    bat
     btop
     eza
     fzf
@@ -47,7 +46,6 @@
     ripgrep
 
     # DEV
-    go
     nixpkgs-fmt
     nixpkgs-lint
     nodejs
@@ -74,15 +72,6 @@
     xdg-desktop-portal
     xdg-utils
     xwayland
-
-    # GNOME RELATED
-    gnome-extension-manager
-    gnome.gnome-shell-extensions
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.pop-shell
-    gnomeExtensions.color-picker
-    gnome.gnome-tweaks
-    gnome.dconf-editor
   ];
 
   programs = {
@@ -99,30 +88,6 @@
         waybar
         xwayland
       ];
-    };
-  };
-
-  environment = {
-    gnome = {
-      excludePackages =
-        (with pkgs; [
-          gnome-tour
-          gnome-connections
-          gedit
-        ])
-        ++
-        (with pkgs.gnome; [
-          gnome-characters
-          gnome-contacts
-          gnome-maps
-          gnome-music
-          gnome-weather
-          cheese
-          geary
-          epiphany
-          #evince
-          totem
-        ]);
     };
   };
 }
