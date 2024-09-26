@@ -23,6 +23,7 @@
         titlebar = false;
         border = 2;
       };
+
       floating = {
         titlebar = false;
         border = 0;
@@ -52,9 +53,8 @@
         "Mod4+F" = "exec firefox";
         "Mod4+s" = "exec grim";
         "Mod4+Shift+q" = "kill";
-        "Mod4+d" = "exec ${menu}";
         "Mod4+Shift+e" = "exec swaymsg exit";
-        #"Mod4+space" = "exec ${menu}";
+        "Mod4+space" = "exec ${menu}";
         "Mod4+C" = "exec codium . --ozone-platform=wayland";
         "Mod4+Shift+R" = "reload";
         "Mod4+Shift+S" = "grim -g '$(slurp)'";
@@ -118,6 +118,15 @@
     extraConfig = ''
       bindgesture swipe:right workspace prev
       bindgesture swipe:left workspace next
+      
+      exec swayidle -w \
+        timeout 30 'if [[ $(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.firefox /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:PlaybackStatus | grep -o Playing) != "Playing" && $(playerctl status) != "Playing" ]]; then systemctl hybrid-sleep; fi' \
+        timeout 900 'systemctl hibernate' \
+        before-sleep 'playerctl pause; swaylock -f -c 000000; swaymsg "output * power off"' \
+        lock 'if [[ $(playerctl status) == "Playing" ]]; then swaylock -f -c 000000; fi' \
+        unlock 'swaymsg "output * power on"' \
+        after-resume 'swaymsg "output * power on"'
+
     '';
   };
 }

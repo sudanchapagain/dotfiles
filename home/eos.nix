@@ -9,23 +9,38 @@
       idle-delay = "uint32 18";
     };
     "org/gnome/system/location" = {
-      enabled = "false";
+      enabled = false;
     };
     "org/gnome/desktop/privacy" = {
-      remeber-recent-files = "false";
-      remember-app-usage = "false";
-      usb-protection = "true";
+      remeber-recent-files = false;
+      remember-app-usage = false;
+      usb-protection = true;
     };
     "org/gnome/settings-daemon/plugins/power" = {
-      sleep-inactive-battery-timeout = "18";
-      sleep-inactive-ac-timeout = "18";
+      sleep-inactive-battery-timeout = 18;
+      sleep-inactive-ac-timeout = 18;
+    };
+    "io/elementary/desktop/wingpanel/bluetooth" = {
+      bluetooth-enabled = false;
+    };
+    "io/elementary/desktop/wingpanel/power" = {
+      show-percentage = true;
+    };
+    "org/gtk/settings/file-chooser" = {
+      date-format = "regular";
+    };
+    "net/launchpad/plank/docks/dock1" = {
+      pressure-reveal = true;
+    };
+    "org/pantheon/desktop/gala/behavior" = {
+      hotcorner-topleft = "open-launcher";
     };
     "org/gnome/desktop/interface" = {
       document-font-name = "Inter Variable 11";
       font-name = "Inter Variable 11";
       monospace-font-name = "JetBrainsMono Nerd Font 10";
       titlebar-font = "Inter Variable Bold 11";
-      text-scaling-factor = "1";
+      text-scaling-factor = 1;
       clock-format = "12h";
       gtk-theme = "io.elementary.stylesheet.strawberry";
     };
@@ -53,24 +68,6 @@
       switch-to-workspace-8 = [ "<Super>8" ];
       switch-to-workspace-9 = [ "<Super>9" ];
       switch-to-workspace-10 = [ "<Super>0" ];
-    };
-    "io/elementary/desktop/wingpanel/bluetooth" = {
-        bluetooth-enabled = "false";
-    };
-    "io/elementary/desktop/wingpanel/power" = {
-        show-percentage = "true";
-    };
-    "org/gtk/settings/file-chooser" = {
-      date-format = "regular";
-    };
-    "net/launchpad/plank/docks/dock1" = {
-      pressure-reveal = "true";
-    };
-    "org/pantheon/desktop/gala/behavior" = {
-      hotcorner-topleft = "open-launcher";
-    };
-    "org/pantheon/desktop/gala/keybindings" = {
-      panel-main-menu = [ "<Alt>space" ];
     };
   };
 }

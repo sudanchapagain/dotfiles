@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-
+    gnome.dconf-editor
     planify
     tuba
     video-trimmer
@@ -77,6 +77,7 @@
   programs = {
     sway = {
       enable = true;
+      package = pkgs.swayfx;
       extraPackages = with pkgs; [
         brightnessctl
         playerctl
