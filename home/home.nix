@@ -4,7 +4,6 @@
   imports = [
     ./alacritty.nix
     ./btop.nix
-    #./firefox.nix
     ./git.nix
     ./gnome.nix
     ./starship.nix

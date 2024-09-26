@@ -14,7 +14,6 @@
     ./persistence.nix
     ./services.nix
     ./sound.nix
-    ./syncthing.nix
     ./systemd.nix
     ./user.nix
   ];

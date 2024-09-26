@@ -1,6 +1,20 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+
+    planify
+    tuba
+    video-trimmer
+    flare-signal
+    gnome.polari
+    fractal
+    foliate
+    apostrophe
+    contrast
+    citations
+    endeavour
+    helix
+  
     # GNOME DEVELOPMENT
     glib
     gtk4
@@ -86,10 +100,6 @@
         xwayland
       ];
     };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
   };
 
   environment = {
@@ -115,5 +125,4 @@
         ]);
     };
   };
-
 }

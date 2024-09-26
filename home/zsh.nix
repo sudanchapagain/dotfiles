@@ -26,7 +26,7 @@
       sbuild = "sudo nixos-rebuild switch --flake ~/dotfiles/ --specialisation eos";
     };
 
-    #    initExtraFirst = ''eval "$(oh-my-posh prompt init zsh --config $HOME/.config/ohmyposh/config.toml"'';
+    #initExtraFirst = ''eval "$(oh-my-posh prompt init zsh --config $HOME/.config/ohmyposh/config.toml"'';
 
     initExtra = ''
       bindkey -v

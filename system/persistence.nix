@@ -17,24 +17,21 @@
     ];
     users.crimson = {
       directories = [
-        ".local/share/nvim"
         ".local/share/Trash"
         ".local/share/gnome-builder"
         ".local/share/flatpak"
         ".local/share/gnome-shell/extensions/"
         ".config/VSCodium"
         ".config/zsh/"
-        ".mozilla/firefox"
-        ".vscode-oss"
-        ".emacs.d"
         ".ssh"
-        "Downloads"
-        "Documents"
-        "dotfiles"
-        "Pictures"
+        ".vscode-oss"
+        ".mozilla/firefox"
         "Music"
         "Videos"
-        "Templates"
+        "dotfiles"
+        "Pictures"
+        "Downloads"
+        "Documents"
       ];
       files = [
         ".zsh_history"
