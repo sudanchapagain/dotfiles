@@ -47,7 +47,6 @@
     "format-alt-click": "click-right",
     "format-disconnected": "⚠ Disconnected",
     "max-length": 50,
-    "on-click": "gnome-control-center wifi"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",

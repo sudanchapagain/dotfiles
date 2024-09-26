@@ -5,7 +5,7 @@
     ./alacritty.nix
     ./btop.nix
     ./git.nix
-    ./gnome.nix
+    ./eos.nix
     ./starship.nix
     ./sway.nix
     ./zsh.nix
