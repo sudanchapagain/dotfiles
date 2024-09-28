@@ -2,70 +2,70 @@
 {
   environment.systemPackages = with pkgs; [
     nb
-    navi
 
-    gnome.dconf-editor
+    # APP
     planify
+    foliate
+
+    # SOCIAL
     tuba
     flare-signal
     gnome.polari
     fractal
 
-    foliate
-    contrast
-    citations
-    helix
-  
     # DEVELOPMENT
-    glib
-    gtk4
-    libadwaita
-    meson
-
     alacritty
+    helix
+    tmux
+    git
     firefox
     vscodium
 
-    # MEDIA
-    celluloid
-    ffmpeg
-    yt-dlp
+    glib
+    gtk4
+    libadwaita
 
-    # DESKTOP
-    home-manager
-    starship
-    wofi
-    tmux
+    meson
+    gnumake
+    sysprof
+    gnome.dconf-editor
 
-    # UTILITIES
-    btop
-    eza
-    fzf
-    neofetch
-    ripgrep
-
-    # DEV
     nixpkgs-fmt
     nixpkgs-lint
     nodejs
     odin
     ols
-    sysprof
 
-    # SYSTEM COMPONENTS
+    # MEDIA
+    ffmpeg
+    yt-dlp
+
+    # UTILS & SYSTEM COMPONENTS
+    home-manager
+    starship
+
+    btop
+    eza
+    fzf
+    wget
+    navi
+    neofetch
+    ripgrep
+
     busybox
     flatpak
+
     fontconfig
     freetype
-    git
-    gnumake
+
     efibootmgr
-    pipewire
     refind
+
+    pipewire
     sof-firmware
+
     wayland-protocols
     wayland-utils
-    wget
     wlroots
     xdg-desktop-portal-gtk
     xdg-desktop-portal
@@ -87,6 +87,7 @@
         swayidle
         ulauncher
         waybar
+        wofi
         xwayland
       ];
     };
