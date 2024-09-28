@@ -14,8 +14,15 @@
     "io/elementary/desktop/agent-geoclue2" = {
       location-enabled = false;
     };
-    "io/elementary/files/preferences" = {
-      sidebar-width = "265";
+    "org/pantheon/desktop/gala/mask-corners" = {
+      corner-radius = 16;
+    };
+    "org/gnome/desktop/privacy" = {
+      remember-recent-files = false;
+      show-full-name-in-top-bar = false;
+    };
+    "org/gnome/desktop/thumbnail-cache" = {
+      maximum-age = 1;
     };
     "net/launchpad/plank/docks/dock1/dock-items" = {
       dock-items = ["

@@ -8,7 +8,6 @@
     foliate
 
     # SOCIAL
-    tuba
     flare-signal
     gnome.polari
     fractal
@@ -90,6 +89,22 @@
         wofi
         xwayland
       ];
+    };
+  };
+
+  environment = {
+    pantheon = {
+      excludePackages = 
+        (with pkgs; [
+          
+        ])
+        ++
+        (with pkgs.pantheon; [
+          elementary-terminal
+          elementary-code
+          elementary-tasks
+          epiphany
+        ]);
     };
   };
 }
