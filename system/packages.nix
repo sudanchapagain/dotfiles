@@ -1,16 +1,9 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    nb
-
     # APP
     planify
     foliate
-
-    # SOCIAL
-    flare-signal
-    gnome.polari
-    fractal
 
     # DEVELOPMENT
     alacritty
@@ -40,23 +33,19 @@
     yt-dlp
 
     # UTILS & SYSTEM COMPONENTS
-    home-manager
-    starship
-
     btop
     eza
     fzf
     wget
-    navi
-    neofetch
     ripgrep
+    neofetch
+    starship
+    home-manager
 
     busybox
     flatpak
-
     fontconfig
     freetype
-
     efibootmgr
     refind
 
@@ -96,7 +85,6 @@
     pantheon = {
       excludePackages = 
         (with pkgs; [
-          
         ])
         ++
         (with pkgs.pantheon; [

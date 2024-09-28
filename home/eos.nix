@@ -24,11 +24,9 @@
     "org/gnome/desktop/thumbnail-cache" = {
       maximum-age = 1;
     };
-    "net/launchpad/plank/docks/dock1/dock-items" = {
-      dock-items = ["
-                      'io.elementary.switchboard.dockitem',
-                      'io.elementary.appcenter.dockitem'
-                    "];
+    "net/launchpad/plank/docks/dock1" = {
+      dock-items = ["'firefox.dockitem', 'Alacritty.dockitem', 'com.github.johnfactotum.Foliate.dockitem', 'org.gnome.World.Iotas.dockitem', 'io.github.alainm23.planify.dockitem'"];
+      theme = "Transparent";
     };
     "org/gnome/desktop/privacy" = {
       remeber-recent-files = false;
@@ -44,6 +42,12 @@
     };
     "io/elementary/desktop/wingpanel/power" = {
       show-percentage = true;
+    };
+    "io/elementary/desktop/wingpanel/datetime" = {
+      clock-format = "12h";
+    };
+    "org/gnome/desktop/datetime" = {
+      automatic-timezone = false;
     };
     "org/gtk/settings/file-chooser" = {
       date-format = "regular";

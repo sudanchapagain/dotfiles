@@ -18,7 +18,9 @@
     users.crimson = {
       directories = [
         ".local/share/Trash"
-        ".local/share/navi"
+        ".local/share/io.github.alainm23.planify"
+        ".var/app/org.gnome.World.Iotas"
+        ".local/share/ulauncher"
         ".local/share/gnome-builder"
         ".local/share/flatpak"
         ".config/VSCodium"
