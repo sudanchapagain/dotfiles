@@ -11,6 +11,18 @@
     "org/gnome/system/location" = {
       enabled = false;
     };
+    "io/elementary/desktop/agent-geoclue2" = {
+      location-enabled = false;
+    };
+    "io/elementary/files/preferences" = {
+      sidebar-width = "265";
+    };
+    "net/launchpad/plank/docks/dock1/dock-items" = {
+      dock-items = ["
+                      'io.elementary.switchboard.dockitem',
+                      'io.elementary.appcenter.dockitem'
+                    "];
+    };
     "org/gnome/desktop/privacy" = {
       remeber-recent-files = false;
       remember-app-usage = false;
