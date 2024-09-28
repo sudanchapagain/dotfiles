@@ -23,7 +23,6 @@
       l = "eza -lga --icons --hyperlink";
       c = "clear";
       sysbuild = "sudo nixos-rebuild switch --flake ~/dotfiles/";
-      sbuild = "sudo nixos-rebuild switch --flake ~/dotfiles/ --specialisation eos";
     };
 
     #initExtraFirst = ''eval "$(oh-my-posh prompt init zsh --config $HOME/.config/ohmyposh/config.toml"'';
