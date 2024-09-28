@@ -29,8 +29,8 @@
       usb-protection = true;
     };
     "org/gnome/settings-daemon/plugins/power" = {
-      sleep-inactive-battery-timeout = 18;
-      sleep-inactive-ac-timeout = 18;
+      sleep-inactive-battery-timeout = 30;
+      sleep-inactive-ac-timeout = 30;
     };
     "io/elementary/desktop/wingpanel/bluetooth" = {
       bluetooth-enabled = false;
