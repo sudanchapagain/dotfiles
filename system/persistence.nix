@@ -18,6 +18,7 @@
     users.crimson = {
       directories = [
         ".local/share/Trash"
+        ".local/share/navi"
         ".local/share/gnome-builder"
         ".local/share/flatpak"
         ".config/VSCodium"

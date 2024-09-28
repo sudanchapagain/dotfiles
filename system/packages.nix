@@ -1,21 +1,22 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    nb
+    navi
+
     gnome.dconf-editor
     planify
     tuba
-    video-trimmer
     flare-signal
     gnome.polari
     fractal
+
     foliate
-    apostrophe
     contrast
     citations
-    endeavour
     helix
   
-    # GNOME DEVELOPMENT
+    # DEVELOPMENT
     glib
     gtk4
     libadwaita
@@ -29,8 +30,6 @@
     celluloid
     ffmpeg
     yt-dlp
-
-    emote
 
     # DESKTOP
     home-manager
@@ -78,6 +77,7 @@
     sway = {
       enable = true;
       package = pkgs.swayfx;
+      wrapperFeatures.gtk = true;
       extraPackages = with pkgs; [
         brightnessctl
         playerctl
