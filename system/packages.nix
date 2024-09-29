@@ -26,6 +26,7 @@
     nixpkgs-lint
     nodejs
     odin
+    rustup
     ols
 
     # MEDIA
@@ -74,6 +75,7 @@
         swaylock
         swayidle
         ulauncher
+        clipster
         waybar
         wofi
         xwayland
