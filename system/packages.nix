@@ -85,12 +85,15 @@
     pantheon = {
       excludePackages = 
         (with pkgs; [
+          plank
         ])
         ++
         (with pkgs.pantheon; [
           elementary-terminal
           elementary-code
           elementary-tasks
+          elementary-mail
+          elementary-calendar
           epiphany
         ]);
     };
