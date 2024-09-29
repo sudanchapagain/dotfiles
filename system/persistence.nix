@@ -24,6 +24,8 @@
         ".local/share/gnome-builder"
         ".local/share/flatpak"
         ".config/VSCodium"
+        ".config/ulauncher"
+        ".config/autostart"
         ".config/zsh/"
         ".ssh"
         ".vscode-oss"
