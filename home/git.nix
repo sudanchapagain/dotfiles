@@ -11,6 +11,11 @@
       core.editor = "hx";
       credential.helper = "store";
       github.user = "sudanchapagain";
+      gpg.format = "ssh";
+    };
+    signing = {
+      signByDefault = true;
+      key = "~/.ssh/id_ed25519.pub";
     };
     ignores = [
       ".cache/"

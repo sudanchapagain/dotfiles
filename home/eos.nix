@@ -51,9 +51,6 @@
     "net/launchpad/plank/docks/dock1" = {
       pressure-reveal = true;
     };
-    "org/pantheon/desktop/gala/behavior" = {
-      hotcorner-topleft = "open-launcher";
-    };
     "org/gnome/desktop/interface" = {
       document-font-name = "Inter Variable 11";
       font-name = "Inter Variable 11";

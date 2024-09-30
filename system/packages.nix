@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     # APP
     planify
+    anytype
     foliate
 
     # DEVELOPMENT
@@ -34,6 +35,7 @@
     yt-dlp
 
     # UTILS & SYSTEM COMPONENTS
+    nh
     btop
     eza
     fzf
@@ -75,7 +77,6 @@
         swaylock
         swayidle
         ulauncher
-        clipster
         waybar
         wofi
         xwayland
@@ -96,6 +97,7 @@
           elementary-tasks
           elementary-mail
           elementary-calendar
+          elementary-dock
           epiphany
         ]);
     };
