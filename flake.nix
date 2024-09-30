@@ -13,16 +13,20 @@
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+    agenix.inputs.darwin.follows = "";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impermanence, lanzaboote, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, impermanence, lanzaboote, agenix, ... }: {
     nixosConfigurations = {
       crimson = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./system/system.nix
+          agenix.nixosModules.default
           impermanence.nixosModules.impermanence
-          # home manager as module of nixos
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

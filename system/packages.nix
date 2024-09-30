@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, agenix, ... }:
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = ([]) ++ (with pkgs; [
     # APP
     planify
-    anytype
     foliate
 
     # DEVELOPMENT
@@ -36,6 +35,7 @@
 
     # UTILS & SYSTEM COMPONENTS
     nh
+    niv
     btop
     eza
     fzf
@@ -43,6 +43,7 @@
     ripgrep
     neofetch
     starship
+    nushellFull
     home-manager
 
     busybox
@@ -62,7 +63,7 @@
     xdg-desktop-portal
     xdg-utils
     xwayland
-  ];
+  ]);
 
   programs = {
     sway = {
