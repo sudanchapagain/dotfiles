@@ -1,0 +1,37 @@
+[[language]]
+name = "rust"
+lsp = "rust-analyzer"
+formatter = { command = "rustfmt" }
+linter = { command = "cargo", args = ["clippy"] }
+auto-format = true
+
+[[language]]
+name = "odin"
+lsp = "ols"
+
+[[language]]
+name = "javascript"
+lsp = "typescript-language-server"
+formatter = { command = "prettier", args = ["--stdin-filepath", "%file"] }
+linter = { command = "eslint", args = ["--stdin", "--stdin-filename", "%file"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+lsp = "typescript-language-server"
+formatter = { command = "prettier", args = ["--stdin-filepath", "%file"] }
+linter = { command = "eslint", args = ["--stdin", "--stdin-filename", "%file"] }
+auto-format = true
+
+[[language]]
+name = "go"
+lsp = "gopls"
+formatter = { command = "gofmt" }
+linter = { command = "golangci-lint", args = ["run"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+lsp = "marksman"
+formatter = { command = "prettier", args = ["--stdin-filepath", "%file"] }
+auto-format = true
