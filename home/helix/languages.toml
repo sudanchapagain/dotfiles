@@ -1,37 +1,96 @@
 [[language]]
 name = "rust"
-lsp = "rust-analyzer"
-formatter = { command = "rustfmt" }
-linter = { command = "cargo", args = ["clippy"] }
-auto-format = true
-
-[[language]]
-name = "odin"
-lsp = "ols"
-
-[[language]]
-name = "javascript"
-lsp = "typescript-language-server"
-formatter = { command = "prettier", args = ["--stdin-filepath", "%file"] }
-linter = { command = "eslint", args = ["--stdin", "--stdin-filename", "%file"] }
-auto-format = true
+[language-server.rust-analyzer.config]
+check = { command = "clippy", features = "all" }
+diagnostics = { experimental = { enable = true } }
+hover = { actions = { enable = true } }
+typing = { autoClosingAngleBrackets = { enable = true } }
+cargo = { allFeatures = true }
+procMacro = { enable = true }
 
 [[language]]
 name = "typescript"
-lsp = "typescript-language-server"
-formatter = { command = "prettier", args = ["--stdin-filepath", "%file"] }
-linter = { command = "eslint", args = ["--stdin", "--stdin-filename", "%file"] }
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-react",
+  "eslint",
+  "emmet-ls",
+]
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
 [[language]]
-name = "go"
-lsp = "gopls"
-formatter = { command = "gofmt" }
-linter = { command = "golangci-lint", args = ["run"] }
+name = "tsx"
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-react",
+  "eslint",
+  "emmet-ls",
+]
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
 [[language]]
-name = "markdown"
-lsp = "marksman"
-formatter = { command = "prettier", args = ["--stdin-filepath", "%file"] }
+name = "jsx"
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-react",
+  "eslint",
+  "emmet-ls",
+]
+grammar = "javascript"
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-react",
+  "eslint",
+  "emmet-ls",
+]
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+formatter = { command = 'npx', args = ["prettier", "--parser", "json"] }
+auto-format = true
+
+[[language]]
+name = "html"
+formatter = { command = 'npx', args = ["prettier", "--parser", "html"] }
+language-servers = [
+  "vscode-html-language-server",
+  "tailwindcss-react",
+  "emmet-ls",
+]
+auto-format = true
+
+[[language]]
+name = "css"
+formatter = { command = 'npx', args = ["prettier", "--parser", "css"] }
+language-servers = [
+  "vscode-css-language-server",
+  "tailwindcss-react",
+  "emmet-ls",
+]
+auto-format = true
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+codeAction = { disableRuleComment = { enable = true, location = "separateLine" }, showDocumentation = { enable = false } }
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+experimental = {}
+problems = { shortenToSingleLine = false }

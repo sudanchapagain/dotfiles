@@ -1,14 +1,12 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    planify
     foliate
     ulauncher
 
     ffmpeg
     yt-dlp
 
-    alacritty
     helix
     tmux
     git
@@ -27,7 +25,6 @@
     ripgrep
     neofetch
     starship
-    nushellFull
     busybox
   ];
 }
