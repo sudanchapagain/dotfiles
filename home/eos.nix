@@ -1,10 +1,6 @@
 { lib, config, pkgs, ... }:
 {
   dconf.settings = {
-    "org/gnome/desktop/background" = {
-      picture-uri = "file:///home/crimson/dotfiles/wallpaper/ring.jpg";
-      picture-uri-dark = "file:///home/crimson/dotfiles/wallpaper/grass.jpg";
-    };
     "org/gnome/desktop/session" = {
       idle-delay = "uint32 18";
     };
@@ -14,50 +10,17 @@
     "io/elementary/desktop/agent-geoclue2" = {
       location-enabled = false;
     };
-    "org/pantheon/desktop/gala/mask-corners" = {
-      corner-radius = 16;
-    };
     "org/gnome/desktop/privacy" = {
       remember-recent-files = false;
       show-full-name-in-top-bar = false;
+      remember-app-usage = false;
     };
     "org/gnome/desktop/thumbnail-cache" = {
       maximum-age = 1;
     };
-    "net/launchpad/plank/docks/dock1" = {
-      theme = "Transparent";
-    };
-    "org/gnome/desktop/privacy" = {
-      remeber-recent-files = false;
-      remember-app-usage = false;
-      usb-protection = true;
-    };
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-battery-timeout = 30;
       sleep-inactive-ac-timeout = 30;
-    };
-    "io/elementary/desktop/wingpanel/bluetooth" = {
-      bluetooth-enabled = false;
-    };
-    "io/elementary/desktop/wingpanel/power" = {
-      show-percentage = true;
-    };
-    "io/elementary/desktop/wingpanel/datetime" = {
-      clock-format = "12h";
-    };
-    "org/gtk/settings/file-chooser" = {
-      date-format = "regular";
-    };
-    "net/launchpad/plank/docks/dock1" = {
-      pressure-reveal = true;
-    };
-    "org/gnome/desktop/interface" = {
-      document-font-name = "Inter Variable 11";
-      font-name = "Inter Variable 11";
-      monospace-font-name = "JetBrainsMono Nerd Font 10";
-      titlebar-font = "Inter Variable Bold 11";
-      clock-format = "12h";
-      gtk-theme = "io.elementary.stylesheet.strawberry";
     };
     "org/gnome/desktop/wm/keybindings" = {
       move-to-center = [ "<Super>c" ];
