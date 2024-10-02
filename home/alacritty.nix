@@ -1,13 +1,19 @@
 { config, pkgs, ... }:
 {
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       window = {
         decorations = "full";
         dynamic_padding = true;
-        dimensions = { columns = 200; lines = 50; };
-        padding = { x = 10; y = 10; };
+        dimensions = {
+          columns = 200;
+          lines = 50;
+        };
+        padding = {
+          x = 10;
+          y = 10;
+        };
         opacity = 1;
         #blur = true;
         dynamic_title = true;

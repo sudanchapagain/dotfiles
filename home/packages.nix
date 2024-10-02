@@ -1,16 +1,27 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   home.packages = with pkgs; [
-    foliate
+    git
+    tmux
+    helix
+    starship
+    neofetch
+    vscodium
     ulauncher
+
+    btop
+    eza
+    fzf
+    ripgrep
 
     ffmpeg
     yt-dlp
-
-    helix
-    tmux
-    git
-    vscodium
+    busybox
 
     nixpkgs-fmt
     nixpkgs-lint
@@ -18,13 +29,5 @@
     odin
     rustup
     ols
-
-    btop
-    eza
-    fzf
-    ripgrep
-    neofetch
-    starship
-    busybox
   ];
 }

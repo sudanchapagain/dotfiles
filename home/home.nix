@@ -1,5 +1,9 @@
-{ lib, home-manager, impermanence, lanzaboote, config, pkgs, pkgs-unstable, ... }:
-
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./alacritty.nix

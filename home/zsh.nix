@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   programs.zsh = {
     enable = true;
@@ -12,7 +11,13 @@
       share = true;
       ignoreDups = true;
       ignoreAllDups = true;
-      ignorePatterns = [ "rm *" "ls" "l" "ll" "exit" ];
+      ignorePatterns = [
+        "rm *"
+        "ls"
+        "l"
+        "ll"
+        "exit"
+      ];
       ignoreSpace = true;
 
     };
