@@ -1,0 +1,28 @@
+[user]
+    name = Sudan Chapagain
+    email = 101015050+sudanchapagain@users.noreply.github.com
+
+[init]
+    defaultBranch = main
+
+[color]
+    ui = true
+
+[core]
+    editor = hx
+
+[credential]
+    helper = store
+
+[github]
+    user = sudanchapagain
+
+[gpg]
+    format = ssh
+
+[commit]
+    gpgSign = true
+
+[user]
+    signingKey = ~/.ssh/id_ed25519.pub
+
