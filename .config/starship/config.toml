@@ -38,3 +38,9 @@ commit_hash_length = 4
 [cmd_duration]
 format = "[$duration]($style)"
 style = "yellow"
+
+[package]
+disabled = true
+
+[rust]
+disabled = true
