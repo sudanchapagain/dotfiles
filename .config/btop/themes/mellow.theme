@@ -1,5 +1,4 @@
-theme[main_bg]=""
-theme[main_fg]="#c9c7cd"
+theme[main_bg]="#161617"
 theme[title]="#c1c0d4"
 theme[hi_fg]="#c9c7cd"
 theme[selected_bg]="#1b1b1d"

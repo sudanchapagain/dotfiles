@@ -8,9 +8,7 @@ esac
 
 HISTSIZE=5000
 HISTFILE=~/.bash_history
-shopt -s histignoredups         # Ignore duplicate commands in history
 shopt -s histappend             # Append to history file, don't overwrite
-shopt -s histignorespace        # Ignore commands starting with a space
 export HISTIGNORE="rm *:ls:l:ll:exit"  # Ignore specific commands from history
 
 # Terminal size check after each command
@@ -73,11 +71,6 @@ alias sysbuild="sudo nixos-rebuild switch --flake ~/dotfiles/"
 bind '"\C-p": history-search-backward'
 bind '"\C-n": history-search-forward'
 
-# Enable fzf (fuzzy finder) if installed
-if command -v fzf > /dev/null 2>&1; then
-    eval "$(fzf --bash)"
-fi
-
 # Launch tmux if installed and not already inside a tmux session
 if command -v tmux > /dev/null 2>&1; then
     [ -z "$TMUX" ] && exec tmux
@@ -99,3 +92,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
