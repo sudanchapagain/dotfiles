@@ -5,7 +5,7 @@ FLATPAK_REPO="flathub"
 SNAP_PACKAGES=("helix" "btop" "yt-dlp")
 FLATPAK_PACKAGES=("com.rafaelmardojai.SharePreview" "com.vscodium.codium" "io.github.seadve.Kooha" "org.mozilla.firefox")
 SYSTEM_PACKAGES=("git" "stow" "busybox" "ffmpeg" "cargo" "fzf" "podman" "ripgrep")
-CARGO_PACKAGES=("tokei" "eza" "binsider")
+CARGO_PACKAGES=("tokei" "eza" "binsider" "xplr")
 
 check_command() {
     command -v "$1" >/dev/null 2>&1
