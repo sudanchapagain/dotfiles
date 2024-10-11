@@ -49,42 +49,6 @@ install_cargo_packages() {
     fi
 }
 
-symlink_dotfiles() {
-    for dir in */; do
-        dir_name="${dir%/}"
-        default_target="$HOME/.config/$dir_name"
-
-        read -p "Symlink contents of '$dir' to '$default_target'? (Press Enter for default, or specify a path, 'n' to skip) " custom_target
-        
-        if [[ "$custom_target" == "n" ]]; then
-            echo "Skipping '$dir_name'."
-            continue
-        fi
-
-        target="${custom_target:-$default_target}"
-
-        mkdir -p "$target"
-
-        for item in "$dir"*; do
-            item_name="$(basename "$item")"
-            if [[ "$item_name" == ".git" ]]; then
-                echo "Ignoring '$item_name'."
-                continue
-            fi
-
-            symlink_target="$target/$item_name"
-
-            if [[ -e "$symlink_target" ]]; then
-                echo "Target '$symlink_target' already exists. Skipping."
-                continue
-            fi
-
-            ln -sfn "$item" "$symlink_target" && echo "Created symlink: '$symlink_target' -> '$item'"
-        done
-    done
-}
-
-
 handle_git_commit() {
     read -p "Do you want to commit changes to Git? (y/n) " commit_choice
     if [[ "$commit_choice" == "y" ]]; then
@@ -132,7 +96,6 @@ print_help() {
     echo "| Commands:                                                    |"
     echo "|   full-setup        run all commands including initial setup |"
     echo "|   new               install only newly added packages        |"
-    echo "|   dot               symlink dotfiles                         |"
     echo "|   help              show this help message                   |"
     echo "+--------------------------------------------------------------+"
 }
