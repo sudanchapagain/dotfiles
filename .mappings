@@ -1,0 +1,8 @@
+[general]
+"alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
+"git/gitconfig"            = "~/.gitconfig"
+"helix/config.toml"        = "~/.config/helix/config.toml"
+"helix/languages.toml"     = "~/.config/helix/languages.toml"
+"starship/config.toml"     = "~/.config/starship/config.toml"
+"tmux/tmux.conf"           = "~/.config/tmux/tmux.conf"
+"zsh/rc.zsh"               = "~/.zshrc"

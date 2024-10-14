@@ -1,5 +1,6 @@
 [window]
 decorations = "full"
+decorations_theme_variant = "Dark"
 dynamic_padding = true
 dimensions = { columns = 200, lines = 50 }
 padding = { x = 10, y = 10 }
