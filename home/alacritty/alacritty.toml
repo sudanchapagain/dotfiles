@@ -21,29 +21,25 @@ bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "#161617"
-foreground = "#c9c7cd"
-
-[colors.cursor]
-cursor = "#757581"
-text = "#c9c7cd"
+background = '#282828'
+foreground = '#d4be98'
 
 [colors.normal]
-black = "#27272a"
-blue = "#aca1cf"
-cyan = "#ea83a5"
-green = "#90b99f"
-magenta = "#e29eca"
-red = "#f5a191"
-white = "#c1c0d4"
-yellow = "#e6b99d"
+black   = '#3c3836'
+red     = '#ea6962'
+green   = '#a9b665'
+yellow  = '#d8a657'
+blue    = '#7daea3'
+magenta = '#d3869b'
+cyan    = '#89b482'
+white   = '#d4be98'
 
 [colors.bright]
-black = "#353539"
-blue = "#b9aeda"
-cyan = "#f591b2"
-green = "#9dc6ac"
-magenta = "#ecaad6"
-red = "#ffae9f"
-white = "#cac9dd"
-yellow = "#f0c5a9"
+black   = '#3c3836'
+red     = '#ea6962'
+green   = '#a9b665'
+yellow  = '#d8a657'
+blue    = '#7daea3'
+magenta = '#d3869b'
+cyan    = '#89b482'
+white   = '#d4be98'
