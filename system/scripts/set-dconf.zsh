@@ -3,10 +3,10 @@ dconf write /org/gnome/shell/extensions/blur-my-shell/sigma "30" && \
 dconf write /org/gtk/settings/file-chooser/clock-format "'12h'" && \
 dconf write /org/gnome/desktop/interface/clock-format "'12h'" && \
 dconf write /org/gtk/settings/file-chooser/show-hidden "true" && \
-dconf write /org/gnome/desktop/interface/document-font-name "'Inter Variable 10'" && \
-dconf write /org/gnome/desktop/interface/font-name "'Inter Variable 10'" && \
+dconf write /org/gnome/desktop/interface/document-font-name "'Inter 10'" && \
+dconf write /org/gnome/desktop/interface/font-name "'Inter 10'" && \
 dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrainsMono Nerd Font 10'" && \
-dconf write /org/gnome/desktop/interface/titlebar-font "'Inter Variable Bold 11'" && \
+dconf write /org/gnome/desktop/interface/titlebar-font "'Inter Bold 11'" && \
 dconf write /org/gnome/desktop/interface/text-scaling-factor "0.94999999999999996" && \
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces "10" && \
 dconf write /org/gnome/desktop/wm/keybindings/move-to-center "['<Super>c']" && \
