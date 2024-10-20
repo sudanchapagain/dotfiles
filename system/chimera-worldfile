@@ -5,8 +5,7 @@ btop
 cargo
 chimera-repo-user
 cryptsetup-scripts
-dconf-editor
-distrobox
+curl
 eza
 fastfetch
 ffmpeg
@@ -15,20 +14,15 @@ firmware-linux-soc
 fzf
 git
 gnome
-gnome-tweaks
-grub-i386-efi
-grub-i386-pc
 grub-x86_64-efi
 helix
 linux-lts
-linux-lts-zfs-bin
 lvm2
 mtools
 nginx
 nmap
 nodejs
 php
-podman
 postgresql-postgresql16-default
 ripgrep
 rust
@@ -43,4 +37,5 @@ wget
 xorriso
 xplr
 yt-dlp
+zola
 zsh
