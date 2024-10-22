@@ -1,28 +1,39 @@
+# Set zinit dir
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Get Zinit, if not found
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
 # Zsh options and completion
 autoload -Uz compinit && compinit
 
-# Autosuggestions and Syntax Highlighting
-if command -v zsh-autosuggestions > /dev/null; then
-  source $(dirname $(realpath $(which zsh-autosuggestions)))/zsh-autosuggestions.zsh
-fi
-
-if command -v zsh-syntax-highlighting > /dev/null; then
-  source $(dirname $(realpath $(which zsh-syntax-highlighting)))/zsh-syntax-highlighting.zsh
-fi
+zinit cdreplay -q
 
 # History settings
 HISTSIZE=5000
 SAVEHIST=5000
+HISTDUP=erase
 HISTFILE=~/.zsh_history
-setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE
 
-zshaddhistory() {
-  local hist_ignore_patterns=("rm *" "ls" "l" "ll" "exit")
-  for pattern in $hist_ignore_patterns; do
-    [[ $1 == $pattern ]] && return 1
-  done
-  return 0
-}
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Shell aliases
 alias pretty="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
