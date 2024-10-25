@@ -1,6 +1,6 @@
 [general]
 "home/alacritty/alacritty.toml"           = "~/.config/alacritty/alacritty.toml"
-"home/git/gitconfig"                      = "~/.gitconfig"
+"home/git/gitconfig"                      = "~/.config/git/config"
 "home/helix/config.toml"                  = "~/.config/helix/config.toml"
 "home/helix/languages.toml"               = "~/.config/helix/languages.toml"
 "home/helix/themes/gruvbox-material.toml" = "~/.config/helix/themes/gruvbox-material.toml"
