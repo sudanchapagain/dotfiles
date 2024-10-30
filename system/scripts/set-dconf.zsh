@@ -29,4 +29,11 @@ dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-6 "['<Super>6'
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-7 "['<Super>7']" && \
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-8 "['<Super>8']" && \
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-9 "['<Super>9']" && \
-dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-10 "['<Super>0']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-10 "['<Super>0']" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Open Alacritty'" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'alacritty'" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>t'" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'Open Nautilus'" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'nautilus'" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "'<Super>e'"
