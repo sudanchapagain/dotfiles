@@ -41,6 +41,8 @@ alias ls="eza -g --icons --hyperlink"
 alias ll="eza -lg --icons --hyperlink"
 alias l="eza -lga --icons --hyperlink"
 alias c="clear"
+alias x="exit"
+alias e="nautilus ."
 alias sysbuild="sudo nixos-rebuild switch --flake ~/dotfiles/"
 
 # Vi mode and history search keybindings
