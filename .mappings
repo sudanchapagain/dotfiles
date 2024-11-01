@@ -7,3 +7,8 @@
 "home/starship/config.toml"               = "~/.config/starship/config.toml"
 "home/tmux/tmux.conf"                     = "~/.config/tmux/tmux.conf"
 "home/zsh/rc.zsh"                         = "~/.zshrc"
+"home/sway/config"                        = "~/.config/sway/config"
+"home/waybar/config"                      = "~/.config/waybar/config"
+"home/waybar/style.css"                   = "~/.config/waybar/style.css"
+"home/wofi/config"                        = "~/.config/wofi/config"
+"home/wofi/style.css"                     = "~/.config/wofi/style.css"
