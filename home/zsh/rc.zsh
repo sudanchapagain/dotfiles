@@ -61,11 +61,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-# Auto-start tmux
-if command -v tmux > /dev/null 2>&1; then
-  [ -z "$TMUX" ] && exec tmux
-fi
-
 # Starship prompt
 if command -v starship > /dev/null; then
   eval "$(starship init zsh)"
