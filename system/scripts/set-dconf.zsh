@@ -10,6 +10,15 @@ dconf write /org/gnome/desktop/interface/titlebar-font "'Inter Bold 11'" && \
 dconf write /org/gnome/desktop/interface/text-scaling-factor "0.94999999999999996" && \
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces "10" && \
 dconf write /org/gnome/desktop/wm/keybindings/move-to-center "['<Super>c']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-1 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-2 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-3 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-4 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-5 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-6 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-7 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-8 "['']" && \
+dconf write /org/gnome/shell/keybindings/switch-to-application-9 "['']" && \
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-1 "['<Super><Shift>1']" && \
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-2 "['<Super><Shift>2']" && \
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-3 "['<Super><Shift>3']" && \
