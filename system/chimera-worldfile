@@ -1,4 +1,3 @@
-alacritty
 base-full
 binsider
 btop
@@ -30,7 +29,6 @@ rust-analyzer
 rust-doc
 rust-std
 starship
-tmux
 tokei
 tree
 ufw
