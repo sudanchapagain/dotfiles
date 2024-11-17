@@ -5,11 +5,11 @@ $directory$git_branch$git_state$git_status$git_commit$fill$cmd_duration$line_bre
 [line_break]
 disabled = false
 
-add_newline = true;
-command_timeout = 1000;
+add_newline = true
+command_timeout = 1000
 
 [fill]
-symbol = " ";
+symbol = " "
 
 [directory]
 style = "bold blue"

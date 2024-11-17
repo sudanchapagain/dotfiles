@@ -5,4 +5,5 @@
 "home/helix/languages.toml"               = "~/.config/helix/languages.toml"
 "home/helix/themes/gruvbox-material.toml" = "~/.config/helix/themes/gruvbox-material.toml"
 "home/starship/config.toml"               = "~/.config/starship/config.toml"
-"home/zsh/rc.zsh"                         = "~/.zshrc"
+"home/fish/rc.fish"                       = "~/.config/fish/config.fish"
+"home/fish/functions/fish_greeting.fish"  = "~/.config/fish/functions/fish_greeting.fish"

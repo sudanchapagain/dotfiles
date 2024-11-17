@@ -12,6 +12,7 @@ eza
 fastfetch
 ffmpeg
 firefox
+fish-shell
 fonts-inter
 fonts-nerd-jetbrains-mono
 fzf
@@ -34,4 +35,3 @@ tree
 ufw
 wget
 yt-dlp
-zsh

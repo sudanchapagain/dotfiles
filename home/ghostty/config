@@ -1,6 +1,7 @@
+command = fish
+shell-integration = fish
 window-theme = dark
 font-size = 10
-font-family =
 bold-is-bright = true
 
 adw-toolbar-style = flat
