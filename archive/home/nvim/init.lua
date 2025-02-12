@@ -1,13 +1,3 @@
--- TEMPORARY. To force learn hjkl movement.
--- vim.api.nvim_set_keymap("n", "<Up>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Down>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Left>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Right>", "<Nop>", { noremap = true, silent = true })
-
--- force learn C-b & C-f to move cursor in insert mode or use normal mode
--- vim.api.nvim_set_keymap("i", "<Left>", "<Nop>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", { noremap = true, silent = true })
-
 --                     VIM
 ------------------------------------------------
 vim.g.mapleader = " "
@@ -95,133 +85,6 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("i", "<C-b>", "<Left>")
 vim.keymap.set("i", "<C-f>", "<Right>")
 
--- Fold if not folded, unfold if folded.
-vim.keymap.set("n", "zz", function()
-	local current_line_number, col = unpack(vim.api.nvim_win_get_cursor(0))
-	local is_line_folded = vim.fn.foldclosed(current_line_number)
-	if is_line_folded > 0 then
-		vim.api.nvim_feedkeys("zd", "n", true)
-	else
-		local current_line = vim.api.nvim_get_current_line()
-		local curly = "{}"
-		local round = "()"
-		local square = "[]"
-		local triangle = "<>"
-		local brackets = {}
-		local is_start_last = {}
-		brackets[curly] = 0
-		brackets[round] = 0
-		brackets[square] = 0
-		brackets[triangle] = 0
-		is_start_last[curly] = nil
-		is_start_last[round] = nil
-		is_start_last[square] = nil
-		is_start_last[triangle] = nil
-		for i = 1, #current_line do
-			local c = current_line:sub(i, i)
-			if c == "{" then
-				brackets[curly] = brackets[curly] + 1
-				is_start_last[curly] = true
-			end
-			if c == "}" then
-				brackets[curly] = brackets[curly] - 1
-				is_start_last[curly] = false
-			end
-			if c == "(" then
-				brackets[round] = brackets[round] + 1
-				is_start_last[round] = true
-			end
-			if c == ")" then
-				brackets[round] = brackets[round] - 1
-				is_start_last[round] = false
-			end
-			if c == "[" then
-				brackets[square] = brackets[square] + 1
-				is_start_last[square] = true
-			end
-			if c == "]" then
-				brackets[square] = brackets[square] - 1
-				is_start_last[square] = false
-			end
-			if c == "<" then
-				brackets[triangle] = brackets[triangle] + 1
-				is_start_last[triangle] = true
-			end
-			if c == ">" then
-				brackets[triangle] = brackets[triangle] - 1
-				is_start_last[triangle] = false
-			end
-		end
-		if brackets[curly] ~= 0 then
-			-- `nvim_feedkeys` does not wait for commands to complete, so I added a delay manually
-			if is_start_last[curly] then
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F{", "n", true)
-				end, 0)
-			else
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F}", "n", true)
-				end, 0)
-			end
-			vim.defer_fn(function()
-				vim.api.nvim_feedkeys("zf%", "n", true)
-			end, 10)
-		elseif brackets[round] ~= 0 then
-			-- `nvim_feedkeys` does not wait for commands to complete, so I added a delay manually
-			if is_start_last[round] then
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F(", "n", true)
-				end, 0)
-			else
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F)", "n", true)
-				end, 0)
-			end
-			vim.defer_fn(function()
-				vim.api.nvim_feedkeys("zf%", "n", true)
-			end, 10)
-		elseif brackets[square] ~= 0 then
-			-- `nvim_feedkeys` does not wait for commands to complete, so I added a delay manually
-			if is_start_last[square] then
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F[", "n", true)
-				end, 0)
-			else
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F]", "n", true)
-				end, 0)
-			end
-			vim.defer_fn(function()
-				vim.api.nvim_feedkeys("zf%", "n", true)
-			end, 10)
-		elseif brackets[triangle] ~= 0 then
-			-- `nvim_feedkeys` does not wait for commands to complete, so I added a delay manually
-			if is_start_last[triangle] then
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F<", "n", true)
-				end, 0)
-			else
-				vim.defer_fn(function()
-					vim.api.nvim_feedkeys("$F>", "n", true)
-				end, 0)
-			end
-			vim.defer_fn(function()
-				vim.api.nvim_feedkeys("zf%", "n", true)
-			end, 10)
-		else
-			local prompt = vim.fn.input("Do you want to colapse this whole paragraph? [y/N]")
-			local yes_options = {
-				["y"] = true,
-				["Y"] = true,
-			}
-			if yes_options[prompt] then
-				vim.api.nvim_feedkeys("vapkzf", "n", true)
-			end
-			vim.cmd("echo ''")
-		end
-	end
-end)
-
 --        LAZY PACKAGE MANAGER
 ------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -243,7 +106,6 @@ require("lazy").setup({
 
 	--                Simple Packages
 	------------------------------------------------
-	"ThePrimeagen/vim-be-good",
 	"nvim-lua/plenary.nvim",
 	"mbbill/undotree",
 
@@ -251,15 +113,6 @@ require("lazy").setup({
 		"LintaoAmons/easy-commands.nvim",
 		event = "VeryLazy",
 		opts = {},
-	},
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			local custom_auto = require("lualine.themes.auto")
-			custom_auto.normal.c.bg = "NONE"
-			vim.cmd("colorscheme rose-pine")
-		end,
 	},
 	{
 		"ThePrimeagen/harpoon",
@@ -362,15 +215,9 @@ require("lazy").setup({
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.formatting.gofumpt,
-					null_ls.builtins.formatting.goimports,
-					null_ls.builtins.formatting.golines,
-					null_ls.builtins.formatting.latexindent,
-					null_ls.builtins.formatting.fixjson,
 					null_ls.builtins.formatting.markdownlint,
 					null_ls.builtins.diagnostics.eslint_d,
 					null_ls.builtins.formatting.prettierd,
-					null_ls.builtins.formatting.nixpkgs_fmt,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
@@ -519,66 +366,6 @@ require("lazy").setup({
 		end,
 	},
 
-	--                TROUBLE
-	------------------------------------------------
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
-		config = function()
-			vim.keymap.set("n", "B", function()
-				require("trouble").toggle()
-			end)
-		end,
-	},
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup({
-				signs = {
-					add = { text = "│" },
-					change = { text = "│" },
-					delete = { text = "_" },
-					topdelete = { text = "‾" },
-					changedelete = { text = "~" },
-					untracked = { text = "┆" },
-				},
-				signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-				numhl = false,
-				linehl = false,
-				word_diff = false,
-				watch_gitdir = {
-					follow_files = true,
-				},
-				auto_attach = true,
-				attach_to_untracked = false,
-				current_line_blame = false,
-				current_line_blame_opts = {
-					virt_text = true,
-					virt_text_pos = "eol",
-					delay = 1000,
-					ignore_whitespace = false,
-					virt_text_priority = 100,
-				},
-				current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
-				sign_priority = 6,
-				update_debounce = 100,
-				status_formatter = nil,
-				max_file_length = 40000,
-				preview_config = {
-					border = "single",
-					style = "minimal",
-					relative = "cursor",
-					row = 0,
-					col = 1,
-				},
-				yadm = {
-					enable = false,
-				},
-			})
-		end,
-	},
-
 	--                Lualine
 	------------------------------------------------
 	{
@@ -595,65 +382,6 @@ require("lazy").setup({
 					section_separators = "",
 				},
 			})
-		end,
-	},
-
-	--                Indent Blankline
-	------------------------------------------------
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {},
-		config = function()
-			require("ibl").setup({
-				indent = {
-					char = "│",
-					tab_char = "│",
-				},
-				whitespace = {
-					remove_blankline_trail = false,
-				},
-				scope = { enabled = false },
-				exclude = {
-					filetypes = {
-						"help",
-						"dashboard",
-						"Trouble",
-						"trouble",
-						"lazy",
-						"mason",
-						"toggleterm",
-						"lazyterm",
-					},
-				},
-			})
-		end,
-	},
-
-	--                Indent Animation
-	------------------------------------------------
-	{
-		"echasnovski/mini.indentscope",
-		version = "*",
-		init = function()
-			vim.api.nvim_create_autocmd("FileType", {
-				pattern = {
-					"help",
-					"dashboard",
-					"Trouble",
-					"trouble",
-					"lazy",
-					"mason",
-					"toggleterm",
-					"lazyterm",
-				},
-				callback = function()
-					vim.b.miniindentscope_disable = true
-				end,
-			})
-		end,
-		config = function()
-			require("mini.indentscope").setup()
 		end,
 	},
 })
