@@ -14,4 +14,4 @@ if type -q starship
     starship init fish | source
 end
 
-set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
+set -U fish_user_paths $HOME/.cargo/bin $HOME/.local/bin $fish_user_paths

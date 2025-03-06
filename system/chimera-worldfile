@@ -1,7 +1,6 @@
 base-full
 btop
 chimera-repo-user
-crun
 curl
 distrobox
 eza
@@ -19,13 +18,15 @@ gopls
 grub-x86_64-efi
 helix
 linux-stable
+mako
 monolith
-podman
-podman-compose
 ripgrep
 starship
+swayfx
+tofi
 tokei
 tree
 ufw
+waybar
 xdg-utils
 yt-dlp
