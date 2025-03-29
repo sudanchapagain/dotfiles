@@ -1,0 +1,19 @@
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(36,36,36)'
+bold-color-same-as-fg=true
+bold-is-bright=true
+cursor-blink-mode='system'
+cursor-colors-set=false
+cursor-foreground-color='rgb(212,190,152)'
+cursor-shape='ibeam'
+custom-command='fish'
+default-size-columns=120
+default-size-rows=30
+font='JetBrainsMono Nerd Font 10'
+foreground-color='rgb(212,190,214)'
+login-shell=true
+palette=['rgb(85,82,80)', 'rgb(234,105,118)', 'rgb(169,182,77)', 'rgb(216,167,85)', 'rgb(137,180,193)', 'rgb(211,134,151)', 'rgb(169,182,77)', 'rgb(216,167,85)', 'rgb(221,199,161)', 'rgb(234,105,118)', 'rgb(169,182,77)', 'rgb(216,167,85)', 'rgb(137,180,193)', 'rgb(211,134,151)', 'rgb(169,182,77)', 'rgb(216,167,85)']
+use-custom-command=true
+use-system-font=false
+use-theme-colors=false
+visible-name='main'
