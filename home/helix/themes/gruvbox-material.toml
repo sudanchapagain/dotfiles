@@ -87,7 +87,7 @@
 "diagnostic.error" = { underline = { color = "red", style = "curl" } }
 
 [palette]
-bg0 = "#222226"
+bg0 = "#242424"
 bg1 = "#32302f"
 bg2 = "#32302f"
 bg3 = "#454041"
