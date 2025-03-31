@@ -1,6 +1,8 @@
 base-full
 btop
 chimera-repo-user
+clang
+cmake
 curl
 decibels
 eza
@@ -12,6 +14,7 @@ fonts-inter
 fonts-nerd-jetbrains-mono
 fzf
 git
+gmake
 gnome
 gnome-boxes
 gnome-terminal
@@ -28,6 +31,7 @@ timg
 tmux
 tokei
 tree
+typst
 ufw
 xdg-utils
 yt-dlp
