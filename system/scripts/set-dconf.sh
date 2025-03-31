@@ -3,11 +3,11 @@ dconf write /org/gnome/shell/extensions/blur-my-shell/sigma "30" && \
 dconf write /org/gtk/settings/file-chooser/clock-format "'12h'" && \
 dconf write /org/gnome/desktop/interface/clock-format "'12h'" && \
 dconf write /org/gtk/settings/file-chooser/show-hidden "true" && \
-dconf write /org/gnome/desktop/interface/document-font-name "'Inter 10'" && \
-dconf write /org/gnome/desktop/interface/font-name "'Inter 10'" && \
-dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrainsMono Nerd Font 10'" && \
-dconf write /org/gnome/desktop/interface/titlebar-font "'Inter Bold 11'" && \
-dconf write /org/gnome/desktop/interface/text-scaling-factor "0.94999999999999996" && \
+dconf write /org/gnome/desktop/interface/document-font-name "'Adwaita Sans 11'" && \
+dconf write /org/gnome/desktop/interface/font-name "'Adwaita Sans 10'" && \
+dconf write /org/gnome/desktop/interface/monospace-font-name "'Adwaita Mono 11'" && \
+dconf write /org/gnome/desktop/interface/titlebar-font "'Adwaita Sans Bold 11'" && \
+dconf write /org/gnome/desktop/interface/text-scaling-factor "1" && \
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces "10" && \
 dconf write /org/gnome/desktop/wm/keybindings/move-to-center "['<Super>c']" && \
 dconf write /org/gnome/shell/keybindings/switch-to-application-1 "['']" && \
@@ -40,8 +40,8 @@ dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-8 "['<Super>8'
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-9 "['<Super>9']" && \
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-10 "['<Super>0']" && \
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']" && \
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Open Ghostty'" && \
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'/home/crimson/.local/bin/ghostty'" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Open Terminal'" && \
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'gnome-terminal'" && \
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>t'" && \
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'Open Nautilus'" && \
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'nautilus'" && \
