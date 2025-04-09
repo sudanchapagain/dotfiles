@@ -1,5 +1,6 @@
-command = fish
-shell-integration = fish
+command = nu
+#command = "nu -c 'zellij --config-dir ~/.config/yazelix/zellij attach --create yazelix_ghostty options --default-layout yazelix'"
+shell-integration = detect
 window-theme = dark
 font-size = 10
 bold-is-bright = true
@@ -16,7 +17,7 @@ auto-update = check
 # Colors can be changed by setting the 16 colors of `palette`, with each color
 # being defined as regular and bold.
 
-background = 222226
+background = 242424
 foreground = d4bed6
 
 # black
@@ -61,3 +62,4 @@ keybind = alt+k=goto_split:top
 keybind = alt+j=goto_split:bottom
 keybind = alt+h=goto_split:left
 keybind = alt+l=goto_split:right
+
