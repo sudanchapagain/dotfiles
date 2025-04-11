@@ -1,4 +1,4 @@
-command = nu
+command = zellij
 #command = "nu -c 'zellij --config-dir ~/.config/yazelix/zellij attach --create yazelix_ghostty options --default-layout yazelix'"
 shell-integration = detect
 window-theme = dark
