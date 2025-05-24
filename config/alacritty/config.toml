@@ -43,29 +43,29 @@ style = "Bold Italic"
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-foreground = "#c9c7cd"
+foreground = "#d4bed6"
 background = "#242424"
 
 [colors.cursor]
-text = "#757581"
-cursor = "#c9c7cd"
+text = "#ffffff"
+cursor = "#ddc7a1"
 
 [colors.normal]
 black = "#27272a"
-red = "#f5a191"
-green = "#90b99f"
-yellow = "#e6b99d"
-blue = "#aca1cf"
-magenta = "#e29eca"
-cyan = "#ea83a5"
-white = "#c1c0d4"
+red = "#ea6976"
+green = "#a9b64d"
+yellow = "#d8a755"
+blue = "#7daed4"
+magenta = "#d38697"
+cyan = "#89b4c1"
+white = "#d4bed6"
 
 [colors.bright]
-black = "#353539"
-red = "#ffae9f"
-green = "#9dc6ac"
-yellow = "#f0c5a9"
-blue = "#b9aeda"
-magenta = "#ecaad6"
-cyan = "#f591b2"
-white = "#cac9dd"
+black = "#27272a"
+red = "#ea6976"
+green = "#a9b64d"
+yellow = "#d8a755"
+blue = "#7daed4"
+magenta = "#d38697"
+cyan = "#89b4c1"
+white = "#d4bed6"

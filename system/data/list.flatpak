@@ -2,7 +2,8 @@ com.belmoussaoui.Authenticator
 com.github.finefindus.eyedropper
 com.github.subhadeepjasu.ensembles
 com.github.subhadeepjasu.pebbles
-com.jetbrains.CLion
+com.github.flxzt.rnote
+com.github.tfuxu.floodit
 com.jetbrains.IntelliJ-IDEA-Ultimate
 com.rafaelmardojai.Blanket
 com.viber.Viber
@@ -11,6 +12,7 @@ de.haeckerfelix.Fragments
 de.haeckerfelix.Shortwave
 garden.jamie.Morphosis
 io.anytype.anytype
+io.gitlab.adhami3310.Impression
 io.github.cleomenezesjr.Escambo
 io.github.mrvladus.List
 io.gitlab.news_flash.NewsFlash
