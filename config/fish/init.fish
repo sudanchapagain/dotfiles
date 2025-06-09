@@ -7,6 +7,7 @@ if status is-interactive
     alias ls "eza -g --icons --hyperlink"
     alias ll "eza -lg --icons --hyperlink"
     alias l "eza -lga --icons --hyperlink"
+    alias lt "eza --tree --level=2 --long --icons --git"
     alias c clear
     alias x exit
     alias e "nautilus ."
