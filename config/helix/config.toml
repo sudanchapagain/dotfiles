@@ -1,6 +1,7 @@
 theme = "gruvbox-material"
 
 [editor]
+shell = ["nu", "-c"]
 line-number = "relative"
 mouse = false
 cursorline = true
@@ -30,3 +31,9 @@ display-inlay-hints = true
 [keys.normal]
 "A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
 "A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+"C-a" = [
+  ':sh $env.temp | path join yazi-path | rm -f $in',
+  ':insert-output yazi --chooser-file %sh{ $env.temp | path join yazi-path }',
+  ':open %sh{ $env.temp | path join yazi-path | cat $in }',
+  ':redraw'
+]

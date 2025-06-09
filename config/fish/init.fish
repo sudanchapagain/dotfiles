@@ -10,6 +10,7 @@ if status is-interactive
     alias c clear
     alias x exit
     alias e "nautilus ."
+    alias hx helix
     # ENV
     set -U fish_user_paths $HOME/.cargo/bin $HOME/.local/bin $fish_user_paths
     # COMMANDS

@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-dotfiles for fish, alacritty, gnome, git, helix, starship, etc.
+dotfiles for fish, nu, ghostty, alacritty, gnome, niri, git, helix, starship, etc.

@@ -276,14 +276,16 @@ theme "gruvbox-material"
 default_mode "normal"
 default_shell "fish"
 
-pane_frames false
-default_layout "compact"
-
 show_startup_tips false 
 show_release_notes false
  
 // Choose the path to override cwd that zellij will use for opening new panes
 // default_cwd "/tmp"
+
+// The name of the default layout to load on startup
+// Default: "default"
+// 
+default_layout "compact"
 
 // The folder in which Zellij will look for layouts (Requires restart)
 // layout_dir "/tmp"
@@ -295,6 +297,12 @@ show_release_notes false
 // On certain configurations, or terminals this could potentially interfere
 // with copying text. default is true
 // mouse_mode false
+
+// Toggle having pane frames around the panes
+// Options:
+//   - true (default, enabled)
+//   - false
+pane_frames false
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

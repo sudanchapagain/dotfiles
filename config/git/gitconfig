@@ -9,20 +9,10 @@
     ui = true
 
 [core]
-    editor = hx
+    editor = helix
 
 [credential]
     helper = store
 
 [github]
     user = sudanchapagain
-
-[gpg]
-    format = ssh
-
-[commit]
-    gpgSign = true
-
-[user]
-    signingKey = ~/.ssh/id_ed25519.pub
-
