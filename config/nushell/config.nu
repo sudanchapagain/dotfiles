@@ -34,7 +34,6 @@ fastfetch -c examples/8.jsonc
 $env.config = {
   buffer_editor: "hx"
   show_banner: false
-  rm.always_trash: false
 
   table: {
         mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
@@ -71,8 +70,6 @@ $env.config = {
       use_ls_colors: true
     }
 
-    filesize: {
-      metric: true
-      format: "auto"
-    }
 }
+
+use '/home/crimson/.config/broot/launcher/nushell/br' *

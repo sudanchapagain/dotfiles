@@ -245,7 +245,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "swayosd-server"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "swww img /home/crimson/.local/share/backgrounds/2025-06-01-19-58-39-frog.jpg"
+spawn-at-startup "swww img /home/crimson/.local/share/backgrounds/frog.jpg"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
