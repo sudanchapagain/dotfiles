@@ -1,11 +1,16 @@
 layer=top
-background-color=#1e1e2eee
-border-size=2
-border-color=#74c7ec
-border-radius=8
+background-color=#242424
+progress-color=source #81a1c1
+
+padding=10
+margin=10
+width=400
+text-color=#ffffff
+border-size=1
+border-color=#535353
+border-radius=12
 default-timeout=5000
 font='Adwaita Sans' 12
-#output=eDP-1
 
 [urgency=high]
 layer=overlay

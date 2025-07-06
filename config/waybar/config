@@ -1,5 +1,5 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "position": "top",
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -46,7 +46,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %b %d   %I:%M %p}",
+        "format": "{:%a, %b %d   %I:%M %p}",
     },
     "cpu": {
         "format": "{usage}% ",
@@ -82,19 +82,19 @@
         "format": "{icon} {volume}%",
         "format-alt-click": "click-right",
         "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "  Muted",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "󰝟  Muted",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "phone": [" ", " ", " "],
-            "portable": "",
-            "car": "",
-            "default": [" ", " ", " "]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "phone": ["  ", "  ", "  "],
+            "portable": " ",
+            "car": " ",
+            "default": ["  ", "  ", "  "]
         },
         "on-click": "pavucontrol"
     },

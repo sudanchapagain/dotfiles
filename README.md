@@ -1,4 +1,5 @@
 dotfiles
 ========
 
-dotfiles for fish, nu, ghostty, alacritty, gnome, niri, git, helix, starship, etc.
+dotfiles for swww, eww, mako, fuzzel, niri & gnome, ghostty & alacritty,
+helix, starship, fish & nu, swayidle, etc.

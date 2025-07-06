@@ -16,15 +16,19 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
-alias hx = helix
+alias pretty = git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+alias lo = ls
 alias ls = eza -g --icons --hyperlink
-alias ll = eza -lg --icons --hyperlink
 alias l = exa -lga --icons --hyperlink
+alias ll = eza -lg --icons --hyperlink
+alias lt = eza --tree --level=2 --long --icons --git
+alias ltt = exa --tree --long --icons --git
+
 alias c = clear
 alias x = exit
 alias e = nautilus .
-alias lt = eza --tree --level=2 --long --icons --git
-alias pretty = git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+alias hx = helix
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
