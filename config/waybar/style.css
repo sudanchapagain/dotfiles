@@ -60,8 +60,15 @@ window#waybar.solo {
 }
 
 #clock {
-  margin: 0px 16px 0px 10px;
-  min-width: 140px;
+  margin: 0px 5px 0px 10px;
+}
+
+#custom-separator {
+  margin: 0px 5px 0px 5px;
+}
+
+#custom-nepali-date {
+  margin: 0px 16px 0px 0px;
 }
 
 #battery {

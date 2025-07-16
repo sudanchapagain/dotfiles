@@ -9,7 +9,9 @@
         "niri/workspaces"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "custom/separator",
+        "custom/nepali-date"
     ],
     "modules-right": [
         "network",
@@ -47,6 +49,14 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %b %d   %I:%M %p}",
+    },
+    "custom/nepali-date": {
+        "exec": "bikramsambat",
+        "interval": 86400,
+        "format": "{}"
+    },
+    "custom/separator": {
+        "format": "  |  "
     },
     "cpu": {
         "format": "{usage}% ",

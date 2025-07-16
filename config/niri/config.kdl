@@ -18,7 +18,7 @@ input {
         // drag false
         // drag-lock
         natural-scroll
-        middle-emulation
+        // middle-emulation
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
@@ -102,6 +102,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
+    always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -253,6 +254,7 @@ spawn-at-startup "swww img /home/crimson/IdeaProjects/meower.png"
 spawn-at-startup "xwayland-satellite"
 environment {
     DISPLAY ":0"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -275,10 +277,10 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    off
+    // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 0.7
+    slowdown 0.1
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -301,6 +303,7 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
     match app-id=r#"^org\.gnome\.Loupe"#
     match app-id=r#"^org\.gnome\.Calculator"#
     match app-id=r#"eyedropper"#
@@ -347,7 +350,16 @@ window-rule {
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Super+Shift+S hotkey-overlay-title="Toggle Dark/Light Style" { spawn "set-theme"; }
+    Super+Shift+S hotkey-overlay-title="Toggle Dark/Light Style" {
+    spawn "bash" "-c" r#"
+        current=$(gsettings get org.gnome.desktop.interface color-scheme)
+        if [ "$current" = "'prefer-dark'" ]; then
+            gsettings set org.gnome.desktop.interface color-scheme default
+        else
+            gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+        fi
+        "#
+    }
     // opt for gsettings set org.gnome.desktop.interface color-scheme
 
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
