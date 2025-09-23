@@ -102,7 +102,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
-    always-center-single-column
+    // always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -246,10 +246,9 @@ layout {
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
-spawn-at-startup "swayosd-server"
 spawn-at-startup "niri-sticky"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "swww img /home/crimson/IdeaProjects/meower.png"
+spawn-at-startup "swww img /home/crimson/.local/share/backgrounds/meower.png"
 
 spawn-at-startup "xwayland-satellite"
 environment {
@@ -289,7 +288,7 @@ animations {
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
-window-rule {
+/-window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
@@ -297,7 +296,6 @@ window-rule {
     default-column-width {}
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
@@ -332,7 +330,7 @@ layer-rule {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
@@ -342,7 +340,6 @@ layer-rule {
     // block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
@@ -360,30 +357,29 @@ binds {
         fi
         "#
     }
-    // opt for gsettings set org.gnome.desktop.interface color-scheme
 
-    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Shift+C hotkey-overlay-title="Run colorpicker: eyedropper" { spawn "eyedropper"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+E hotkey-overlay-title="Open File Manager" { spawn "nautilus"; }
+    Mod+T       hotkey-overlay-title="Open a Terminal: Ghostty"    { spawn "ghostty"; }
+    Mod+A       hotkey-overlay-title="Run an Application: Fuzzel"  { spawn "fuzzel"; }
+    Mod+Shift+C hotkey-overlay-title="Run colorpicker: Eyedropper" { spawn "eyedropper"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: Swaylock"   { spawn "swaylock"; }
+    Mod+E       hotkey-overlay-title="Open File Manager: Nautilus" { spawn "nautilus"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume=+2"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume=-2"; }
-    XF86AudioMute allow-when-locked=true { spawn "swayosd-client" "--output-volume=mute-toggle"; }
-    XF86AudioMicMute allow-when-locked=true { spawn "swayosd-client" "--input-volume=mute-toggle"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%" ; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-" ; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+5"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-5"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
+    XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    XF86AudioNext allow-when-locked=true { spawn "swayosd-client" "--playerctl=next"; }
-    XF86AudioPause allow-when-locked=true { spawn "swayosd-client" "--playerctl=play-pause"; }
-    XF86AudioPlay allow-when-locked=true { spawn "swayosd-client" "--playerctl=play"; }
-    XF86AudioPrev allow-when-locked=true { spawn "swayosd-client" "--playerctl=prev"; }
+    XF86AudioPlay         allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPause        allow-when-locked=true { spawn "playerctl" "pause"; }
+    XF86AudioNext         allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev         allow-when-locked=true { spawn "playerctl" "previous"; }
 
     Mod+O repeat=false { toggle-overview; }
-    Mod+Q { close-window; }
-    Mod+Tab { focus-window-previous; }
+    Mod+Q              { close-window; }
+    Mod+Tab            { focus-window-previous; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }

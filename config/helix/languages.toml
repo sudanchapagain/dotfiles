@@ -1,6 +1,3 @@
-[language-server.hx-lsp]
-command = "hx-lsp"
-
 [[language]]
 name = "c"
 auto-format = true
@@ -14,13 +11,11 @@ indent = {tab-width = 2, unit = "  "}
 [[language]]
 name = "rust"
 scope = "source.rust"
-injection-regex = "rust"
 file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
 auto-format = true
 language-servers = ["rust-analyzer"]
 formatter = { command = "rust fmt" }
-indent = { tab-width = 2, unit = "  " }
 
 [language.debugger]
 name = "lldb-vscode"
@@ -167,6 +162,9 @@ language-servers = [
   "lsp-ai",
 ]
 
+[language-server.hx-lsp]
+command = "hx-lsp"
+
 [[language]]
 name = "css"
 file-types = ["css"]
@@ -224,24 +222,6 @@ language-servers = [
   "cspell-lsp",
   "lsp-ai",
 ]
-
-[language-server.typescript-language-server.config.typescript.inlayHints]
-includeInlayEnumMemberValueHints = true
-includeInlayFunctionLikeReturnTypeHints = false
-includeInlayFunctionParameterTypeHints = true
-includeInlayParameterNameHints = "all"
-includeInlayParameterNameHintsWhenArgumentMatchesName = false
-includeInlayPropertyDeclarationTypeHints = true
-includeInlayVariableTypeHints = true
-
-[language-server.typescript-language-server.config.javascript.inlayHints]
-includeInlayEnumMemberValueHints = true
-includeInlayFunctionLikeReturnTypeHints = false
-includeInlayFunctionParameterTypeHints = true
-includeInlayParameterNameHints = "all"
-includeInlayParameterNameHintsWhenArgumentMatchesName = false
-includeInlayPropertyDeclarationTypeHints = true
-includeInlayVariableTypeHints = true
 
 [language-server.biome]
 command = "biome"
@@ -357,20 +337,6 @@ args = ["--stdio"]
 
 [[language]]
 name = "json"
-language-servers = [
-  "vscode-json-language-server",
-  "biome",
-  "hx-lsp",
-]
-
-[[language]]
-name = "jsonc"
-file-types = [
-  "jsonc",
-  "code-snippets",
-  { glob = "tsconfig.json" },
-  { glob = "bun.lock" },
-]
 language-servers = [
   "vscode-json-language-server",
   "biome",

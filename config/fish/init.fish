@@ -7,6 +7,8 @@ if status is-interactive
     # ALIAS
     alias pretty "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
+    alias sdk='bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk $argv"'
+
     alias lo ls # ls original
     alias ls "eza -g --icons --hyperlink"
     alias l "eza -lga --icons --hyperlink"
@@ -20,8 +22,13 @@ if status is-interactive
     alias rm "rm -i"
     alias hx helix
 
+    alias tdl "td list"
+    alias tda "td add"
+    alias tdd "td delete"
+    alias tdu "td update"
+
     # ENV
-    set -U fish_user_paths $HOME/.cargo/bin $HOME/.local/bin $fish_user_paths
+    set -U fish_user_paths $HOME/.cargo/bin $HOME/.local/bin $fish_user_paths $HOME/.local/share/JetBrains/Toolbox/scripts
 
     # COMMANDS
     starship init fish | source

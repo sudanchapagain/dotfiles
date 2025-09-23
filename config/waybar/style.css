@@ -34,7 +34,7 @@ window#waybar.solo {
 }
 
 #workspaces button.active {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 #workspaces button.visible {
@@ -85,4 +85,8 @@ window#waybar.solo {
 
 #battery.charging {
   color: rgba(217, 216, 216, 1);
+}
+
+#tray {
+  margin-right: 10px;
 }

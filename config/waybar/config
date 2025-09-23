@@ -43,7 +43,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 18,
         "spacing": 10
     },
     "clock": {
@@ -69,13 +69,7 @@
           "critical": 20
         },
         "format": "{icon}    {capacity}%",
-        "format-icons": [
-              "",
-              "",
-              "",
-              "",
-              ""
-        ],
+        "format-icons": ["", "", "", "", ""],
         "format-charging": "  {capacity}%",
         "format-full": "  Charged",
         "interval": 3
@@ -104,7 +98,7 @@
             "phone": ["  ", "  ", "  "],
             "portable": " ",
             "car": " ",
-            "default": ["  ", "  ", "  "]
+            "default": [" ", " ", "  "]
         },
         "on-click": "pavucontrol"
     },
