@@ -31,7 +31,7 @@
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 120)
 (use-package doom-themes
-  :config (load-theme 'doom-dracula t))
+  :config (load-theme 'doom-gruvbox t))
 
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode))
