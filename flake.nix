@@ -24,7 +24,7 @@
       crimson = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./config/config.nix
+          ./system/config.nix
           agenix.nixosModules.default
           # impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager
