@@ -235,7 +235,6 @@
         bacon
         bat
         blanket
-        bottom
         brightnessctl
         btop
         cargo
@@ -274,6 +273,7 @@
         gnomeExtensions.gsconnect
         gnomeExtensions.nepali-calendar
         gnomeExtensions.runcat
+        gradia
         helix
         home-manager
         hyperfine
@@ -299,6 +299,7 @@
         pavucontrol
         pciutils
         playerctl
+        ragenix
         refind
         refine
         ripgrep
@@ -314,7 +315,7 @@
         stress
         swayidle
         swaylock
-        swaync
+        swaynotificationcenter
         swayosd
         switcheroo
         swww
@@ -322,12 +323,11 @@
         tealdeer
         television
         timg
+        tinymist
         tokei
         tree
         tuba
         typst
-        typst-lsp
-        viber
         vscode
         warp
         waybar
@@ -335,7 +335,6 @@
         wf-recorder
         wget
         wl-clipboard
-        wp-ctl
         yazi
         yt-dlp
         zellij
