@@ -241,6 +241,7 @@
         cargo
         citations
         clang
+        cliphist
         curtail
         dconf-editor
         delta
@@ -281,6 +282,7 @@
         keypunch
         libreoffice
         mako
+        marksman
         monolith
         morphosis
         mousai
@@ -294,10 +296,12 @@
         pandoc
         paper-clip
         papers
+        pavucontrol
         pciutils
         playerctl
         refind
         refine
+        ripgrep
         rnote
         rust-analyzer
         rustc
@@ -310,19 +314,28 @@
         stress
         swayidle
         swaylock
+        swaync
+        swayosd
         switcheroo
         swww
+        taplo
         tealdeer
         television
+        timg
         tokei
         tree
         tuba
         typst
+        typst-lsp
+        viber
         vscode
         warp
         waybar
         wbg
+        wf-recorder
         wget
+        wl-clipboard
+        wp-ctl
         yazi
         yt-dlp
         zellij
