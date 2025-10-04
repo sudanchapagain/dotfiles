@@ -102,48 +102,6 @@ args = []
 name = "scheme"
 language-servers = ["steel-language-server", "steel"]
 
-[[language]]
-name = "python"
-file-types = [
-  "py",
-  "pyi",
-  "py3",
-  "pyw",
-  "ptl",
-  ".pythonstartup",
-  ".pythonrc",
-  "SConstruct",
-  "mel",
-]
-roots = ["pyproject.toml", "pyrightconfig.json"]
-language-servers = [ "pyright", "ruff", "ruff-lsp", "hx-lsp"]
-auto-format = true
-
-[language-server.ruff]
-command = "ruff"
-args = [ "server" ]
-
-[language-server.ruff-lsp]
-command = "ruff-lsp"
-args = ["--ignore", "E501", "E402"]
-
-[language-server.pyright]
-command = "pyright-langserver"
-args = [ "--stdio" ]
-except-features = ["diagnostics", "format"]
-
-[language-server.pyright.config]
-settings.python.analysis = { autoImportCompletions = true, typeCheckingMode = "on", autoSearchPaths = true, useLibraryCodeForTypes = true, diagnosticMode = "openFilesOnly" }
-strictListInference = true
-strictDictionaryInference = true
-strictSetInference = true
-enableReachabilityAnalysis = true
-typeCheckingMode = "strict"
-reportUnusedVariable = false
-
-[language-server.pyright.config.pyright]
-analysis.autoImportCompletions = true
-
 #
 # WORLD WIDE WEB
 #
@@ -245,14 +203,6 @@ file-types = [
   { glob = ".Justfile" },
   { glob = "globaljustfile" },
 ]
-
-[[language]]
-name = "fish"
-language-servers = [ "fish-lsp" ]
-
-[language-server.fish-lsp]
-command = "fish-lsp"
-args = [ "start" ]
 
 [[language]]
 name = "git-commit"

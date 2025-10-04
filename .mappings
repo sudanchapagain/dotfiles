@@ -7,7 +7,6 @@
 "config/helix/themes/gruvbox-material.toml" = "~/.config/helix/themes/gruvbox-material.toml"
 "config/starship/config.toml"               = "~/.config/starship/config.toml"
 "config/zellij/config.kdl"                  = "~/.config/zellij/config.kdl"
-"config/fish/init.fish"                     = "~/.config/fish/config.fish"
 "config/niri/config.kdl"                    = "~/.config/niri/config.kdl"
 "config/mako/config"                        = "~/.config/mako/config"
 "config/fuzzel/fuzzel.ini"                  = "~/.config/fuzzel/fuzzel.ini"

@@ -7,8 +7,10 @@
       efi.canTouchEfiVariables = true;
     };
     kernel.sysctl = {
-      # TCP optimization. TCP Fast Open is a TCP extension that reduces network latency by packing data in the sender’s initial
-      # TCP SYN. Setting 3 = enable TCP Fast Open for both incoming and outgoing connections:
+      # TCP optimization. TCP Fast Open is a TCP extension that reduces
+      # network latency by packing data in the sender's initial TCP SYN.
+      # Setting 3 = enable TCP Fast Open for both incoming and outgoing
+      # connections:
       "net.ipv4.tcp_fastopen" = 3;
 
       # Bufferbloat mitigations + slight improvement in throughput & latency

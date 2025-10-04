@@ -9,7 +9,7 @@
     ui = true
 
 [core]
-    editor = helix
+    editor = hx
 
 [credential]
     helper = store

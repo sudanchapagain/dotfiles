@@ -1,8 +1,3 @@
-# config.nu
-#
-# Installed by:
-# version = "0.104.1"
-#
 # This file is used to override default Nushell settings, define
 # (or import) custom commands, or run any other startup tasks.
 # See https://www.nushell.sh/book/configuration.html
@@ -20,15 +15,14 @@ alias pretty = git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cre
 
 alias lo = ls
 alias ls = eza -g --icons --hyperlink
-alias l = exa -lga --icons --hyperlink
+alias l = eza -lga --icons --hyperlink
 alias ll = eza -lg --icons --hyperlink
 alias lt = eza --tree --level=2 --long --icons --git
-alias ltt = exa --tree --long --icons --git
+alias ltt = eza --tree --long --icons --git
 
 alias c = clear
 alias x = exit
 alias e = nautilus .
-alias hx = helix
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
@@ -73,7 +67,4 @@ $env.config = {
       }
       use_ls_colors: true
     }
-
 }
-
-use '/home/crimson/.config/broot/launcher/nushell/br' *
