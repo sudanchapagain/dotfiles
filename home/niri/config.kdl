@@ -93,7 +93,7 @@ input {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 0
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -190,7 +190,7 @@ layout {
 
     // You can enable drop shadows for windows.
     shadow {
-        on
+        // on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -324,7 +324,7 @@ layer-rule {
     // match namespace="^desktop$"
     // match namespace="^desktop-icons$"
 
-    place-within-backdrop false
+    // place-within-backdrop false
 }
 
 
@@ -341,7 +341,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 12
+    // geometry-corner-radius 12
     clip-to-geometry true
 }
 
@@ -358,7 +358,7 @@ binds {
         "#
     }
 
-    Mod+T       hotkey-overlay-title="Open a Terminal: Ghostty"    { spawn "ghostty"; }
+    Mod+T       hotkey-overlay-title="Open a Terminal: Alacritty"    { spawn "alacritty"; }
     Mod+A       hotkey-overlay-title="Run an Application: Fuzzel"  { spawn "fuzzel"; }
     Mod+Shift+C hotkey-overlay-title="Run colorpicker: Eyedropper" { spawn "eyedropper"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: Swaylock"   { spawn "swaylock"; }

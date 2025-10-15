@@ -1,10 +1,7 @@
-format = """
-$directory$git_branch$git_state$git_status$git_commit$fill$cmd_duration$line_break$character
-"""
+format = """$directory$git_branch$fill$cmd_duration$line_break$character"""
 
 [line_break]
 disabled = false
-
 add_newline = true
 command_timeout = 1000
 
@@ -29,18 +26,11 @@ style = "bright-black"
 format = "[$symbol $branch]($style) "
 
 [git_status]
-format = "[$all_status$ahead_behind]($style)"
-style = "cyan"
-
-[git_commit]
-commit_hash_length = 4
+disabled = true
 
 [cmd_duration]
 format = "[$duration]($style)"
 style = "yellow"
 
 [package]
-disabled = true
-
-[rust]
 disabled = true

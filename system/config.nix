@@ -229,43 +229,135 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        # anytype
-        # tombi
+        # apps
+        anytype
+        baobab
         authenticator
-        bacon
-        bat
         blanket
-        brightnessctl
-        btop
-        cargo
         citations
-        clang
-        cliphist
         curtail
         dconf-editor
-        delta
         eartag
-        efibootmgr
-        emacs
         errands
         escambo
-        eww
         eyedropper
+        foliate
+        fragments
+        gapless
+        gnome-podcasts
+        gnome-secrets
+        gradia
+        keypunch
+        libreoffice
+        mousai
+        newsflash
+        paper-clip
+        papers
+        protonmail-desktop
+        refine
+        rnote
+        shortwave
+        showtime
+        solanum
+        switcheroo
+        tuba
+        warp
+        # telegram-desktop
+
+        # dev tools
+        alacritty
+        emacs-pgtk
+        helix
+        vscode
+
+        # language
+        cargo
+        clang
+        clippy
+        harper
+        just
+        marksman
+        meson
+        niv
+        nixfmt
+        nodejs
+        nushell
+        python3
+        ruff
+        rustc
+        rustfmt
+        rust-analyzer
+        steel
+        taplo
+        tinymist
+        tombi
+        typst
+        uv
+        zuban
+
+        # tools
+        bacon
+        bat
+        btop
+        countryfetch
+        delta
+        dua
         eza
-        fastfetch
         fastfetch
         fd
         ffmpeg
-        flatpak
-        foliate
-        fragments
-        fuzzel
         fzf
-        gapless
-        ghostty
         git
-        gnome-podcasts
-        gnome-secrets
+        hyperfine
+        monolith
+        pandoc
+        pciutils
+        ripgrep
+        starship
+        stress
+        television
+        timg
+        tokei
+        tree
+        vivid
+        wget
+        yazi
+        yt-dlp
+        zellij
+        zoxide
+
+        # os tools
+        brightnessctl
+        carapace
+        carapace-bridge
+        cliphist
+        eww
+        fuzzel
+        mako
+        mpd
+        niri
+        nh
+        pavucontrol
+        playerctl
+        quickshell
+        ragenix
+        swayidle
+        swaylock
+        swaynotificationcenter
+        swayosd
+        swww
+        waybar
+        wbg
+        wf-recorder
+        wl-clipboard
+
+        # os
+        efibootmgr
+        flatpak
+        home-manager
+        refind
+
+        # desktop
         gnomeExtensions.blur-my-shell
         gnomeExtensions.caffeine
         gnomeExtensions.clipboard-indicator
@@ -273,78 +365,11 @@
         gnomeExtensions.gsconnect
         gnomeExtensions.nepali-calendar
         gnomeExtensions.runcat
-        gradia
-        helix
-        home-manager
-        hyperfine
-        jetbrains.idea-ultimate
-        just
-        keypunch
-        libreoffice
-        mako
-        marksman
-        monolith
-        morphosis
-        mousai
-        mpd
-        newsflash
-        nh
-        niri
-        niv
-        nixfmt
-        nushell
-        pandoc
-        paper-clip
-        papers
-        pavucontrol
-        pciutils
-        playerctl
-        ragenix
-        refind
-        refine
-        ripgrep
-        rnote
-        rust-analyzer
-        rustc
-        rustfmt
-        rustycli
-        shortwave
-        showtime
-        solanum
-        starship
-        stress
-        swayidle
-        swaylock
-        swaynotificationcenter
-        swayosd
-        switcheroo
-        swww
-        taplo
-        tealdeer
-        television
-        timg
-        tinymist
-        tokei
-        tree
-        tuba
-        typst
-        vscode
-        warp
-        waybar
-        wbg
-        wf-recorder
-        wget
-        wl-clipboard
-        yazi
-        yt-dlp
-        zellij
-        zoxide
     ];
 
     environment.gnome.excludePackages = (
         with pkgs;
         [
-            baobab
             epiphany
             evince
             geary

@@ -1,36 +1,24 @@
-# This file is used to override default Nushell settings, define
-# (or import) custom commands, or run any other startup tasks.
-# See https://www.nushell.sh/book/configuration.html
-#
-# This file is loaded after env.nu and before login.nu
-#
-# You can open this file in your default editor using:
-# config nu
-#
-# See `help config nu` for more options
-#
-# You can remove these comments if you want or leave
-# them for future reference.
-alias pretty = git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+const cfg = ($nu.config-path | path dirname)
 
-alias lo = ls
-alias ls = eza -g --icons --hyperlink
-alias l = eza -lga --icons --hyperlink
-alias ll = eza -lg --icons --hyperlink
-alias lt = eza --tree --level=2 --long --icons --git
-alias ltt = eza --tree --long --icons --git
+source ($cfg | path join "alias.nu")
+source ($cfg | path join "z.nu")
+# source $"($nu.cache-dir)/carapace.nu"
 
-alias c = clear
-alias x = exit
-alias e = nautilus .
+use ($cfg | path join "earlgrey.nu")
 
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+let carapace_completer = {|spans|
+  carapace $spans.0 nushell ...$spans | from json
+}
 
-fastfetch -c examples/8.jsonc
+const history_path = ($nu.data-dir | path join "history.txt")
+
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+mkdir $"($nu.cache-dir)"
+carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 
 $env.config = {
   buffer_editor: "hx"
+  color_config: (earlgrey)
   show_banner: false
 
   table: {
@@ -59,12 +47,34 @@ $env.config = {
       case_sensitive: false
       quick: true
       partial: true
-      algorithm: "prefix"
+      algorithm: "fuzzy"
       external: {
         enable: true
         max_results: 100
-        completer: null
+        completer: $carapace_completer
       }
       use_ls_colors: true
+    },
+    hooks: {
+      pre_prompt: [{ ||
+        if (which direnv | is-empty) {
+          return
+        }
+
+        direnv export json | from json | default {} | load-env
+        if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
+          $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
+        }
+      }]
     }
 }
+
+const NU_PLUGIN_DIRS = [
+  ($nu.current-exe | path dirname)
+  ...$NU_PLUGIN_DIRS
+]
+
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+fastfetch -c examples/8.jsonc
+
