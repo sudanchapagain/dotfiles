@@ -3,7 +3,7 @@
     "position": "top",
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 30,
+    "height": 34,
     "spacing": 0,
     "modules-left": [
         "niri/workspaces"
@@ -14,12 +14,11 @@
         "custom/nepali-date"
     ],
     "modules-right": [
+        "tray",
+        "keyboard-state",
         "network",
         "pulseaudio",
-        "battery",
-        "custom/logout",
-        "keyboard-state",
-        "tray",
+        "battery"
     ],
     "custom/logout": {
         "format": "⏻   ",

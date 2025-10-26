@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ self, config, pkgs, ... }:
 
 {
     imports = [ ./hardware-configuration.nix ];
@@ -253,6 +253,7 @@
         newsflash
         paper-clip
         papers
+        plattenalbum
         protonmail-desktop
         refine
         rnote
@@ -272,6 +273,7 @@
 
         # language
         cargo
+        cargo-binstall
         clang
         clippy
         harper
@@ -308,11 +310,17 @@
         ffmpeg
         fzf
         git
+        grex
         hyperfine
+        jrnl
+        killport
+        python313Packages.faker
         monolith
+        ouch
         pandoc
         pciutils
         ripgrep
+        simple-http-server
         starship
         stress
         television
@@ -333,6 +341,7 @@
         cliphist
         eww
         fuzzel
+        libnotify
         mako
         mpd
         niri
@@ -341,15 +350,15 @@
         playerctl
         quickshell
         ragenix
+        swaybg
         swayidle
         swaylock
         swaynotificationcenter
         swayosd
-        swww
         waybar
-        wbg
         wf-recorder
         wl-clipboard
+        wl-mirror
 
         # os
         efibootmgr

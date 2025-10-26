@@ -88,12 +88,29 @@ input {
     position x=1280 y=0
 }
 
+// Wallpaper
+spawn-at-startup "swaybg -i /home/crimson/.local/share/meower.png"
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+// disable the workspace shadows in the overview.
+overview {
+    workspace-shadow {
+        // off
+    }
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 0
+    gaps 4
+
+    // Set transparent workspace background color.
+    background-color "transparent"
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -102,7 +119,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
-    // always-center-single-column
+    always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -190,7 +207,7 @@ layout {
 
     // You can enable drop shadows for windows.
     shadow {
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -218,10 +235,10 @@ layout {
         spread 5
 
         // Offset moves the shadow relative to the window.
-        offset x=0 y=5
+        offset x=5 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        color "#0009"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -247,8 +264,6 @@ spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "niri-sticky"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "swww img /home/crimson/.local/share/backgrounds/meower.png"
 
 spawn-at-startup "xwayland-satellite"
 environment {
@@ -276,7 +291,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    // off
+    off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     slowdown 0.0
@@ -301,6 +316,7 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    // match app-id=r#"firefox$"# title="^Extension:" TODO: DOES NOT WORK.
     match app-id=r#"zen$"# title="^Picture-in-Picture$"
     match app-id=r#"^org\.gnome\.Loupe"#
     match app-id=r#"^org\.gnome\.Calculator"#
@@ -341,7 +357,7 @@ window-rule {
 }
 
 window-rule {
-    // geometry-corner-radius 12
+    geometry-corner-radius 12
     clip-to-geometry true
 }
 
