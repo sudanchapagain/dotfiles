@@ -7,8 +7,6 @@
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
         lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
-        ignis.url = "github:ignis-sh/ignis";
-        ignis.inputs.nixpkgs.follows = "nixpkgs";
     };
 
     outputs =
