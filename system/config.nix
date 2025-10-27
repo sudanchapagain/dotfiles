@@ -335,30 +335,11 @@
         zoxide
 
         # os tools
-        brightnessctl
         carapace
         carapace-bridge
-        cliphist
-        eww
-        fuzzel
-        libnotify
-        mako
         mpd
-        niri
         nh
-        pavucontrol
-        playerctl
-        quickshell
-        ragenix
-        swaybg
-        swayidle
-        swaylock
-        swaynotificationcenter
-        swayosd
-        waybar
-        wf-recorder
         wl-clipboard
-        wl-mirror
 
         # os
         efibootmgr
@@ -370,7 +351,6 @@
         gnomeExtensions.blur-my-shell
         gnomeExtensions.caffeine
         gnomeExtensions.clipboard-indicator
-        gnomeExtensions.gsconnect
         gnomeExtensions.gsconnect
         gnomeExtensions.nepali-calendar
         gnomeExtensions.runcat

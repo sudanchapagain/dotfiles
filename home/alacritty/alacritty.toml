@@ -43,41 +43,71 @@ style = "Bold Italic"
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = '#282828'
-foreground = '#ebdbb2'
+background = "#1e1e1e"
+foreground = "#d4d4d4"
 
-[colors.normal]
-black   = '#282828'
-red     = '#cc241d'
-green   = '#98971a'
-yellow  = '#d79921'
-blue    = '#458588'
-magenta = '#b16286'
-cyan    = '#689d6a'
-white   = '#a89984'
-
-[colors.bright]
-black   = '#928374'
-red     = '#fb4934'
-green   = '#b8bb26'
-yellow  = '#fabd2f'
-blue    = '#83a598'
-magenta = '#d3869b'
-cyan    = '#8ec07c'
-white   = '#ebdbb2'
+[colors.cursor]
+text = "#1e1e1e"
+cursor = "#a6a6a6"
 
 [colors.selection]
-background = "#ebdbb2"
-text       = "CellForeground"
+text = "#d4d4d4"
+background = "#264f78"
+
+[colors.normal]
+black   = "#282828"
+red     = "#f14c4c"
+green   = "#6A9955"
+yellow  = "#d7ba7d"
+blue    = "#569CD6"
+magenta = "#C586C0"
+cyan    = "#4EC9B0"
+white   = "#d4d4d4"
+
+[colors.bright]
+black   = "#404040"
+red     = "#ff1212"
+green   = "#b5cea8"
+yellow  = "#cca700"
+blue    = "#75beff"
+magenta = "#d16be2"
+cyan    = "#4FC1FF"
+white   = "#eeeeee"
+
+[colors.dim]
+black   = "#1e1e1e"
+red     = "#ce9178"
+green   = "#487e02"
+yellow  = "#d7ba7d"
+blue    = "#1b81a8"
+magenta = "#C586C0"
+cyan    = "#4EC9B0"
+white   = "#c6c6c6"
+
+[colors.search]
+matches = { foreground = "#1e1e1e", background = "#d7ba7d" }
+focused_match = { foreground = "#1e1e1e", background = "#75beff" }
+
+[colors.hints]
+start = { foreground = "#d7ba7d", background = "#1e1e1e" }
+end   = { foreground = "#1e1e1e", background = "#d7ba7d" }
+
+[colors.vi_mode_cursor]
+text = "#1e1e1e"
+cursor = "#569CD6"
+
+[colors.line_indicator]
+foreground = "#d4d4d4"
+background = "#404040"
+
+[colors.footer_bar]
+background = "#252526"
+foreground = "#d4d4d4"
 
 [keyboard]
 bindings = [
   { key = "F11", action = "ToggleFullscreen" }
 ]
-
-#=============================================================================
-# misc
-#=============================================================================
 
 [[hints.enabled]]
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
