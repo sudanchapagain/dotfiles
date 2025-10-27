@@ -30,10 +30,25 @@
         };
     };
 
-    xdg.portal = {
-        enable = true;
-        wlr.enable = true;
-        extraPortals = [ ];
+    xdg = {
+        portal = {
+            enable = true;
+            wlr.enable = true;
+            extraPortals = [ ];
+        };
+        mime = {
+            enable = true;
+            defaultApplications = {
+                "text/html" = "firefox.desktop";
+                "x-scheme-handler/http" = "firefox.desktop";
+                "x-scheme-handler/https" = "firefox.desktop";
+                "application/pdf" = "org.gnome.Papers.desktop";
+                "image/png" = "org.gnome.Loupe.desktop";
+                "image/jpeg" = "org.gnome.Loupe.desktop";
+                "audio/mpeg" = "io.bassi.Decibels.desktop";
+                "audio/flac" = "io.bassi.Decibels.desktop";
+            };
+        };
     };
 
     security = {

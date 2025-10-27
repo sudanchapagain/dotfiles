@@ -3,32 +3,27 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-        home-manager.url = "github:nix-community/home-manager/master";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
-        lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
+        impermanence.url = "github:nix-community/impermanence";
+
+        lanzaboote = {
+            url = "github:nix-community/lanzaboote/v0.4.2";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs =
         inputs@{
-            self,
             nixpkgs,
-            home-manager,
             lanzaboote,
+            impermanence,
             ...
         }:
         {
             nixosConfigurations = {
                 crimson = nixpkgs.lib.nixosSystem {
-                    system = "x86_64-linux";
                     modules = [
-                        ./system/config.nix
-                        home-manager.nixosModules.home-manager
-                        {
-                            home-manager.useGlobalPkgs = true;
-                            home-manager.useUserPackages = true;
-                            home-manager.users.crimson = import ./home/home.nix;
-                        }
+                        ./system/system.nix
+                        { nixpkgs.hostPlatform = "x86_64-linux";}
                     ];
                 };
             };

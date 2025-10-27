@@ -9,17 +9,23 @@
 {
     imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-    boot.initrd.availableKernelModules = [
-        "xhci_pci"
-        "thunderbolt"
-        "nvme"
-        "usb_storage"
-        "sd_mod"
-    ];
-    boot.initrd.kernelModules = [ ];
-    boot.kernelModules = [ "kvm-intel" ];
-    boot.kernelParams = [ "i915.enable_psr=1" ];
-    boot.extraModulePackages = [ ];
+    boot = {
+        kernelModules = [ "kvm-intel" ];
+        kernelParams = [ "i915.enable_psr=1" ];
+        extraModulePackages = [ ];
+        initrd = {
+            availableKernelModules = [
+                "xhci_pci"
+                "thunderbolt"
+                "nvme"
+                "usb_storage"
+                "sd_mod"
+            ];
+            kernelModules = [ ];
+            luks.devices."luks-db8cfe31-000a-48b4-a15f-0323d8a55f0d".device =
+                "/dev/disk/by-uuid/db8cfe31-000a-48b4-a15f-0323d8a55f0d";
+        };
+    };
 
     fileSystems."/boot" = {
         device = "/dev/disk/by-uuid/63B9-913B";
@@ -35,9 +41,6 @@
         fsType = "btrfs";
         options = [ "subvol=@" ];
     };
-
-    boot.initrd.luks.devices."luks-db8cfe31-000a-48b4-a15f-0323d8a55f0d".device =
-        "/dev/disk/by-uuid/db8cfe31-000a-48b4-a15f-0323d8a55f0d";
 
     swapDevices = [
         {

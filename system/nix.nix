@@ -10,10 +10,12 @@
             auto-optimise-store = true;
         };
 
-        gc.automatic = true;
-        gc.persistent = true;
-        gc.dates = "weekly";
-        gc.options = "--delete-older-than 7d";
+        gc = {
+            automatic = true;
+            persistent = true;
+            dates = "weekly";
+            options = "--delete-older-than 7d";
+        };
     };
     nixpkgs.config.allowUnfree = true;
 }

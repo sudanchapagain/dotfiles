@@ -10,7 +10,7 @@ $env.PATH ++= [
 ]
 
 $env.JAVA_HOME = "/home/crimson/.jdks/openjdk-25"
-$env.LS_COLORS = (vivid generate rose-pine-dawn)
+$env.EDITOR = "hx"
 
 # ===========================================================================
 
@@ -30,7 +30,7 @@ mkdir $"($nu.cache-dir)"
 carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 
 $env.config = {
-  buffer_editor: "hx"
+  buffer_editor: $env.EDITOR
   show_banner: false
 
   table: {
@@ -86,7 +86,6 @@ const NU_PLUGIN_DIRS = [
 ]
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
-fastfetch -c examples/8.jsonc
 
 def --env y [...args] {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")

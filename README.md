@@ -1,8 +1,10 @@
-dotfiles
-========
+# dotfiles
 
-configuration of various programs. the system config (`system/`) is of NixOS.
-other Nix files are configuration for either system or programs.
+configuration of various programs. the nix configuration is split into
+two directories. the `system/` directory is for NixOS itself and system
+level configuration. the `home/` directory is for home manager
+configuration and just program configuration files that is being copied
+by nix.
 
 ## Setup > NixOS installation
 
@@ -67,31 +69,31 @@ other Nix files are configuration for either system or programs.
    "tmpfs";/a options = [ "defaults" "size=25%" "mode=755" ];'
    ./hardware-configuration.nix` or manually.
 
-```diff
-{
-#------------------
-  fileSystems."/" = {
-      device = "none";
-      fsType = "tmpfs";
-+     options = [ "defaults" "size=25%" "mode=755" ];
-  };
-#----------------
-}
-```
+   ```diff
+   {
+   #------------------
+   fileSystems."/" = {
+         device = "none";
+         fsType = "tmpfs";
+   +     options = [ "defaults" "size=25%" "mode=755" ];
+   };
+   #----------------
+   }
+   ```
 
 2. Fix [this error](https://github.com/NixOS/nixpkgs/issues/279362)
    with `sed -i '/fsType = "vfat"/a options = [ "umask=0077" ];'
    ./hardware-configuration.nix` or manually. `sed` command adds `options =
    [ "umask=0077"];` on the vfat section.
 
-```diff
-{
-#------------------
-      fsType = "vfat";
-+     options = [ "umask=0077" ];
-#----------------
-}
-```
+   ```diff
+   {
+   #------------------
+         fsType = "vfat";
+   +     options = [ "umask=0077" ];
+   #----------------
+   }
+   ```
 
 ### Encrypt Swap
 
@@ -111,17 +113,17 @@ other Nix files are configuration for either system or programs.
 
 1. Setup network.
 
-```txt
-Configure WPA supplicant so we can use WIFI:
+   ```txt
+   Configure WPA supplicant so we can use WIFI:
 
-$ cat > /etc/wpa_supplicant.conf
-network={
-  ssid="****"
-  psk="****"
-}
-^D
-$ systemctl start wpa_supplicant
-```
+   $ cat > /etc/wpa_supplicant.conf
+   network={
+   ssid="****"
+   psk="****"
+   }
+   ^D
+   $ systemctl start wpa_supplicant
+   ```
 
 2. Clone repo `git clone https://github.com/sudanchapagain/dotfiles.git`
 3. Swap out the repo's hardware config with newly generated one.

@@ -30,16 +30,16 @@
         };
     };
 
-    environment.gnome.excludePackages = (
-        with pkgs;
-        [
-            epiphany
-            evince
-            geary
-            simple-scan
-            totem
-        ]
-    );
+    environment.gnome.excludePackages = with pkgs; [
+        epiphany
+        evince
+        geary
+        gnome-console
+        gnome-tour
+        gnome-maps
+        simple-scan
+        totem
+    ];
 
     # Install firefox.
     programs.firefox.enable = true;
@@ -81,10 +81,11 @@
         showtime
         solanum
         switcheroo
+        telegram-desktop
         tuba
+        viber
         vscode
         warp
-        # telegram-desktop
 
         # language
         cargo
@@ -96,6 +97,7 @@
         marksman
         meson
         niv
+        nixd
         nixfmt
         nushell
         python3
@@ -117,20 +119,25 @@
         bacon
         bottom
         delta
+        dig
         dua
         eza
         fastfetch
         fd
         ffmpeg
+        ffmpegthumbnailer
+        file
         fzf
         git
         grex
         hyperfine
+        killall
         killport
         monolith
         mpd
         nh
         ouch
+        p7zip
         pandoc
         ripgrep
         simple-http-server
@@ -138,6 +145,8 @@
         television
         tokei
         tree
+        unrar-wrapper
+        unzip
         wl-clipboard
         yazi
         yt-dlp
@@ -146,7 +155,6 @@
 
         # os
         efibootmgr
-        # flatpak
         home-manager
         refind
 

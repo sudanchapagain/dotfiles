@@ -32,4 +32,3 @@ $env.TRANSIENT_PROMPT_COMMAND = { || (_prompt_line) }
 $env.PROMPT_COMMAND_RIGHT = { || "" }
 $env.PROMPT_INDICATOR = { || "" }
 $env.TRANSIENT_PROMPT_INDICATOR = { || "" }
-
