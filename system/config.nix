@@ -167,6 +167,14 @@
 
     services = {
         flatpak.enable = true;
+        flatpak-repo = {
+            wantedBy = [ "multi-user.target" ];
+            path = [ pkgs.flatpak ];
+            script = ''
+                flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+            '';
+        };
+
         # printing.enable = false;
         #openssh.enable = true;
         pulseaudio.enable = false;
@@ -229,7 +237,6 @@
 
     # Install firefox.
     programs.firefox.enable = true;
-    programs.niri.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -305,8 +312,7 @@
         # tools
         bacon
         bat
-        btop
-        countryfetch
+        bottom
         delta
         dua
         eza
@@ -317,22 +323,16 @@
         git
         grex
         hyperfine
-        jrnl
         killport
-        python313Packages.faker
         monolith
         ouch
         pandoc
-        pciutils
         ripgrep
         simple-http-server
         stress
         television
-        timg
         tokei
         tree
-        vivid
-        wget
         yazi
         yt-dlp
         zellij

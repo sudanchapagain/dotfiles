@@ -14,19 +14,17 @@ $env.LS_COLORS = (vivid generate rose-pine-dawn)
 
 # ===========================================================================
 
-const cfg = ($nu.config-path | path dirname)
+const history_path = ($nu.data-dir | path join "history.txt")
 
+const cfg = ($nu.config-path | path dirname)
 source ($cfg | path join "alias.nu")
 source ($cfg | path join "z.nu")
 source ($cfg | path join "prompt.nu")
-source $"($nu.cache-dir)/carapace.nu"
 
+source $"($nu.cache-dir)/carapace.nu"
 let carapace_completer = {|spans|
   carapace $spans.0 nushell ...$spans | from json
 }
-
-const history_path = ($nu.data-dir | path join "history.txt")
-
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 mkdir $"($nu.cache-dir)"
 carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
@@ -67,7 +65,6 @@ $env.config = {
         max_results: 100
         completer: $carapace_completer
       }
-      use_ls_colors: true
     },
     hooks: {
       pre_prompt: [{ ||
