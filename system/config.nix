@@ -321,7 +321,6 @@
         pciutils
         ripgrep
         simple-http-server
-        starship
         stress
         television
         timg
