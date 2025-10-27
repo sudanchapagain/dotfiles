@@ -165,5 +165,29 @@
         gnomeExtensions.gsconnect
         gnomeExtensions.nepali-calendar
         gnomeExtensions.runcat
+
+        # my packages
+        (pkgs.rustPlatform.buildRustPackage rec {
+            pname = "dotf";
+            version = "2.0.0";
+            cargoLock.lockFile = "${src}/Cargo.lock";
+            src = builtins.fetchGit {
+                url = "https://github.com/sudanchapagain/dotf";
+                rev = "ac1522b829099fa9a7171ccc7675bde4d0be8dd0";
+            };
+        })
+
+        (pkgs.rustPlatform.buildRustPackage rec {
+            pname = "arrow";
+            version = "6.0.0";
+            cargoLock.lockFile = "${src}/Cargo.lock";
+            src = builtins.fetchGit {
+                url = "https://github.com/sudanchapagain/arrow";
+                rev = "1040b48aeadc4c6bbe5dbc4d777fa74fb5290327";
+            };
+            nativeBuildInputs = with pkgs; [ pkg-config ];
+            buildInputs = with pkgs; [ openssl ];
+            doCheck = false;
+        })
     ];
 }
