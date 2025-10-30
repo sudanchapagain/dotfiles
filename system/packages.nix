@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     fonts = {
@@ -34,22 +34,18 @@
         epiphany
         evince
         geary
-        gnome-console
         gnome-tour
         gnome-maps
+        gnome-music
         simple-scan
         totem
     ];
-
-    # Install firefox.
-    programs.firefox.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
         # apps
         alacritty
-        anytype
         baobab
         authenticator
         blanket
@@ -74,16 +70,13 @@
         paper-clip
         papers
         plattenalbum
-        protonmail-desktop
         refine
         rnote
         shortwave
         showtime
         solanum
         switcheroo
-        telegram-desktop
         tuba
-        viber
         vscode
         warp
 

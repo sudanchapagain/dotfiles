@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     # Set your time zone.
@@ -39,9 +39,9 @@
         mime = {
             enable = true;
             defaultApplications = {
-                "text/html" = "firefox.desktop";
-                "x-scheme-handler/http" = "firefox.desktop";
-                "x-scheme-handler/https" = "firefox.desktop";
+                "text/html" = "app.zen_browser.zen";
+                "x-scheme-handler/http" = "app.zen_browser.zen";
+                "x-scheme-handler/https" = "app.zen_browser.zen";
                 "application/pdf" = "org.gnome.Papers.desktop";
                 "image/png" = "org.gnome.Loupe.desktop";
                 "image/jpeg" = "org.gnome.Loupe.desktop";
@@ -49,6 +49,14 @@
                 "audio/flac" = "io.bassi.Decibels.desktop";
             };
         };
+    };
+
+    environment.sessionVariables = {
+        EDITOR = "hx";
+        XDG_BIN_HOME    = "$HOME/.local/bin";
+        PATH = [
+            "$XDG_BIN_HOME"
+        ];
     };
 
     security = {

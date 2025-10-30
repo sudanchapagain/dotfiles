@@ -1,33 +1,14 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
     services = {
-        libinput = {
-            enable = true;
-            mouse = {
-                accelProfile = "adaptive";
-                accelSpeed = "-0.5";
-                scrollMethod = "twofinger";
-            };
-
-            touchpad = {
-                accelProfile = "adaptive";
-                accelSpeed = "-0.5";
-                scrollMethod = "twofinger";
-                tapping = true;
-                disableWhileTyping = true;
-            };
-        };
-
-        xserver = {
-            enable = true;
-            xkb.layout = "us";
-            xkb.variant = "";
-        };
         desktopManager.gnome.enable = true;
-        displayManager.gdm.enable = true;
+        displayManager.gdm = {
+            enable = true;
+            wayland = true;
+        };
 
-        flatpak.enable = false;
+        flatpak.enable = true;
 
         pulseaudio.enable = false;
         pipewire = {
