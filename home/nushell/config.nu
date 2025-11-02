@@ -20,8 +20,8 @@ const cfg = ($nu.config-path | path dirname)
 source ($cfg | path join "alias.nu")
 source ($cfg | path join "z.nu")
 source ($cfg | path join "prompt.nu")
+source ($cfg | path join "cara.nu")
 
-source $"($nu.cache-dir)/carapace.nu"
 let carapace_completer = {|spans|
   carapace $spans.0 nushell ...$spans | from json
 }

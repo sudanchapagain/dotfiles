@@ -6,6 +6,7 @@
 "home/mpd/mpd.conf"          = "~/.config/mpd/mpd.conf"
 "home/nushell/alias.nu"      = "~/.config/nushell/alias.nu"
 "home/nushell/config.nu"     = "~/.config/nushell/config.nu"
+"home/nushell/cara.nu"       = "~/.config/nushell/cara.nu"
 "home/nushell/prompt.nu"     = "~/.config/nushell/prompt.nu"
 "home/nushell/z.nu"          = "~/.config/nushell/z.nu"
 "home/zellij/config.kdl"     = "~/.config/zellij/config.kdl"

@@ -69,6 +69,7 @@
         newsflash
         paper-clip
         papers
+        pdfarranger
         plattenalbum
         refine
         rnote

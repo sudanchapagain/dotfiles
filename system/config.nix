@@ -39,9 +39,9 @@
         mime = {
             enable = true;
             defaultApplications = {
-                "text/html" = "app.zen_browser.zen";
-                "x-scheme-handler/http" = "app.zen_browser.zen";
-                "x-scheme-handler/https" = "app.zen_browser.zen";
+                "text/html" = "app.zen_browser.zen.desktop";
+                "x-scheme-handler/http" = "app.zen_browser.zen.desktop";
+                "x-scheme-handler/https" = "app.zen_browser.zen.desktop";
                 "application/pdf" = "org.gnome.Papers.desktop";
                 "image/png" = "org.gnome.Loupe.desktop";
                 "image/jpeg" = "org.gnome.Loupe.desktop";
