@@ -82,30 +82,41 @@
         warp
 
         # language
+        clang
+        meson
+        nushell
+        typst
+
+        steel
+        just
+
+        harper
+        marksman
+        tinymist
+        tombi
+
         cargo
         cargo-binstall
-        clang
         clippy
-        harper
-        just
-        marksman
-        meson
-        niv
-        nixd
-        nixfmt
-        nushell
-        python3
-        ruff
         rustc
         rustfmt
         rust-analyzer
-        steel
-        taplo
-        tinymist
-        tombi
-        typst
-        uv
+
+        ghc
+        cabal-install
+        haskell-language-server
+        hlint
+        fourmolu
+        ghcid
+
+        niv
+        nixd
+        nixfmt
+
+        python3
+        ruff
         zuban
+        uv
 
         # tools
         carapace

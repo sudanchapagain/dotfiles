@@ -4,7 +4,7 @@
     inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     outputs =
-        inputs@{ nixpkgs, ... }:
+        { nixpkgs, ... }:
         {
             nixosConfigurations = {
                 crimson = nixpkgs.lib.nixosSystem {

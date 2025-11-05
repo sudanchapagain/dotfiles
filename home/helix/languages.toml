@@ -1,14 +1,4 @@
 [[language]]
-name = "c"
-auto-format = true
-indent = {tab-width = 2, unit = "  "}
-
-[[language]]
-name = "cpp"
-auto-format = true
-indent = {tab-width = 2, unit = "  "}
-
-[[language]]
 name = "rust"
 scope = "source.rust"
 file-types = ["rs"]
@@ -16,35 +6,6 @@ roots = ["Cargo.toml", "Cargo.lock"]
 auto-format = true
 language-servers = ["rust-analyzer"]
 formatter = { command = "rust fmt" }
-
-[language.debugger]
-name = "lldb-vscode"
-transport = "stdio"
-command = "lldb-vscode"
-
-[[language.debugger.templates]]
-name = "binary"
-request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
-args = { program = "{0}" }
-
-[[language.debugger.templates]]
-name = "binary (terminal)"
-request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
-args = { program = "{0}", runInTerminal = true }
-
-[[language.debugger.templates]]
-name = "attach"
-request = "attach"
-completion = [ "pid" ]
-args = { pid = "{0}" }
-
-[[language.debugger.templates]]
-name = "gdbserver attach"
-request = "attach"
-completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
-args = { attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
 
 [[grammar]]
 name = "rust"
@@ -102,9 +63,7 @@ args = []
 name = "scheme"
 language-servers = ["steel-language-server", "steel"]
 
-#
 # WORLD WIDE WEB
-#
 
 [[language]]
 name = "html"
@@ -299,7 +258,7 @@ language-servers = ["vscode-html-language-server"]
 
 [[language]]
 name = "markdown"
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 4, unit = "  " }
 file-types = [
   "md",
   "markdown",
