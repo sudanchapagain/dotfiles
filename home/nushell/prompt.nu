@@ -22,6 +22,7 @@ def _cwd [duration_raw=null] {
 
 def _prompt_line [] {
     let last_status = ($env.CMD_STATUS? | default 0)
+    # , λ, ❯, >, $, ˃
     let arrow = $"(ansi magenta)λ(ansi reset)"
     $"\n(_cwd ($env.CMD_DURATION_MS? | default null))\n($arrow) "
 }
