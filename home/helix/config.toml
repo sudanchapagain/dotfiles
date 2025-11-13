@@ -1,4 +1,4 @@
-theme = "dark_plus"
+theme = "github_dark_dimmed"
 
 [editor]
 shell = ["nu", "-c"]
@@ -68,6 +68,8 @@ smart-case = true
 [keys.normal]
 "A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
 "A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+# jank but works.
+# destructive for file end and starts
 "A-up" = [
   "keep_primary_selection",
   "extend_line",
@@ -86,8 +88,15 @@ smart-case = true
 "A-down" = [
   "keep_primary_selection",
   "extend_line",
+  "yank",
+  "move_line_down",
+  "open_below",
+  "normal_mode",
+  "replace_with_yanked",
+  "move_line_up",
+  "move_line_up",
+  "extend_line",
   "delete_selection",
-  "paste_after",
   "move_line_down",
 ]
 
@@ -108,9 +117,9 @@ smart-case = true
 "S-c" = "toggle_comments"
 
 "C-a" = [
-  ':sh $env.temp | path join yazi-path | rm -f $in',
-  ':insert-output yazi --chooser-file %sh{ $env.temp | path join yazi-path }',
-  ':open %sh{ $env.temp | path join yazi-path | cat $in }',
+  ':sh $nu.temp-path | path join yazi-path | rm -f $in',
+  ':insert-output yazi --chooser-file %sh{ $nu.temp-path | path join yazi-path }',
+  ':open %sh{ $nu.temp-path | path join yazi-path | cat $in }',
   ':redraw'
 ]
 

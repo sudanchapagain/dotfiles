@@ -1,0 +1,112 @@
+[flags]
+color = "truecolor"
+disable_click = false
+cpu_left_legend = true
+
+# Expand selected widget upon starting the app
+expanded = true
+tree = true
+default_widget_type = "proc"
+# default_widget_count = 1
+# Use basic mode
+# basic = true
+
+# Show processes as their commands by default in the process widget.
+process_command = false
+
+# Hides advanced options to stop a process on Unix-like systems.
+disable_advanced_kill = false
+
+# Processes widget configuration
+[processes]
+# The columns shown by the process widget. The following columns are supported (the GPU columns are only available if the GPU feature is enabled when built):
+# PID, Name, CPU%, Mem%, R/s, W/s, T.Read, T.Write, User, State, Time, GMem%, GPU%
+columns = ["PID", "Name", "CPU%", "Mem%", "R/s", "W/s", "T.Read", "T.Write", "User", "State", "GMem%", "GPU%"]
+
+
+# CPU widget configuration
+#[cpu]
+# One of "all" (default), "average"/"avg"
+#default = "average"
+
+[styles]
+theme = "default"
+
+[styles.cpu]
+cpu_core_colors = ["light magenta", "light yellow", "light cyan", "light green", "light blue", "cyan", "green", "blue"]
+
+[styles.memory]
+ram_color = "light magenta"
+cache_color = "light red"
+swap_color = "light yellow"
+arc_color = "light cyan"
+gpu_colors = ["light blue", "light red", "cyan", "green", "blue", "red"]
+
+[styles.network]
+rx_color = "light magenta"
+tx_color = "light yellow"
+rx_total_color = "light cyan"
+tx_total_color = "light green"
+
+[styles.battery]
+high_battery_color = "green"
+medium_battery_color = "yellow"
+low_battery_color = "red"
+
+[styles.tables]
+headers = {color = "light blue", bold = true}
+
+[styles.graphs]
+graph_color = "gray"
+legend_text = {color = "gray"}
+
+[styles.widgets]
+border_color = "gray"
+selected_border_color = "light blue"
+widget_title = {color = "gray"}
+text = {color = "gray"}
+selected_text = {color = "black", bg_color = "light blue"}
+disbled_text = {color = "dark gray"}
+
+# Layout - layouts follow a pattern like this:
+# [[row]] represents a row in the application.
+# [[row.child]] represents either a widget or a column.
+# [[row.child.child]] represents a widget.
+#
+# All widgets must have the type value set to one of ["cpu", "mem", "proc", "net", "temp", "disk", "empty"].
+# All layout components have a ratio value - if this is not set, then it defaults to 1.
+# The default widget layout:
+[[row]]
+  ratio=30
+  [[row.child]]
+  type="cpu"
+[[row]]
+  ratio=70
+  [[row.child]]
+    type="mem"
+  [[row.child]]
+    type="proc"
+    default=true
+
+[colors]
+fg = "#adbac7"
+bg = "#22272e"
+black = "#1c2128"
+red = "#f47067"
+green = "#57ab5a"
+yellow = "#f69d50"
+blue = "#6cb6ff"
+magenta = "#dcbdfb"
+cyan = "#4EC9B0"
+white = "#adbac7"
+orange = "#f69d50"
+
+[colors.bright]
+black = "#373e47"
+red = "#e5534b"
+green = "#8ddb8c"
+yellow = "#e0823d"
+blue = "#539bf5"
+magenta = "#8256d0"
+cyan = "#57ab5a"
+white = "#cdd9e5"

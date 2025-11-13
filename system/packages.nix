@@ -44,6 +44,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+        mysql84
         # apps
         alacritty
         baobab

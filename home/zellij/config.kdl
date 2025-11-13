@@ -271,8 +271,7 @@ load_plugins {
  
 // Use a simplified UI without special fonts (arrow glyphs)
 // simplified_ui true
- 
-theme "dark_plus"
+theme "github_dark_dimmed"
 default_mode "normal"
 default_shell "nu"
 
@@ -404,17 +403,17 @@ scrollback_editor "hx"
  
 
 themes {
-    dark_plux {
-        fg "#D4D4D4"
-        bg "#1E1E1E"
-        black "#282828"
-        red "#F14C4C"
-        green "#6A9955"
-        yellow "#D7BA7D"
-        blue "#569CD6"
-        magenta "#C586C0"
-        cyan "#4EC9B0"
-        white "#D4D4D4"
-        orange "#C28972"
+    github_dark_dimmed {
+        fg      "#adbac7"
+        bg      "#22272e"
+        black   "#1c2128"
+        red     "#f47067"
+        green   "#57ab5a"
+        yellow  "#f69d50"
+        blue    "#6cb6ff"
+        magenta "#dcbdfb"
+        cyan    "#4EC9B0"
+        white   "#adbac7"
+        orange  "#f69d50"
     }
 }

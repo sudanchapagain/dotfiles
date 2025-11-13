@@ -43,66 +43,66 @@ style = "Bold Italic"
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "#1e1e1e"
-foreground = "#d4d4d4"
+background = "#22272e"
+foreground = "#adbac7"
 
 [colors.cursor]
-text = "#1e1e1e"
-cursor = "#a6a6a6"
+text = "#22272e"
+cursor = "#dcbdfb"
 
 [colors.selection]
-text = "#d4d4d4"
-background = "#264f78"
+text = "#adbac7"
+background = "#6cb6ff"
 
 [colors.normal]
-black   = "#282828"
-red     = "#f14c4c"
-green   = "#6A9955"
-yellow  = "#d7ba7d"
-blue    = "#569CD6"
-magenta = "#C586C0"
+black   = "#1c2128"
+red     = "#f47067"
+green   = "#57ab5a"
+yellow  = "#f69d50"
+blue    = "#6cb6ff"
+magenta = "#dcbdfb"
 cyan    = "#4EC9B0"
-white   = "#d4d4d4"
+white   = "#adbac7"
 
 [colors.bright]
-black   = "#404040"
-red     = "#ff1212"
-green   = "#b5cea8"
-yellow  = "#cca700"
-blue    = "#75beff"
-magenta = "#d16be2"
-cyan    = "#4FC1FF"
-white   = "#eeeeee"
+black   = "#373e47"
+red     = "#e5534b"
+green   = "#347d39"
+yellow  = "#e0823d"
+blue    = "#539bf5"
+magenta = "#8256d0"
+cyan    = "#57ab5a"
+white   = "#cdd9e5"
 
 [colors.dim]
-black   = "#1e1e1e"
-red     = "#ce9178"
-green   = "#487e02"
-yellow  = "#d7ba7d"
-blue    = "#1b81a8"
-magenta = "#C586C0"
+black   = "#22272e"
+red     = "#ff938a"
+green   = "#46954a"
+yellow  = "#f69d50"
+blue    = "#4184e4"
+magenta = "#dcbdfb"
 cyan    = "#4EC9B0"
-white   = "#c6c6c6"
+white   = "#636e7b"
 
 [colors.search]
-matches = { foreground = "#1e1e1e", background = "#d7ba7d" }
-focused_match = { foreground = "#1e1e1e", background = "#75beff" }
+matches = { foreground = "#22272e", background = "#f69d50" }
+focused_match = { foreground = "#22272e", background = "#539bf5" }
 
 [colors.hints]
-start = { foreground = "#d7ba7d", background = "#1e1e1e" }
-end   = { foreground = "#1e1e1e", background = "#d7ba7d" }
+start = { foreground = "#f69d50", background = "#22272e" }
+end   = { foreground = "#22272e", background = "#f69d50" }
 
 [colors.vi_mode_cursor]
-text = "#1e1e1e"
-cursor = "#569CD6"
+text = "#22272e"
+cursor = "#539bf5"
 
 [colors.line_indicator]
-foreground = "#d4d4d4"
-background = "#404040"
+foreground = "#adbac7"
+background = "#373e47"
 
 [colors.footer_bar]
-background = "#252526"
-foreground = "#d4d4d4"
+background = "#2d333b"
+foreground = "#adbac7"
 
 [keyboard]
 bindings = [

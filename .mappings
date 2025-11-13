@@ -10,3 +10,4 @@
 "home/nushell/prompt.nu"     = "~/.config/nushell/prompt.nu"
 "home/nushell/z.nu"          = "~/.config/nushell/z.nu"
 "home/zellij/config.kdl"     = "~/.config/zellij/config.kdl"
+"home/bottom/bottom.toml"    = "~/.config/bottom/bottom.toml"
