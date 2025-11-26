@@ -4,15 +4,12 @@
     fonts = {
         enableGhostscriptFonts = true;
         packages = with pkgs; [
-            #liberation_ttf
             corefonts
-            font-awesome
             inter
             jetbrains-mono
             lohit-fonts.nepali
             nerd-fonts.jetbrains-mono
             noto-fonts
-            noto-fonts-cjk-sans
             noto-fonts-color-emoji
         ];
 
@@ -44,7 +41,6 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        mysql84
         # apps
         alacritty
         baobab
@@ -82,12 +78,14 @@
         vscode
         warp
 
+        podman
+        podman-compose
+        podman-tui
+
         # language
-        clang
-        meson
+        biome
         nushell
         typst
-
         steel
         just
 
@@ -95,10 +93,23 @@
         marksman
         tinymist
         tombi
+        racket-minimal
+
+        clang
+        clang-tools
+        libgccjit
+
+        cmake
+        gnumake
+        meson
+        mesonlsp
+        pkg-config
+        ninja
 
         cargo
         cargo-binstall
         clippy
+        lldb
         rustc
         rustfmt
         rust-analyzer
@@ -141,6 +152,7 @@
         killport
         monolith
         mpd
+        mysql84
         nh
         ouch
         p7zip
@@ -156,6 +168,7 @@
         wl-clipboard
         yazi
         yt-dlp
+        zed-editor
         zellij
         zoxide
 

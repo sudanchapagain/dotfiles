@@ -60,7 +60,7 @@ tabpad = "."
 [editor.indent-guides]
 render = true
 character = "⸽"# ╎" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
-#skip-levels = 1
+skip-levels = 1
 
 [editor.search]
 smart-case = true
@@ -112,9 +112,7 @@ smart-case = true
 "C-r" = ":config-reload"
 "X" = ["extend_line_up", "extend_to_line_bounds"]
 ";" = "command_mode"
-
 "esc" = ["collapse_selection", "keep_primary_selection"]
-"S-c" = "toggle_comments"
 
 "C-a" = [
   ':sh $nu.temp-path | path join yazi-path | rm -f $in',
@@ -142,12 +140,8 @@ F = "file_picker_in_current_buffer_directory"
 "A->" = "goto_file_end"
 "pageup" = "page_up"
 "pagedown" = "page_down"
-"C-a" = "goto_first_nonwhitespace"
-"C-e" = "goto_line_end_newline"
 "home" = "goto_line_start"
 "end" = "goto_line_end_newline"
-"A-left" = "goto_line_start"
-"A-right" = "goto_line_end"
 
 [keys.normal."'"]
 f = ":format"
