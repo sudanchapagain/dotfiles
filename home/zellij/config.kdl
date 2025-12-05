@@ -282,8 +282,6 @@ show_release_notes false
 // default_cwd "/tmp"
 
 // The name of the default layout to load on startup
-// Default: "default"
-// 
 default_layout "compact"
 
 // The folder in which Zellij will look for layouts (Requires restart)
@@ -400,7 +398,7 @@ scrollback_editor "hx"
 // Default: true
 // 
 // stacked_resize false
- 
+
 
 themes {
     github_dark_dimmed {

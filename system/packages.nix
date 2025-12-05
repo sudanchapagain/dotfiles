@@ -88,12 +88,14 @@
         typst
         steel
         just
+        racket-minimal
+        lean4
+        elan
 
         harper
         marksman
         tinymist
         tombi
-        racket-minimal
 
         clang
         clang-tools
@@ -105,6 +107,8 @@
         mesonlsp
         pkg-config
         ninja
+        zig
+        zls
 
         cargo
         cargo-binstall
@@ -168,7 +172,6 @@
         wl-clipboard
         yazi
         yt-dlp
-        zed-editor
         zellij
         zoxide
 
