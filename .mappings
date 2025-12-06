@@ -3,7 +3,6 @@
 "home/git/config"            = "~/.config/git/config"
 "home/helix/config.toml"     = "~/.config/helix/config.toml"
 "home/helix/languages.toml"  = "~/.config/helix/languages.toml"
-"home/mpd/mpd.conf"          = "~/.config/mpd/mpd.conf"
 "home/nushell/alias.nu"      = "~/.config/nushell/alias.nu"
 "home/nushell/config.nu"     = "~/.config/nushell/config.nu"
 "home/nushell/cara.nu"       = "~/.config/nushell/cara.nu"
