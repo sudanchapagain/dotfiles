@@ -86,11 +86,9 @@
         biome
         nushell
         typst
-        steel
         just
+        steel
         racket-minimal
-        lean4
-        elan
 
         harper
         marksman
@@ -117,13 +115,6 @@
         rustc
         rustfmt
         rust-analyzer
-
-        ghc
-        cabal-install
-        haskell-language-server
-        hlint
-        fourmolu
-        ghcid
 
         niv
         nixd
@@ -197,6 +188,7 @@
                 url = "https://github.com/sudanchapagain/dotf";
                 rev = "ac1522b829099fa9a7171ccc7675bde4d0be8dd0";
             };
+            doCheck = false;
         })
 
         (pkgs.rustPlatform.buildRustPackage rec {
@@ -209,6 +201,17 @@
             };
             nativeBuildInputs = with pkgs; [ pkg-config ];
             buildInputs = with pkgs; [ openssl ];
+            doCheck = false;
+        })
+
+        (pkgs.rustPlatform.buildRustPackage rec {
+            pname = "mediamark";
+            version = "0.0.1";
+            cargoLock.lockFile = "${src}/Cargo.lock";
+            src = builtins.fetchGit {
+                url = "https://github.com/sudanchapagain/mediamark";
+                rev = "735081664bdb6d7cee35bace18d9bf73527af990";
+            };
             doCheck = false;
         })
     ];
