@@ -80,7 +80,6 @@
 
         podman
         podman-compose
-        podman-tui
 
         # language
         biome
@@ -168,11 +167,9 @@
 
         # os
         efibootmgr
-        home-manager
         refind
 
         # desktop
-        gnomeExtensions.blur-my-shell
         gnomeExtensions.caffeine
         gnomeExtensions.clipboard-indicator
         gnomeExtensions.gsconnect
