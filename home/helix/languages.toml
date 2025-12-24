@@ -7,114 +7,42 @@ auto-format = true
 language-servers = ["rust-analyzer"]
 formatter = { command = "rust fmt" }
 
-[[grammar]]
-name = "rust"
-source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "a360da0a29a19c281d08295a35ecd0544d2da211" }
-
-[language-server.rust-analyzer.config]
-assist.expressionFillDefault = "default"
-assist.importEnforceGranularity = true
-assist.importPrefix = "crate"
-cargo.extraArgs = [ "--profile", "rust-analyzer" ]
-cargo.extraEnv.CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev"
-cargo.features = "all"
-check = { command = "clippy", features = "all" }
-completion.fullFunctionSignatures.enable = true
-files.watcher = "server"
-inlayHints.bindingModeHints.enable = true
-inlayHints.closingBraceHints.minLines = 11
-inlayHints.closureCaptureHints.enable = true
-inlayHints.closureReturnTypeHints.enable = "with_block"
-inlayHints.closureStyle = "rust_analyzer"
-inlayHints.discriminantHints.enable = "fieldless"
-inlayHints.expressionAdjustmentHints.enable = "reborrow"
-inlayHints.expressionAdjustmentHints.mode = "prefer_postfix"
-inlayHints.lifetimeElisionHints.enable = "skip_trivial"
-inlayHints.lifetimeElisionHints.useParameterNames = true
-inlayHints.parameterHints.enable = true
-inlayHints.rangeExclusiveHints.enable = true
-inlayHints.renderColons = false
-lens.run.enable = false
-semanticHighlighting.operator.specialization.enable = true
-semanticHighlighting.punctuation.enable = true
-semanticHighlighting.punctuation.separate.macro.bang = true
-signatureInfo.documentation.enable = true
-diagnostics = { experimental = { enable = true } }
-hover = { actions = { enable = true } }
-typing = { autoClosingAngleBrackets = { enable = true } }
-procMacro = { enable = true }
-
-# for rust leptos
-[[language]]
-name = "rstml"
-scope = "scope.rstml"
-file-types = []
-injection-regex = "rstml"
-
-[[grammar]]
-name = "rstml"
-source = { git = "https://github.com/rayliwell/tree-sitter-rstml", subpath = "rstml", rev = "07a8e3b9bda09b648a6ccaca09e15dea3adf956f" }
-
-[language-server.steel-language-server]
-command = "steel-language-server"
-args = []
-
 [[language]]
 name = "scheme"
 language-servers = ["steel-language-server", "steel"]
 
-# WORLD WIDE WEB
+[[language]]
+name = "meson"
+scope = "source.build"
+file-types = ["build"]
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
-name = "html"
-auto-format = false
-formatter = { command = "prettier", args = [ "--parser", "html" ] }
-file-types = ["html", "xhtml"]
-language-servers = [
-  "vscode-html-language-server",
-  "emmet-language-server",
-  "tailwindcss-ls",
-  "hx-lsp",
-  "cspell-lsp",
-  "lsp-ai",
-]
-
-[language-server.hx-lsp]
-command = "hx-lsp"
+name = "yaml"
+scope = "source.yaml"
+file-types = ["yml", "yaml"]
+roots = []
+comment-token = "#"
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+indent = { tab-width = 2, unit = "  " }
+injection-regex = "yml|yaml"
 
 [[language]]
-name = "css"
-file-types = ["css"]
-formatter = { command = "prettier", args = [ "--parser", "css" ] }
-language-servers = [
-  "vscode-css-language-server",
-  "biome",
-  "emmet-language-server",
-  "tailwindcss-ls",
+name = "markdown"
+indent = { tab-width = 4, unit = "  " }
+file-types = [
+  "md",
+  "markdown",
+  "mdx",
 ]
 
 [[language]]
-name = "javascript"
-auto-format = true
-language-servers = [
-  { name = "typescript-language-server", except-features = ["format"] },
-  "biome",
-  "hx-lsp",
-  "cspell-lsp",
-  "lsp-ai",
-]
-
-[[language]]
-name = "jsx"
-auto-format = true
-language-servers = [
-  { name = "typescript-language-server", except-features = ["format"] },
-  "biome",
-  "tailwindcss-ls",
-  "hx-lsp",
-  "cspell-lsp",
-  "lsp-ai",
-]
+name = "typst"
+language-servers = ["tinymist", "hx-lsp"]
+formatter = { command = "typst", args = ["c"] }
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
 
 [[language]]
 name = "typescript"
@@ -126,9 +54,6 @@ language-servers = [
   "lsp-ai",
 ]
 
-[language-server.typescript-language-server.config]
-hostInfo = "helix"
-
 [[language]]
 name = "tsx"
 language-servers = [
@@ -139,18 +64,6 @@ language-servers = [
   "cspell-lsp",
   "lsp-ai",
 ]
-
-[language-server.biome]
-command = "biome"
-args = ["lsp-proxy"]
-
-[language-server.emmet-language-server]
-command = "emmet-ls"
-args = ["--stdio"]
-
-[language-server.tailwindcss-ls]
-command = "tailwindcss-language-server"
-args = ["--stdio"]
 
 [[language]]
 name = "just"
@@ -203,79 +116,57 @@ file-types = ["eml"]
 indent = { tab-width = 4, unit = "\t" }
 
 [[grammar]]
-name = "mail"
-source = { git = "https://github.com/dagle/tree-sitter-mail", rev = "a668550628e9a76bcac4864864dd9d60c91be27f" }
-
-[[language]]
-name = "fluent"
-scope = "source.ftl"
-injection-regex = "fluent"
-file-types = ["ftl"]
-comment-token = "#"
-indent = { tab-width = 4, unit = "    " }
+name = "rust"
+source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "a360da0a29a19c281d08295a35ecd0544d2da211" }
 
 [[grammar]]
-name = "fluent"
-source = { git = "https://github.com/erasin/tree-sitter-fluent", rev = "14ad08028c0287ca8c10ce620377f581e17dddb2" }
-
-[[language]]
-name = "http"
-scope = "source.http"
-injection-regex = "http"
-file-types = ["rest", "http"]
-comment-token = "#"
-indent = { tab-width = 4, unit = "    " }
+name = "mail"
+source = { git = "https://github.com/dagle/tree-sitter-mail", rev = "a668550628e9a76bcac4864864dd9d60c91be27f" }
 
 [[grammar]]
 name = "http"
 source = { git = "https://github.com/rest-nvim/tree-sitter-http", rev = "e061995f0caf2fa30f68fa1fdf2c08bcbd4629a8" }
 
-[[language]]
-name = "yaml"
-scope = "source.yaml"
-file-types = ["yml", "yaml"]
-roots = []
-comment-token = "#"
-formatter = { command = 'prettier', args = ["--parser", "yaml"] }
-indent = { tab-width = 2, unit = "  " }
-injection-regex = "yml|yaml"
+[language-server.rust-analyzer.config]
+assist.expressionFillDefault = "default"
+assist.importEnforceGranularity = true
+assist.importPrefix = "crate"
+cargo.extraArgs = ["--profile", "rust-analyzer"]
+cargo.extraEnv.CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev"
+cargo.features = "all"
+check = { command = "clippy", features = "all" }
+completion.fullFunctionSignatures.enable = true
+files.watcher = "server"
+inlayHints.bindingModeHints.enable = true
+inlayHints.closingBraceHints.minLines = 11
+inlayHints.closureCaptureHints.enable = true
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.closureStyle = "rust_analyzer"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.expressionAdjustmentHints.enable = "reborrow"
+inlayHints.expressionAdjustmentHints.mode = "prefer_postfix"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.lifetimeElisionHints.useParameterNames = true
+inlayHints.parameterHints.enable = true
+inlayHints.rangeExclusiveHints.enable = true
+inlayHints.renderColons = false
+lens.run.enable = false
+semanticHighlighting.operator.specialization.enable = true
+semanticHighlighting.punctuation.enable = true
+semanticHighlighting.punctuation.separate.macro.bang = true
+signatureInfo.documentation.enable = true
+diagnostics = { experimental = { enable = true } }
+hover = { actions = { enable = true } }
+typing = { autoClosingAngleBrackets = { enable = true } }
+procMacro = { enable = true }
+
+[language-server.steel-language-server]
+command = "steel-language-server"
+args = []
+
+[language-server.hx-lsp]
+command = "hx-lsp"
 
 [language-server.yaml]
 command = "yaml-language-server"
 args = ["--stdio"]
-
-[[language]]
-name = "json"
-language-servers = [
-  "vscode-json-language-server",
-  "biome",
-  "hx-lsp",
-]
-
-[[language]]
-name = "xml"
-language-servers = ["vscode-html-language-server"]
-
-[[language]]
-name = "markdown"
-indent = { tab-width = 4, unit = "  " }
-file-types = [
-  "md",
-  "markdown",
-  "mdx",
-  "mkd",
-  "mkdn",
-  "mdwn",
-  "mdown",
-  "markdn",
-  "mdtxt",
-  "mdtext",
-  "workbook",
-]
-
-[[language]]
-name = "typst"
-language-servers = ["tinymist", "hx-lsp"]
-formatter = { command = "typst", args = ["c"] }
-text-width = 80
-soft-wrap = { enable = true, wrap-at-text-width = true }

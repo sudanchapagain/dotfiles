@@ -119,6 +119,7 @@
         nixd
         nixfmt
 
+        djlint
         python3
         ruff
         zuban
@@ -153,6 +154,7 @@
         pandoc
         ripgrep
         simple-http-server
+        sqlite
         stress
         television
         tokei
