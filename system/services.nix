@@ -34,36 +34,39 @@
         mpd = {
             enable = true;
             startWhenNeeded = true;
-            network.listenAddress = "any";
+            openFirewall = true;
 
-            extraConfig = ''
-                music_directory "~/Music"
-                playlist_directory "~/.config/mpd/playlists"
+            settings = {
+                music_directory = "/home/crimson/Music";
+                playlist_directory = "/home/crimson/.config/mpd/playlists";
 
-                db_file "~/.config/mpd/database"
-                log_file "~/.config/mpd/log"
-                pid_file "~/.config/mpd/pid"
-                state_file "~/.config/mpd/state"
-                sticker_file "~/.config/mpd/sticker.sql"
+                db_file = "/home/crimson/.config/mpd/database";
+                log_file = "/home/crimson/.config/mpd/log";
+                pid_file = "/home/crimson/.config/mpd/pid";
+                state_file = "/home/crimson/.config/mpd/state";
+                sticker_file = "/home/crimson/.config/mpd/sticker.sql";
 
-                bind_to_address "127.0.0.1"
-                port "6600"
+                port = 6600;
 
-                metadata_to_use "artist,album,title,track,name,genre,date,composer,performer,disc"
+                metadata_to_use = "artist,album,title,track,name,genre,date,composer,performer,disc";
 
-                input {
-                    plugin "curl"
-                }
+                input = [
+                    {
+                        plugin = "curl";
+                    }
+                ];
 
-                audio_output {
-                    type "pulse"
-                    name "Pulse Output"
-                }
+                audio_output = [
+                    {
+                        type = "pulse";
+                        name = "Pulse Output";
+                    }
+                ];
 
-                save_absolute_paths_in_playlists "no"
-                auto_update "yes"
-                auto_update_depth "3"
-            '';
+                save_absolute_paths_in_playlists = "no";
+                auto_update = "yes";
+                auto_update_depth = "3";
+            };
         };
     };
 }

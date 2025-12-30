@@ -21,6 +21,7 @@
     s = status
     st = status -s
     lol = log --oneline --graph --all
+    dir = log --topo-order --compact-summary --pretty=fuller
     wipe = reflog expire --expire-unreachable=now --all
     wipee = gc --prune=now
     wipeee = fsck --unreachable
