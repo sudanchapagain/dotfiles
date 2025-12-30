@@ -50,11 +50,7 @@
 
                 metadata_to_use = "artist,album,title,track,name,genre,date,composer,performer,disc";
 
-                input = [
-                    {
-                        plugin = "curl";
-                    }
-                ];
+                input = [ { plugin = "curl"; } ];
 
                 audio_output = [
                     {
