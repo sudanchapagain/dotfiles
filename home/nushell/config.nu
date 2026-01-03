@@ -1,6 +1,5 @@
 $env.PATH ++= [
   '~/.local/bin'
-  '~/.cargo/bin'
   $"/etc/profiles/per-user/($env.USER)/bin"
   "/run/current-system/sw/bin"
   "/usr/local/bin"

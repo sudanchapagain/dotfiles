@@ -1,17 +1,4 @@
 [[language]]
-name = "rust"
-scope = "source.rust"
-file-types = ["rs"]
-roots = ["Cargo.toml", "Cargo.lock"]
-auto-format = true
-language-servers = ["rust-analyzer"]
-formatter = { command = "rust fmt" }
-
-[[language]]
-name = "scheme"
-language-servers = ["steel-language-server", "steel"]
-
-[[language]]
 name = "meson"
 scope = "source.build"
 file-types = ["build"]
@@ -43,38 +30,6 @@ language-servers = ["tinymist", "hx-lsp"]
 formatter = { command = "typst", args = ["c"] }
 text-width = 80
 soft-wrap = { enable = true, wrap-at-text-width = true }
-
-[[language]]
-name = "typescript"
-auto-format = true
-language-servers = [
-  { name = "typescript-language-server", except-features = ["format"] },
-  "biome",
-  "hx-lsp",
-  "lsp-ai",
-]
-
-[[language]]
-name = "tsx"
-language-servers = [
-  { name = "typescript-language-server", except-features = ["format"] },
-  "biome",
-  "tailwindcss-ls",
-  "hx-lsp",
-  "cspell-lsp",
-  "lsp-ai",
-]
-
-[[language]]
-name = "just"
-file-types = [
-  "just",
-  { glob = "justfile" },
-  { glob = "Justfile" },
-  { glob = ".justfile" },
-  { glob = ".Justfile" },
-  { glob = "globaljustfile" },
-]
 
 [[language]]
 name = "git-commit"
@@ -116,53 +71,12 @@ file-types = ["eml"]
 indent = { tab-width = 4, unit = "\t" }
 
 [[grammar]]
-name = "rust"
-source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "a360da0a29a19c281d08295a35ecd0544d2da211" }
-
-[[grammar]]
 name = "mail"
 source = { git = "https://github.com/dagle/tree-sitter-mail", rev = "a668550628e9a76bcac4864864dd9d60c91be27f" }
 
 [[grammar]]
 name = "http"
 source = { git = "https://github.com/rest-nvim/tree-sitter-http", rev = "e061995f0caf2fa30f68fa1fdf2c08bcbd4629a8" }
-
-[language-server.rust-analyzer.config]
-assist.expressionFillDefault = "default"
-assist.importEnforceGranularity = true
-assist.importPrefix = "crate"
-cargo.extraArgs = ["--profile", "rust-analyzer"]
-cargo.extraEnv.CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev"
-cargo.features = "all"
-check = { command = "clippy", features = "all" }
-completion.fullFunctionSignatures.enable = true
-files.watcher = "server"
-inlayHints.bindingModeHints.enable = true
-inlayHints.closingBraceHints.minLines = 11
-inlayHints.closureCaptureHints.enable = true
-inlayHints.closureReturnTypeHints.enable = "with_block"
-inlayHints.closureStyle = "rust_analyzer"
-inlayHints.discriminantHints.enable = "fieldless"
-inlayHints.expressionAdjustmentHints.enable = "reborrow"
-inlayHints.expressionAdjustmentHints.mode = "prefer_postfix"
-inlayHints.lifetimeElisionHints.enable = "skip_trivial"
-inlayHints.lifetimeElisionHints.useParameterNames = true
-inlayHints.parameterHints.enable = true
-inlayHints.rangeExclusiveHints.enable = true
-inlayHints.renderColons = false
-lens.run.enable = false
-semanticHighlighting.operator.specialization.enable = true
-semanticHighlighting.punctuation.enable = true
-semanticHighlighting.punctuation.separate.macro.bang = true
-signatureInfo.documentation.enable = true
-diagnostics = { experimental = { enable = true } }
-hover = { actions = { enable = true } }
-typing = { autoClosingAngleBrackets = { enable = true } }
-procMacro = { enable = true }
-
-[language-server.steel-language-server]
-command = "steel-language-server"
-args = []
 
 [language-server.hx-lsp]
 command = "hx-lsp"

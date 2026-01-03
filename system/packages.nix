@@ -82,12 +82,8 @@
         podman-compose
 
         # language
-        biome
         nushell
         typst
-        just
-        steel
-        racket-minimal
 
         harper
         marksman
@@ -97,23 +93,12 @@
         clang
         clang-tools
         libgccjit
+        lldb
 
-        cmake
-        gnumake
         meson
         mesonlsp
         pkg-config
         ninja
-        zig
-        zls
-
-        cargo
-        cargo-binstall
-        clippy
-        lldb
-        rustc
-        rustfmt
-        rust-analyzer
 
         niv
         nixd
@@ -141,6 +126,7 @@
         file
         fzf
         git
+        graphviz
         grex
         hyperfine
         killall
@@ -165,6 +151,7 @@
         yazi
         yt-dlp
         zellij
+        zola
         zoxide
 
         # os
@@ -183,7 +170,7 @@
             pname = "dotf";
             version = "2.0.0";
             cargoLock.lockFile = "${src}/Cargo.lock";
-            src = builtins.fetchGit {
+            src = fetchGit {
                 url = "https://github.com/sudanchapagain/dotf";
                 rev = "ac1522b829099fa9a7171ccc7675bde4d0be8dd0";
             };
@@ -194,7 +181,7 @@
             pname = "arrow";
             version = "6.0.0";
             cargoLock.lockFile = "${src}/Cargo.lock";
-            src = builtins.fetchGit {
+            src = fetchGit {
                 url = "https://github.com/sudanchapagain/arrow";
                 rev = "1040b48aeadc4c6bbe5dbc4d777fa74fb5290327";
             };
@@ -207,7 +194,7 @@
             pname = "mediamark";
             version = "0.0.1";
             cargoLock.lockFile = "${src}/Cargo.lock";
-            src = builtins.fetchGit {
+            src = fetchGit {
                 url = "https://github.com/sudanchapagain/mediamark";
                 rev = "735081664bdb6d7cee35bace18d9bf73527af990";
             };
