@@ -37,6 +37,7 @@
         simple-scan
         totem
     ];
+    programs.niri.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -159,6 +160,19 @@
         refind
 
         # desktop
+        niri
+        waybar
+        swaybg
+        swaylock
+        swayidle
+        swaynotificationcenter
+        swayosd
+        libnotify
+        fuzzel
+        playerctl
+        brightnessctl
+        wl-clipboard
+
         gnomeExtensions.caffeine
         gnomeExtensions.clipboard-indicator
         gnomeExtensions.gsconnect

@@ -21,7 +21,12 @@
             enable = true;
             dns = "none";
         };
-        nameservers = [ "9.9.9.9" "149.112.112.112" "2620:fe::fe" "2620:fe::9" ];
+        nameservers = [
+            "9.9.9.9"
+            "149.112.112.112"
+            "2620:fe::fe"
+            "2620:fe::9"
+        ];
         # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
         # Configure network proxy if necessary
         # proxy.default = "http://user:password@proxy:port/";
