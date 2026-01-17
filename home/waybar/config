@@ -1,0 +1,85 @@
+{
+    "layer": "top",
+    "position": "top",
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 34,
+    "spacing": 0,
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/separator",
+        "custom/nepali-date"
+    ],
+    "modules-right": [
+        "tray",
+        "keyboard-state",
+        "network",
+        "pulseaudio",
+        "battery",
+        "custom/logout"
+    ],
+    "custom/logout": {
+        "format": "⏻   ",
+        "tooltip": false,
+        "on-click": "niri msg action quit"
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "   ",
+            "unlocked": "   "
+        }
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %b %d   %I:%M %p}",
+    },
+    "custom/nepali-date": {
+        "exec": "bikramsambat --personal-format",
+        "interval": 86400,
+        "format": "{}"
+    },
+    "custom/separator": {
+        "format": "  |  "
+    },
+    "battery": {
+        "states": {
+          "good": 90,
+          "warning": 35,
+          "critical": 20
+        },
+        "format": "{icon}    {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "format-charging": " {capacity}%",
+        "format-full": " Charged",
+        "interval": 3
+    },
+    "network": {
+        "format-wifi": " ",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-disconnected": "⚠   Disconnected",
+    },
+    "pulseaudio": {
+    	"format": "󰕾  {volume}%",
+    	"format-bluetooth": "{icon} {volume}%",
+        "format-muted": "󰖁   Muted",
+    	"format-icons": {
+    		"headphones": "",
+    		"phone": "",
+    		"phone-muted": "",
+    		"portable": "",
+    		"default": ["  ", "  "]
+    	},
+    	"scroll-step": 1,
+    	"on-click": "pavucontrol"
+    }
+}
