@@ -180,13 +180,45 @@
         gnomeExtensions.runcat
 
         # my packages
+        # (pkgs.stdenv.mkDerivation {
+        #     pname = "bikram";
+        #     version = "1.1.1";
+
+        #     src = pkgs.fetchgit {
+        #         url = "https://github.com/sudanchapagain/bikramsambat";
+        #         rev = "418a88db9ec0857e540ea019932156bc2cd89a29";
+        #         sha256 = "LwM7yXtfkv00QZTFfnNhnhlhBsdpGYCz2o/R2xjiWcQ=";
+        #     };
+
+        #     nativeBuildInputs = [
+        #         pkgs.gcc
+        #         pkgs.meson
+        #         pkgs.ninja
+        #     ];
+
+        #     buildPhase = ''
+        #         meson setup build $src \
+        #             --prefix=$out \
+        #             --bindir=$out/bin \
+        #             --libdir=$out/lib \
+        #             --includedir=$out/include \
+        #             --buildtype=release
+        #         meson compile -C build
+        #         meson install -C build
+        #     '';
+
+        #     installPhase = ''
+        #         meson install -C build
+        #     '';
+        # })
+
         (pkgs.rustPlatform.buildRustPackage rec {
             pname = "dotf";
             version = "2.0.0";
             cargoLock.lockFile = "${src}/Cargo.lock";
             src = fetchGit {
                 url = "https://github.com/sudanchapagain/dotf";
-                rev = "ac1522b829099fa9a7171ccc7675bde4d0be8dd0";
+                rev = "f19f065452c76f1799d3b9caf55a341213239ed0";
             };
             doCheck = false;
         })
