@@ -172,45 +172,14 @@
         playerctl
         brightnessctl
         wl-clipboard
+        xwayland
+        xwayland-satellite
 
         gnomeExtensions.caffeine
         gnomeExtensions.clipboard-indicator
         gnomeExtensions.gsconnect
         gnomeExtensions.nepali-calendar
         gnomeExtensions.runcat
-
-        # my packages
-        # (pkgs.stdenv.mkDerivation {
-        #     pname = "bikram";
-        #     version = "1.1.1";
-
-        #     src = pkgs.fetchgit {
-        #         url = "https://github.com/sudanchapagain/bikramsambat";
-        #         rev = "418a88db9ec0857e540ea019932156bc2cd89a29";
-        #         sha256 = "LwM7yXtfkv00QZTFfnNhnhlhBsdpGYCz2o/R2xjiWcQ=";
-        #     };
-
-        #     nativeBuildInputs = [
-        #         pkgs.gcc
-        #         pkgs.meson
-        #         pkgs.ninja
-        #     ];
-
-        #     buildPhase = ''
-        #         meson setup build $src \
-        #             --prefix=$out \
-        #             --bindir=$out/bin \
-        #             --libdir=$out/lib \
-        #             --includedir=$out/include \
-        #             --buildtype=release
-        #         meson compile -C build
-        #         meson install -C build
-        #     '';
-
-        #     installPhase = ''
-        #         meson install -C build
-        #     '';
-        # })
 
         (pkgs.rustPlatform.buildRustPackage rec {
             pname = "dotf";
@@ -233,17 +202,6 @@
             };
             nativeBuildInputs = with pkgs; [ pkg-config ];
             buildInputs = with pkgs; [ openssl ];
-            doCheck = false;
-        })
-
-        (pkgs.rustPlatform.buildRustPackage rec {
-            pname = "mediamark";
-            version = "0.0.1";
-            cargoLock.lockFile = "${src}/Cargo.lock";
-            src = fetchGit {
-                url = "https://github.com/sudanchapagain/mediamark";
-                rev = "735081664bdb6d7cee35bace18d9bf73527af990";
-            };
             doCheck = false;
         })
     ];
