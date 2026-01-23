@@ -1,6 +1,5 @@
 [general]
 "home/alacritty/config.toml" = "~/.config/alacritty/alacritty.toml"
-"home/bottom/bottom.toml"    = "~/.config/bottom/bottom.toml"
 "home/git/config"            = "~/.config/git/config"
 "home/helix/config.toml"     = "~/.config/helix/config.toml"
 "home/helix/languages.toml"  = "~/.config/helix/languages.toml"

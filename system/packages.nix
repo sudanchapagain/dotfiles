@@ -38,6 +38,7 @@
         totem
     ];
     programs.niri.enable = true;
+    programs.sway.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -100,6 +101,7 @@
         mesonlsp
         pkg-config
         ninja
+        gnumake
 
         niv
         nixd
@@ -115,7 +117,7 @@
         carapace
         carapace-bridge
         bacon
-        bottom
+        btop
         delta
         dig
         dua
@@ -161,6 +163,7 @@
 
         # desktop
         niri
+        swayfx
         waybar
         swaybg
         swaylock
