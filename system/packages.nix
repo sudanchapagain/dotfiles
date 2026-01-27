@@ -38,7 +38,6 @@
         totem
     ];
     programs.niri.enable = true;
-    programs.sway.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -163,7 +162,6 @@
 
         # desktop
         niri
-        swayfx
         waybar
         swaybg
         swaylock
