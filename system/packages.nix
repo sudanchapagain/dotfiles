@@ -6,6 +6,8 @@
         packages = with pkgs; [
             corefonts
             inter
+            libertine
+            liberation_ttf
             jetbrains-mono
             lohit-fonts.nepali
             nerd-fonts.jetbrains-mono
