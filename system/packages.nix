@@ -63,6 +63,7 @@
         gnome-secrets
         gradia
         helix
+        hugo
         keypunch
         libreoffice
         mousai
@@ -155,7 +156,6 @@
         yazi
         yt-dlp
         zellij
-        zola
         zoxide
 
         # os
