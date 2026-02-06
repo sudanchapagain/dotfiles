@@ -4,13 +4,19 @@
     fonts = {
         enableGhostscriptFonts = true;
         packages = with pkgs; [
+            # essential
             corefonts
             inter
             libertine
             liberation_ttf
-            jetbrains-mono
+
+            # cute
+            maple-mono.NormalNL-NF-unhinted
+            comic-mono
+            comic-relief
+
+            # additional support
             lohit-fonts.nepali
-            nerd-fonts.jetbrains-mono
             noto-fonts
             noto-fonts-color-emoji
         ];
@@ -19,7 +25,7 @@
             enable = true;
             defaultFonts = {
                 serif = [ "Noto Serif" ];
-                monospace = [ "JetBrains Mono" ];
+                monospace = [ "MapleMonoNormalNLNF" ];
                 sansSerif = [
                     "Inter"
                     "Noto Sans"
@@ -44,6 +50,9 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+        # cursor
+        banana-cursor
+
         # apps
         alacritty
         baobab

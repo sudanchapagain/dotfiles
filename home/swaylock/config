@@ -3,7 +3,7 @@ daemonize
 show-failed-attempts
 indicator-idle-visible
 line-uses-ring
-font=JetBrainsMono Nerd Font
+font=MapleMonoNormalNLNF
 indicator-radius=100
 indicator-thickness=15
 color=1e1e2e

@@ -10,7 +10,7 @@ let settings = {
   "/org/gnome/desktop/interface/show-battery-percentage": "true",
   "/org/gnome/desktop/interface/document-font-name": "'Inter 10'",
   "/org/gnome/desktop/interface/font-name": "'Inter 10'",
-  "/org/gnome/desktop/interface/monospace-font-name": "'JetBrainsMono Nerd Font 10'",
+  "/org/gnome/desktop/interface/monospace-font-name": "'MapleMonoNormalNLNF 10'",
   "/org/gnome/desktop/interface/titlebar-font": "'Inter Bold 11'",
   "/org/gnome/desktop/interface/text-scaling-factor": "0.94999999999999996",
   "/org/gnome/desktop/interface/accent-color": "'red'",
