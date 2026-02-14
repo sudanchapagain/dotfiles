@@ -6,7 +6,7 @@ decorations = "full"
 dynamic_padding = true
 dynamic_title = true
 decorations_theme_variant = "Dark"
-opacity = 1
+opacity = 0.98
 
 [window.dimensions]
 columns = 200
@@ -43,66 +43,66 @@ style = "Bold Italic"
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "#22272e"
-foreground = "#adbac7"
+background = "#1d2021"
+foreground = "#ebdbb2"
 
 [colors.cursor]
-text = "#22272e"
-cursor = "#dcbdfb"
+text = "#1d2021"
+cursor = "#fabd2f"
 
 [colors.selection]
-text = "#adbac7"
-background = "#6cb6ff"
+text = "#ebdbb2"
+background = "#3c3836"
 
 [colors.normal]
-black   = "#1c2128"
-red     = "#f47067"
-green   = "#57ab5a"
-yellow  = "#f69d50"
-blue    = "#6cb6ff"
-magenta = "#dcbdfb"
-cyan    = "#4EC9B0"
-white   = "#adbac7"
+black   = "#1d2021"
+red     = "#cc241d"
+green   = "#98971a"
+yellow  = "#d79921"
+blue    = "#458588"
+magenta = "#b16286"
+cyan    = "#689d6a"
+white   = "#a89984"
 
 [colors.bright]
-black   = "#373e47"
-red     = "#e5534b"
-green   = "#347d39"
-yellow  = "#e0823d"
-blue    = "#539bf5"
-magenta = "#8256d0"
-cyan    = "#57ab5a"
-white   = "#cdd9e5"
+black   = "#928374"
+red     = "#fb4934"
+green   = "#b8bb26"
+yellow  = "#fabd2f"
+blue    = "#83a598"
+magenta = "#d3869b"
+cyan    = "#8ec07c"
+white   = "#ebdbb2"
 
 [colors.dim]
-black   = "#22272e"
-red     = "#ff938a"
-green   = "#46954a"
-yellow  = "#f69d50"
-blue    = "#4184e4"
-magenta = "#dcbdfb"
-cyan    = "#4EC9B0"
-white   = "#636e7b"
+black   = "#141617"
+red     = "#9d0006"
+green   = "#79740e"
+yellow  = "#b57614"
+blue    = "#076678"
+magenta = "#8f3f71"
+cyan    = "#427b58"
+white   = "#928374"
 
 [colors.search]
-matches = { foreground = "#22272e", background = "#f69d50" }
-focused_match = { foreground = "#22272e", background = "#539bf5" }
+matches = { foreground = "#1d2021", background = "#d79921" }
+focused_match = { foreground = "#1d2021", background = "#fabd2f" }
 
 [colors.hints]
-start = { foreground = "#f69d50", background = "#22272e" }
-end   = { foreground = "#22272e", background = "#f69d50" }
+start = { foreground = "#d79921", background = "#1d2021" }
+end   = { foreground = "#1d2021", background = "#d79921" }
 
 [colors.vi_mode_cursor]
-text = "#22272e"
-cursor = "#539bf5"
+text = "#1d2021"
+cursor = "#83a598"
 
 [colors.line_indicator]
-foreground = "#adbac7"
-background = "#373e47"
+foreground = "#ebdbb2"
+background = "#3c3836"
 
 [colors.footer_bar]
-background = "#2d333b"
-foreground = "#adbac7"
+background = "#282828"
+foreground = "#ebdbb2"
 
 [keyboard]
 bindings = [

@@ -89,7 +89,7 @@ output "eDP-1" {
 }
 
 // Wallpaper
-spawn-at-startup "swaybg -i /home/crimson/.local/backgrounds/cloud.png"
+spawn-at-startup "swaybg -i /home/crimson/.local/share/backgrounds/cloud.png"
 layer-rule {
     match namespace="^wallpaper$"
     place-within-backdrop true
@@ -107,7 +107,7 @@ overview {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 0
+    gaps 15
 
     // Set transparent workspace background color.
     background-color "transparent"
@@ -118,7 +118,8 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "never"
+    center-focused-column "on-overflow"
+    empty-workspace-above-first
     always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
@@ -135,10 +136,14 @@ layout {
     }
 
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -152,11 +157,12 @@ layout {
     //
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
+    // background-color "transparent"
 
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        off
+        // off
 
         // How many logical pixels the ring extends out from the windows.
         width 2
@@ -167,7 +173,8 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#535353"
+        active-gradient from="#ffd75f" to="#ffafd7"
+        // active-color "#535353"
 
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
@@ -186,6 +193,10 @@ layout {
         // To do that, set relative-to="workspace-view".
         //
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    insert-hint {
+        color "#5f472dAA"
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
@@ -207,7 +218,7 @@ layout {
 
     // You can enable drop shadows for windows.
     shadow {
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -229,7 +240,7 @@ layout {
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 0
+        softness 8
 
         // Spread expands the shadow.
         spread 0
@@ -275,7 +286,7 @@ environment {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -293,7 +304,38 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 0.1
+    // slowdown 0.2
+
+    workspace-switch {
+        spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+    }
+
+    window-movement {
+        spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+    }
+
+    window-resize {
+        spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+    }
+
+    window-open {
+        duration-ms 150
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 200
+        curve "ease-out-expo"
+    }
+}
+
+cursor {
+    xcursor-theme "Banana"
+    hide-when-typing
 }
 
 
@@ -324,6 +366,11 @@ window-rule {
     match app-id=r#"^org\.gnome\.Decibels"#
     match app-id=r#"^org\.gnome\.NautilusPreviewer$"#
     open-floating true
+}
+
+window-rule {
+    match app-id="Minecraft" title="^Minecraft"
+    open-fullscreen true
 }
 
 /-layer-rule {
@@ -357,8 +404,14 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 0
+    geometry-corner-radius 12
     clip-to-geometry true
+    opacity 0.98
+}
+
+window-rule {
+    match is-floating=true
+    geometry-corner-radius 16
 }
 
 binds {

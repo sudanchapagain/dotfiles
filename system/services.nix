@@ -1,6 +1,11 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+    programs.kdeconnect = {
+        enable = true;
+        package = pkgs.valent;
+    };
+
     services = {
         desktopManager.gnome.enable = true;
         displayManager.gdm = {
@@ -31,6 +36,7 @@
             HandlePowerKey = "suspend";
         };
 
+        postgresql.enable = true;
         mpd = {
             enable = true;
             startWhenNeeded = true;

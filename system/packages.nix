@@ -91,9 +91,6 @@
         vscode
         warp
 
-        podman
-        podman-compose
-
         # language
         nushell
         typst
@@ -128,6 +125,7 @@
         carapace
         carapace-bridge
         bacon
+        binsider
         btop
         delta
         dig
@@ -139,6 +137,7 @@
         ffmpegthumbnailer
         file
         fzf
+        ghostscript
         git
         graphviz
         grex
@@ -148,6 +147,7 @@
         monolith
         mpd
         mysql84
+        postgresql
         nh
         ouch
         p7zip
@@ -189,7 +189,6 @@
 
         gnomeExtensions.caffeine
         gnomeExtensions.clipboard-indicator
-        gnomeExtensions.gsconnect
         gnomeExtensions.nepali-calendar
         gnomeExtensions.runcat
 

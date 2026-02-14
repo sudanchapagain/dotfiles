@@ -1,4 +1,4 @@
-theme = "github_dark_dimmed"
+theme = "gruvbox_dark_hard"
 
 [editor]
 shell = ["nu", "-c"]
