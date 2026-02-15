@@ -6,7 +6,7 @@ decorations = "full"
 dynamic_padding = true
 dynamic_title = true
 decorations_theme_variant = "Dark"
-opacity = 0.98
+opacity = 1
 
 [window.dimensions]
 columns = 200

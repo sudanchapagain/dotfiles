@@ -1,34 +1,49 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Inter, Sans;
+    font-family: MapleMonoNormalNLNF, FontAwesome, sans-serif;
     font-size: 16px;
-    font-weight: 600;
     box-shadow: none;
     text-shadow: none;
 }
 
-window {
-    color: rgb(230, 230, 230);
-    background: rgba(0, 0, 0, 1);
+window#waybar {
+    background-color: #1d2021;
+    color: #d4be98;
+    border-bottom: 1px solid #d4be98;
 }
 
-window#waybar.solo {
-    color: rgba(217, 216, 216, 1);
-    background: rgba(0, 0, 0, 1);
+#waybar>* {
+    padding-bottom: 3px;
 }
 
-#workspaces {
+.module {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#clock.date,
+#custom-nepali-date,
+#clock.time {
+    color: #e89b47;
     margin: 0 5px;
+}
+
+#network,
+#battery,
+#pulseaudio,
+#custom-logout {
+    color: #e89b47;
 }
 
 #workspaces button {
     padding: 0 5px;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(232, 155, 71, 0.3);
+    border: none;
 }
 
 #workspaces button.active {
-    color: #ffffff;
+    color: #e89b47;
 }
 
 #workspaces button.visible {
@@ -42,43 +57,5 @@ window#waybar.solo {
 #workspaces button:hover {
     color: rgba(255, 255, 255, 0.6);
     background: rgba(0, 0, 0, 0);
-}
-
-#mode,
-#battery,
-#network,
-#pulseaudio {
-    margin: 0px 6px 0px 10px;
-}
-
-#clock {
-    margin: 0px 5px 0px 10px;
-}
-
-#custom-separator {
-    margin: 0px 5px 0px 5px;
-}
-
-#custom-nepali-date {
-    margin: 0px 16px 0px 0px;
-}
-
-#battery {
-    margin-right: 20px;
-}
-
-#battery.warning {
-    color: rgba(255, 210, 4, 1);
-}
-
-#battery.critical {
-    color: rgba(238, 46, 36, 1);
-}
-
-#battery.charging {
-    color: rgba(217, 216, 216, 1);
-}
-
-#tray {
-    margin-right: 10px;
+    border-top: none;
 }

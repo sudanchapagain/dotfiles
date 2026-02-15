@@ -70,7 +70,7 @@ output "eDP-1" {
     mode "3200x2000@60"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.4
+    scale 1.6
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -107,7 +107,7 @@ overview {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 15
+    gaps 16
 
     // Set transparent workspace background color.
     background-color "transparent"
@@ -119,7 +119,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "on-overflow"
-    empty-workspace-above-first
+    // empty-workspace-above-first
     always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
@@ -407,6 +407,11 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
     opacity 0.98
+}
+
+window-rule {
+    match app-id=r#"^Alacritty"#
+    opacity 0.93
 }
 
 window-rule {
