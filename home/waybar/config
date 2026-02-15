@@ -1,11 +1,9 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 38,
-    "reload_style_on_change": true,
+    "height": 33,
     "modules-left": [
         "niri/workspaces",
-        "custom/niriwin"
     ],
     "modules-center": [
         "clock#time",
@@ -17,16 +15,8 @@
         "network",
         "battery",
         "pulseaudio",
-        // "keyboard-state",
         "custom/logout"
     ],
-    "custom/niriwin": {
-        "exec": "/home/crimson/.config/waybar/niri-windows.py",
-        "return-type": "json",
-        "restart-interval": "never",
-        "endless": true,
-        "format": "{}"
-    },
     "custom/logout": {
         "format": "⏻   ",
         "tooltip": false,
@@ -95,7 +85,6 @@
         ],
         "format-charging": " {capacity}%",
         "format-full": " Charged",
-        "interval": 3
     },
     "network": {
         "format-wifi": " ",

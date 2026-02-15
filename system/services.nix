@@ -44,13 +44,6 @@
 
             settings = {
                 music_directory = "/home/crimson/Music";
-                playlist_directory = "/home/crimson/.config/mpd/playlists";
-
-                db_file = "/home/crimson/.config/mpd/database";
-                log_file = "/home/crimson/.config/mpd/log";
-                pid_file = "/home/crimson/.config/mpd/pid";
-                state_file = "/home/crimson/.config/mpd/state";
-                sticker_file = "/home/crimson/.config/mpd/sticker.sql";
 
                 port = 6600;
 
@@ -67,7 +60,7 @@
 
                 save_absolute_paths_in_playlists = "no";
                 auto_update = "yes";
-                auto_update_depth = "3";
+                auto_update_depth = "10";
             };
         };
     };

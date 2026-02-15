@@ -63,7 +63,6 @@
         dconf-editor
         eartag
         errands
-        escambo
         eyedropper
         foliate
         fragments
@@ -124,7 +123,6 @@
         # tools
         carapace
         carapace-bridge
-        bacon
         binsider
         btop
         delta
@@ -172,18 +170,21 @@
         refind
 
         # desktop
+        cliphist
         niri
         waybar
         swaybg
         swaylock
         swayidle
         swaynotificationcenter
-        swayosd
         libnotify
         fuzzel
         playerctl
         brightnessctl
         wl-clipboard
+        wlsunset
+        wl-mirror
+
         xwayland
         xwayland-satellite
 
