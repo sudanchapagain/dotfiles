@@ -193,6 +193,20 @@
         gnomeExtensions.nepali-calendar
         gnomeExtensions.runcat
 
+        (pkgs.stdenv.mkDerivation {
+            pname = "bikramsambat";
+            version = "1.1.1";
+            src = fetchGit {
+                url = "https://github.com/sudanchapagain/bikramsambat";
+                rev = "0ee00f3d8bc1cca0c01f12b6945ed9b1ec706de8";
+            };
+            nativeBuildInputs = [
+                pkgs.meson
+                pkgs.ninja
+                pkgs.pkg-config
+            ];
+        })
+
         (pkgs.rustPlatform.buildRustPackage rec {
             pname = "dotf";
             version = "2.0.0";
