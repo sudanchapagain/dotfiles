@@ -11,13 +11,13 @@ scope = "source.yaml"
 file-types = ["yml", "yaml"]
 roots = []
 comment-token = "#"
-formatter = { command = "prettier", args = ["--parser", "yaml"] }
 indent = { tab-width = 2, unit = "  " }
 injection-regex = "yml|yaml"
 
 [[language]]
 name = "markdown"
 indent = { tab-width = 4, unit = "  " }
+language-servers = ["marksman", "hx-lsp", "harper-ls", "markdown-oxide"]
 file-types = [
   "md",
   "markdown",
@@ -41,42 +41,13 @@ scope = "source.ini"
 file-types = [
   "ini",
   "service",
-  "automount",
-  "device",
-  "mount",
-  "path",
-  "service",
-  "slice",
-  "socket",
-  "swap",
-  "target",
-  "timer",
-  "container",
-  "volume",
-  "kube",
-  "network",
   { glob = ".editorconfig" },
-  { glob = "rclone.conf" },
-  "properties",
   "cfg",
-  "directory",
-  "desktop",
 ]
 
-[[language]]
-name = "mail"
-scope = "source.eml"
-injection-regex = "mail"
-file-types = ["eml"]
-indent = { tab-width = 4, unit = "\t" }
-
-[[grammar]]
-name = "mail"
-source = { git = "https://github.com/dagle/tree-sitter-mail", rev = "a668550628e9a76bcac4864864dd9d60c91be27f" }
-
-[[grammar]]
-name = "http"
-source = { git = "https://github.com/rest-nvim/tree-sitter-http", rev = "e061995f0caf2fa30f68fa1fdf2c08bcbd4629a8" }
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
 
 [language-server.hx-lsp]
 command = "hx-lsp"

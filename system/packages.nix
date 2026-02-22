@@ -95,7 +95,12 @@
         typst
 
         harper
+        hx-lsp
+        yaml-language-server
         marksman
+        markdown-oxide
+        anki
+        anki-sync-server
         tinymist
         tombi
 
