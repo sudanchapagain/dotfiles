@@ -9,42 +9,20 @@
             inter
             libertine
             liberation_ttf
-
-            # cute
             maple-mono.NormalNL-NF-unhinted
-            comic-mono
-            comic-relief
-
-            # additional support
             lohit-fonts.nepali
             noto-fonts
-            noto-fonts-color-emoji
         ];
 
         fontconfig = {
             enable = true;
             defaultFonts = {
-                serif = [ "Noto Serif" ];
                 monospace = [ "MapleMonoNormalNLNF" ];
-                sansSerif = [
-                    "Inter"
-                    "Noto Sans"
-                ];
-                emoji = [ "Noto Color Emoji" ];
+                sansSerif = [ "Inter" ];
             };
         };
     };
 
-    environment.gnome.excludePackages = with pkgs; [
-        epiphany
-        evince
-        geary
-        gnome-tour
-        gnome-maps
-        gnome-music
-        simple-scan
-        totem
-    ];
     programs.niri.enable = true;
 
     # List packages installed in system profile. To search, run:
@@ -54,6 +32,7 @@
         banana-cursor
 
         # apps
+        adwaita-icon-theme
         alacritty
         baobab
         authenticator
@@ -61,20 +40,34 @@
         citations
         curtail
         dconf-editor
+        decibels
         eartag
         errands
         eyedropper
+        file-roller
         foliate
         fragments
         gapless
+        gnome-calculator
+        gnome-calendar
+        gnome-characters
+        gnome-disk-utility
+        gnome-font-viewer
+        gnome-keyring
+        gnome-keysign
         gnome-podcasts
         gnome-secrets
+        gnome-software
+        gnome-text-editor
+        gnome-user-share
         gradia
         helix
         hugo
         keypunch
         libreoffice
+        loupe
         mousai
+        nautilus
         newsflash
         paper-clip
         papers
@@ -84,7 +77,9 @@
         rnote
         shortwave
         showtime
+        snapshot
         solanum
+        sushi
         switcheroo
         tuba
         vscode
@@ -93,37 +88,25 @@
         # language
         nushell
         typst
-
-        harper
-        hx-lsp
-        yaml-language-server
-        marksman
-        markdown-oxide
-        anki
-        anki-sync-server
+        vala
+        harper hx-lsp
+        yaml-language-server tombi
+        marksman markdown-oxide
         tinymist
-        tombi
+        clang clang-tools libgccjit lldb
+        meson mesonlsp ninja
+        pkg-config gnumake
+        cmake cmake-format cmake-language-server cmake-lint
 
-        clang
-        clang-tools
-        libgccjit
-        lldb
+        niv nixd nixfmt
+        djlint python3 ruff zuban uv
 
-        meson
-        mesonlsp
-        pkg-config
-        ninja
-        gnumake
-
-        niv
-        nixd
-        nixfmt
-
-        djlint
-        python3
-        ruff
-        zuban
-        uv
+        raylib
+        # glib glibc dbus dbus-glib gtk3 gtk4 gtk3.dev gtk4.dev gio-sharp
+        # graphene pango libsoup_3 libadwaita gobject-introspection
+        # blueprint-compiler gettext gsettings-desktop-schemas
+        # desktop-file-utils appstream appstream-glib libGL libGLU glew glfw
+        # freeglut itstool
 
         # tools
         carapace
@@ -136,8 +119,7 @@
         eza
         fastfetch
         fd
-        ffmpeg
-        ffmpegthumbnailer
+        ffmpeg ffmpegthumbnailer
         file
         fzf
         ghostscript
@@ -192,11 +174,6 @@
 
         xwayland
         xwayland-satellite
-
-        gnomeExtensions.caffeine
-        gnomeExtensions.clipboard-indicator
-        gnomeExtensions.nepali-calendar
-        gnomeExtensions.runcat
 
         (pkgs.stdenv.mkDerivation {
             pname = "bikramsambat";

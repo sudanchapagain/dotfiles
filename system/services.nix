@@ -1,16 +1,19 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-    programs.kdeconnect = {
-        enable = true;
-        package = pkgs.valent;
-    };
-
     services = {
-        desktopManager.gnome.enable = true;
-        displayManager.gdm = {
+        logind = {
+            settings = {
+                Login = {
+                    HandleLidSwitchDocked = "suspend";
+                    HandleLidSwitchExternalPower = "suspend";
+                    HandleLidSwitch = "suspend";
+                };
+            };
+        };
+
+        displayManager.ly = {
             enable = true;
-            wayland = true;
         };
 
         flatpak.enable = true;

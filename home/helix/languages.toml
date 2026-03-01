@@ -1,35 +1,27 @@
 [[language]]
+name = "markdown"
+indent = { tab-width = 4, unit = "  " }
+language-servers = [ "marksman", "hx-lsp", "harper-ls", "markdown-oxide" ]
+file-types = [ "md", "markdown", "mdx" ]
+
+[[language]]
+name = "typst"
+language-servers = [ "tinymist", "hx-lsp" ]
+formatter = { command = "typst", args = [ "c" ] }
+soft-wrap = { enable = true, wrap-at-text-width = true }
+
+[[language]]
 name = "meson"
 scope = "source.build"
-file-types = ["build"]
+file-types = [ "build" ]
 comment-token = "#"
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "yaml"
 scope = "source.yaml"
-file-types = ["yml", "yaml"]
-roots = []
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-injection-regex = "yml|yaml"
-
-[[language]]
-name = "markdown"
-indent = { tab-width = 4, unit = "  " }
-language-servers = ["marksman", "hx-lsp", "harper-ls", "markdown-oxide"]
-file-types = [
-  "md",
-  "markdown",
-  "mdx",
-]
-
-[[language]]
-name = "typst"
-language-servers = ["tinymist", "hx-lsp"]
-formatter = { command = "typst", args = ["c"] }
-text-width = 80
-soft-wrap = { enable = true, wrap-at-text-width = true }
 
 [[language]]
 name = "git-commit"
@@ -38,20 +30,15 @@ soft-wrap = { enable = true, wrap-at-text-width = true }
 [[language]]
 name = "ini"
 scope = "source.ini"
-file-types = [
-  "ini",
-  "service",
-  { glob = ".editorconfig" },
-  "cfg",
-]
+file-types = [ "ini", "service", "cfg", { glob = ".editorconfig" } ]
 
 [language-server.harper-ls]
 command = "harper-ls"
-args = ["--stdio"]
+args = [ "--stdio" ]
 
 [language-server.hx-lsp]
 command = "hx-lsp"
 
 [language-server.yaml]
 command = "yaml-language-server"
-args = ["--stdio"]
+args = [ "--stdio" ]

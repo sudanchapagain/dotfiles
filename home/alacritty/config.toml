@@ -117,6 +117,7 @@ post_processing = true
 mouse.enabled = true
 binding = { key = "T", mods = "Control|Shift" }
 
+# to copy git hashes
 [[hints.enabled]]
 regex = "[0-9a-f]{12,128}|[a-f0-9]{7,8}"
 action = "Copy"
