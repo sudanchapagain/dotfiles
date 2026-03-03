@@ -48,6 +48,7 @@
         foliate
         fragments
         gapless
+        glib
         gnome-calculator
         gnome-calendar
         gnome-characters
@@ -61,6 +62,7 @@
         gnome-text-editor
         gnome-user-share
         gradia
+        gsettings-desktop-schemas
         helix
         hugo
         keypunch
@@ -144,6 +146,7 @@
         television
         tokei
         tree
+        ungoogled-chromium
         unrar-wrapper
         unzip
         wl-clipboard

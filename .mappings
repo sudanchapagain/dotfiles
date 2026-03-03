@@ -1,5 +1,6 @@
 [general]
 "home/alacritty/config.toml" = "~/.config/alacritty/alacritty.toml"
+"home/fuzzel/fuzzel.ini"     = "~/.config/fuzzel/fuzzel.ini"
 "home/git/config"            = "~/.config/git/config"
 "home/helix/config.toml"     = "~/.config/helix/config.toml"
 "home/helix/languages.toml"  = "~/.config/helix/languages.toml"

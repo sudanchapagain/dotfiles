@@ -11,7 +11,7 @@
 window#waybar {
     background-color: #1d2021;
     color: #d4be98;
-    border-bottom: 1px solid #d4be98;
+    /* border-bottom: 1px solid #d4be98; */
 }
 
 #waybar>* {

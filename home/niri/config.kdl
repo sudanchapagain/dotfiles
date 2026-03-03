@@ -309,7 +309,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 0.2
+    slowdown 0.1
 
     workspace-switch {
         spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
@@ -411,17 +411,6 @@ window-rule {
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
-    opacity 0.98
-}
-
-window-rule {
-    match app-id=r#"^Alacritty"#
-    match app-id=r#"^code$"#
-    match app-id=r#"^jetbrains-studio$"#
-    match app-id=r#"^jetbrains-idea$"#
-
-    draw-border-with-background false
-    opacity 0.9
 }
 
 window-rule {
@@ -603,7 +592,8 @@ binds {
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Alt+F { toggle-windowed-fullscreen; }
-    Mod+Shift+F { fullscreen-window; }
+    f11 { fullscreen-window; }
+    Mod+Shift+F { maximize-window-to-edges; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
