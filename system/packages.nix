@@ -208,6 +208,21 @@
             '';
         })
 
+        (pkgs.stdenv.mkDerivation {
+            pname = "unduck";
+            version = "1.0.0";
+            src = fetchGit {
+                url = "https://github.com/sudanchapagain/unduck";
+                rev = "1f4cd5d3d0e093498e67107534378cd2a4f9f3ff";
+            };
+            buildPhase = "make";
+            installPhase = ''
+                mkdir -p $out/bin
+                cp build/unduck $out/bin/unduck
+                cp build/source.json $out/bin/source.json
+            '';
+        })
+
         (pkgs.rustPlatform.buildRustPackage rec {
             pname = "dotf";
             version = "2.0.0";
