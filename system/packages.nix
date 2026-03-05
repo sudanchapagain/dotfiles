@@ -213,7 +213,7 @@
             version = "1.0.0";
             src = fetchGit {
                 url = "https://github.com/sudanchapagain/unduck";
-                rev = "1f4cd5d3d0e093498e67107534378cd2a4f9f3ff";
+                rev = "cc8d9fc90b19988e67f204818b434a9cda4d165c";
             };
             buildPhase = "make";
             installPhase = ''
