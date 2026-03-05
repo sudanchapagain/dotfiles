@@ -89,12 +89,13 @@
 
         # language
         nushell
-        typst
         vala
         harper hx-lsp
         yaml-language-server tombi
         marksman markdown-oxide
-        tinymist
+        texlab
+        tex-fmt
+        texliveMedium
         clang clang-tools libgccjit lldb
         meson mesonlsp ninja
         pkg-config gnumake
@@ -190,6 +191,21 @@
                 pkgs.ninja
                 pkgs.pkg-config
             ];
+        })
+
+        (pkgs.stdenv.mkDerivation {
+            pname = "chv";
+            version = "1.0.0";
+            src = fetchGit {
+                url = "https://github.com/sudanchapagain/call-history-viewer";
+                rev = "f0b2ff59ead38f8190aacc3ea34491322070b1de";
+            };
+            buildInputs = [ pkgs.tinyxml-2 ];
+            buildPhase = "make";
+            installPhase = ''
+                mkdir -p $out/bin
+                cp build/app $out/bin/chv
+            '';
         })
 
         (pkgs.rustPlatform.buildRustPackage rec {
