@@ -5,12 +5,6 @@ language-servers = [ "marksman", "hx-lsp", "harper-ls", "markdown-oxide" ]
 file-types = [ "md", "markdown", "mdx" ]
 
 [[language]]
-name = "typst"
-language-servers = [ "tinymist", "hx-lsp" ]
-formatter = { command = "typst", args = [ "c" ] }
-soft-wrap = { enable = true, wrap-at-text-width = true }
-
-[[language]]
 name = "meson"
 scope = "source.build"
 file-types = [ "build" ]
@@ -31,6 +25,27 @@ soft-wrap = { enable = true, wrap-at-text-width = true }
 name = "ini"
 scope = "source.ini"
 file-types = [ "ini", "service", "cfg", { glob = ".editorconfig" } ]
+
+[language-server.texlab.config.texlab.chktex]
+onOpenAndSave = true
+onEdit = true
+
+[language-server.texlab.config.texlab.build]
+auxDirectory = "build"
+logDirectory = "build"
+pdfDirectory = "build"
+
+forwardSearchAfter = true
+onSave = true
+
+executable = "latexmk"
+args = [
+  "-pdf",
+  "-interaction=nonstopmode",
+  "-synctex=1",
+  "-output-directory=build",
+  "%f",
+]
 
 [language-server.harper-ls]
 command = "harper-ls"
