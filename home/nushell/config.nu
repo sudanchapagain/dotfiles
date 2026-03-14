@@ -8,7 +8,6 @@ $env.PATH ++= [
   "/bin"
 ]
 
-$env.JAVA_HOME = "/home/crimson/.jdks/openjdk-25"
 $env.EDITOR = "hx"
 
 # ===========================================================================

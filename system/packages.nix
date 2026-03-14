@@ -144,7 +144,7 @@
         simple-http-server
         sqlite
         stress
-        television
+        television bat # i hate bat but need for TV to work.
         tokei
         tree
         ungoogled-chromium

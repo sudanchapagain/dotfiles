@@ -115,9 +115,9 @@ smart-case = true
 "esc" = ["collapse_selection", "keep_primary_selection"]
 
 "C-a" = [
-  ':sh $nu.temp-path | path join yazi-path | rm -f $in',
-  ':insert-output yazi --chooser-file %sh{ $nu.temp-path | path join yazi-path }',
-  ':open %sh{ $nu.temp-path | path join yazi-path | cat $in }',
+  ':sh $nu.temp-dir | path join yazi-path | rm -f $in',
+  ':insert-output yazi --chooser-file %sh{ $nu.temp-dir | path join yazi-path }',
+  ':open %sh{ $nu.temp-dir | path join yazi-path | cat $in }',
   ':redraw'
 ]
 
