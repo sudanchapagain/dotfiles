@@ -98,11 +98,24 @@
         texliveMedium
         clang clang-tools libgccjit lldb
         meson mesonlsp ninja
-        pkg-config gnumake
+        pkg-config pkgconf gnumake
         cmake cmake-format cmake-language-server cmake-lint
 
         niv nixd nixfmt
         djlint python3 ruff zuban uv
+
+        erofs-utils
+        autoconf
+        automake
+        libtool
+        fuse.dev
+        libuuid.dev
+        lz4.dev
+        xz.dev
+        zlib.dev
+        zstd.dev
+        gnum4
+        util-linux
 
         raylib
         # glib glibc dbus dbus-glib gtk3 gtk4 gtk3.dev gtk4.dev gio-sharp
@@ -213,7 +226,7 @@
             version = "1.0.0";
             src = fetchGit {
                 url = "https://github.com/sudanchapagain/unduck";
-                rev = "cc8d9fc90b19988e67f204818b434a9cda4d165c";
+                rev = "a084fe629f0b295eb3d43168b0b49ffc2ed02b3f";
             };
             buildPhase = "make";
             installPhase = ''
