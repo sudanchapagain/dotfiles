@@ -422,11 +422,12 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Super+Shift+S hotkey-overlay-title="Toggle Dark/Light Style" {
     spawn "bash" "-c" r#"
-        current=$(gsettings get org.gnome.desktop.interface color-scheme)
+        current=$(dconf read /org/gnome/desktop/interface/color-scheme)
         if [ "$current" = "'prefer-dark'" ]; then
+            dconf write /org/gnome/desktop/interface/color-scheme '"prefer-light"'
             gsettings set org.gnome.desktop.interface color-scheme default
         else
-            gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+            dconf write /org/gnome/desktop/interface/color-scheme '"prefer-dark"'
         fi
         "#
     }

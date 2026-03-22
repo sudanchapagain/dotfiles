@@ -89,40 +89,18 @@
 
         # language
         nushell
-        vala
         harper hx-lsp
         yaml-language-server tombi
         marksman markdown-oxide
-        texlab
-        tex-fmt
-        texliveMedium
+        texlab tex-fmt texliveMedium
         clang clang-tools libgccjit lldb
         meson mesonlsp ninja
         pkg-config pkgconf gnumake
         cmake cmake-format cmake-language-server cmake-lint
-
         niv nixd nixfmt
-        djlint python3 ruff zuban uv
-
-        erofs-utils
-        autoconf
-        automake
-        libtool
-        fuse.dev
-        libuuid.dev
-        lz4.dev
-        xz.dev
-        zlib.dev
-        zstd.dev
-        gnum4
-        util-linux
-
+        djlint python3 ruff uv
+        jdk25 gradle jdt-language-server
         raylib
-        # glib glibc dbus dbus-glib gtk3 gtk4 gtk3.dev gtk4.dev gio-sharp
-        # graphene pango libsoup_3 libadwaita gobject-introspection
-        # blueprint-compiler gettext gsettings-desktop-schemas
-        # desktop-file-utils appstream appstream-glib libGL libGLU glew glfw
-        # freeglut itstool
 
         # tools
         carapace
@@ -160,7 +138,6 @@
         television bat # i hate bat but need for TV to work.
         tokei
         tree
-        ungoogled-chromium
         unrar-wrapper
         unzip
         wl-clipboard
