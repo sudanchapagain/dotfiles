@@ -12,6 +12,11 @@ comment-token = "#"
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
+name = "java"
+formatter = { command = "google-java-format", args = ["--aosp", "--skip-reflowing-long-strings", "-"] }
+# auto-format = true
+
+[[language]]
 name = "yaml"
 scope = "source.yaml"
 comment-token = "#"

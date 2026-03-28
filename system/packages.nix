@@ -92,15 +92,20 @@
         harper hx-lsp
         yaml-language-server tombi
         marksman markdown-oxide
-        texlab tex-fmt texliveMedium
+        texlab tex-fmt texliveMedium bibtex-tidy
         clang clang-tools libgccjit lldb
         meson mesonlsp ninja
         pkg-config pkgconf gnumake
         cmake cmake-format cmake-language-server cmake-lint
         niv nixd nixfmt
         djlint python3 ruff uv
-        jdk25 gradle jdt-language-server
+        jdk25 gradle jdt-language-server graalvmPackages.graalvm-ce maven google-java-format
         raylib
+
+        gst_all_1.gst-devtools gst_all_1.gst-editing-services gst_all_1.gst-libav
+        gst_all_1.gst-plugins-bad gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly
+        gst_all_1.gstreamer gst_all_1.gstreamermm gst_all_1.gst-vaapi
 
         # tools
         carapace
@@ -203,7 +208,7 @@
             version = "1.0.0";
             src = fetchGit {
                 url = "https://github.com/sudanchapagain/unduck";
-                rev = "a084fe629f0b295eb3d43168b0b49ffc2ed02b3f";
+                rev = "9f2664b557f60179c92925fd56effca9a5e837ec";
             };
             buildPhase = "make";
             installPhase = ''
