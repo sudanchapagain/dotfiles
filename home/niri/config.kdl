@@ -100,6 +100,7 @@ overview {
     workspace-shadow {
         off
     }
+    zoom 0.12
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -440,6 +441,8 @@ binds {
     Mod+Z { spawn "swaync-client" "--toggle-panel"; }
     Alt+Shift+V { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     Mod+D { spawn "sh" "-c" "fuzzel --dmenu | xargs -I{} unduck -o \"{}\""; }
+
+    Mod+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
 
     XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%" ; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-" ; }

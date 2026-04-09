@@ -80,7 +80,7 @@
         shortwave
         showtime
         snapshot
-        solanum
+        gnome-solanum
         sushi
         switcheroo
         tuba
@@ -98,9 +98,12 @@
         pkg-config pkgconf gnumake
         cmake cmake-format cmake-language-server cmake-lint
         niv nixd nixfmt
-        djlint python3 ruff uv
-        jdk25 gradle jdt-language-server graalvmPackages.graalvm-ce maven google-java-format
-        raylib
+        jq libx11 glib python3 nss zlib
+        flatpak-xdg-utils flatpak-builder
+
+        jdk11 jdk17 jdk25
+        jdt-language-server google-java-format
+        gradle maven
 
         gst_all_1.gst-devtools gst_all_1.gst-editing-services gst_all_1.gst-libav
         gst_all_1.gst-plugins-bad gst_all_1.gst-plugins-base
