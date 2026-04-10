@@ -98,8 +98,7 @@
         pkg-config pkgconf gnumake
         cmake cmake-format cmake-language-server cmake-lint
         niv nixd nixfmt
-        jq libx11 glib python3 nss zlib
-        flatpak-xdg-utils flatpak-builder
+        jq flatpak-xdg-utils flatpak-builder
 
         jdk11 jdk17 jdk25
         jdt-language-server google-java-format
@@ -178,20 +177,6 @@
         xwayland-satellite
 
         (pkgs.stdenv.mkDerivation {
-            pname = "bikramsambat";
-            version = "1.1.1";
-            src = fetchGit {
-                url = "https://github.com/sudanchapagain/bikramsambat";
-                rev = "0ee00f3d8bc1cca0c01f12b6945ed9b1ec706de8";
-            };
-            nativeBuildInputs = [
-                pkgs.meson
-                pkgs.ninja
-                pkgs.pkg-config
-            ];
-        })
-
-        (pkgs.stdenv.mkDerivation {
             pname = "chv";
             version = "1.0.0";
             src = fetchGit {
@@ -221,15 +206,38 @@
             '';
         })
 
-        (pkgs.rustPlatform.buildRustPackage rec {
+        (pkgs.stdenv.mkDerivation {
+            pname = "bikramsambat";
+            version = "1.1.1";
+            src = fetchGit {
+                url = "https://github.com/sudanchapagain/bikramsambat";
+                rev = "0ee00f3d8bc1cca0c01f12b6945ed9b1ec706de8";
+            };
+            nativeBuildInputs = [
+                pkgs.meson
+                pkgs.ninja
+                pkgs.pkg-config
+            ];
+        })
+
+        (pkgs.stdenv.mkDerivation {
             pname = "dotf";
-            version = "2.0.0";
-            cargoLock.lockFile = "${src}/Cargo.lock";
+            version = "3.0.0";
             src = fetchGit {
                 url = "https://github.com/sudanchapagain/dotf";
-                rev = "f19f065452c76f1799d3b9caf55a341213239ed0";
+                rev = "8c8007ab094f11ad5912ae70f2906ce8f75aa30e";
             };
-            doCheck = false;
+            buildInputs = [
+                pkgs.fmt
+                pkgs.argparse
+                pkgs.tomlplusplus
+            ];
+            nativeBuildInputs = [
+                pkgs.meson
+                pkgs.ninja
+                pkgs.pkg-config
+                pkgs.cmake
+            ];
         })
     ];
 }
