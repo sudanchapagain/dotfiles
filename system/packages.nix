@@ -90,19 +90,25 @@
         # language
         nushell
         harper hx-lsp
-        yaml-language-server tombi
+        niv nixd nixfmt
+
         marksman markdown-oxide
+        yaml-language-server tombi
+        jq flatpak-xdg-utils flatpak-builder
         texlab tex-fmt texliveMedium bibtex-tidy
-        clang clang-tools libgccjit lldb
+
+        bazel_9 bazel-buildtools
         meson mesonlsp ninja
         pkg-config pkgconf gnumake
+        clang clang-tools libgccjit lldb
         cmake cmake-format cmake-language-server cmake-lint
-        niv nixd nixfmt
-        jq flatpak-xdg-utils flatpak-builder
 
+        python3 zed-editor
+
+        gradle maven
         jdk11 jdk17 jdk25
         jdt-language-server google-java-format
-        gradle maven
+        kotlin kotlin-native kotlin-language-server kotlin-interactive-shell
 
         gst_all_1.gst-devtools gst_all_1.gst-editing-services gst_all_1.gst-libav
         gst_all_1.gst-plugins-bad gst_all_1.gst-plugins-base
@@ -181,14 +187,14 @@
             version = "1.0.0";
             src = fetchGit {
                 url = "https://github.com/sudanchapagain/call-history-viewer";
-                rev = "f0b2ff59ead38f8190aacc3ea34491322070b1de";
+                rev = "7809f55e0d4ac4296191046674a1e7e065466a34";
             };
             buildInputs = [ pkgs.tinyxml-2 ];
-            buildPhase = "make";
-            installPhase = ''
-                mkdir -p $out/bin
-                cp build/app $out/bin/chv
-            '';
+            nativeBuildInputs = [
+                pkgs.meson
+                pkgs.ninja
+                pkgs.pkg-config
+            ];
         })
 
         (pkgs.stdenv.mkDerivation {
@@ -196,14 +202,13 @@
             version = "1.0.0";
             src = fetchGit {
                 url = "https://github.com/sudanchapagain/unduck";
-                rev = "9f2664b557f60179c92925fd56effca9a5e837ec";
+                rev = "46dd5b7d1bd074b594e0bb83ef0de94e486bb8c6";
             };
-            buildPhase = "make";
-            installPhase = ''
-                mkdir -p $out/bin
-                cp build/unduck $out/bin/unduck
-                cp build/source.json $out/bin/source.json
-            '';
+            nativeBuildInputs = [
+                pkgs.meson
+                pkgs.ninja
+                pkgs.pkg-config
+            ];
         })
 
         (pkgs.stdenv.mkDerivation {
@@ -236,7 +241,6 @@
                 pkgs.meson
                 pkgs.ninja
                 pkgs.pkg-config
-                pkgs.cmake
             ];
         })
     ];

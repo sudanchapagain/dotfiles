@@ -1,3 +1,7 @@
+[[grammar]]
+name = "kotlin"
+source = { git = "https://github.com/fwcd/tree-sitter-kotlin", rev = "a4f71eb9b8c9b19ded3e0e9470be4b1b77c2b569" }
+
 [[language]]
 name = "markdown"
 indent = { tab-width = 4, unit = "  " }
@@ -15,6 +19,16 @@ indent = { tab-width = 4, unit = "    " }
 name = "java"
 formatter = { command = "google-java-format", args = ["--aosp", "--skip-reflowing-long-strings", "-"] }
 # auto-format = true
+
+[[language]]
+name = "kotlin"
+scope = "source.kotlin"
+file-types = ["kt", "kts"]
+roots = ["settings.gradle", "settings.gradle.kts"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "kotlin-language-server" ]
 
 [[language]]
 name = "yaml"
@@ -62,3 +76,6 @@ command = "hx-lsp"
 [language-server.yaml]
 command = "yaml-language-server"
 args = [ "--stdio" ]
+
+[language-server.kotlin-language-server]
+command = "kotlin-language-server"
