@@ -99,8 +99,9 @@
 
         bazel_9 bazel-buildtools
         meson mesonlsp ninja
-        pkg-config pkgconf gnumake
-        clang clang-tools libgccjit lldb
+        pkg-config pkgconf gnumake just just-formatter just-lsp
+        clang clang-tools libgccjit lldb libcxx libgcc
+        pre-commit devenv
         cmake cmake-format cmake-language-server cmake-lint
 
         python3 zed-editor

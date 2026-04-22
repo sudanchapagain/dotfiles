@@ -108,7 +108,7 @@ overview {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 8
 
     // Set transparent workspace background color.
     background-color "transparent"
