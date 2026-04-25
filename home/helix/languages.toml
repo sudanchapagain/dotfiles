@@ -28,7 +28,6 @@ roots = ["settings.gradle", "settings.gradle.kts"]
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
 indent = { tab-width = 4, unit = "    " }
-language-servers = [ "kotlin-language-server" ]
 
 [[language]]
 name = "yaml"
@@ -76,6 +75,3 @@ command = "hx-lsp"
 [language-server.yaml]
 command = "yaml-language-server"
 args = [ "--stdio" ]
-
-[language-server.kotlin-language-server]
-command = "kotlin-language-server"

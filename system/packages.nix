@@ -87,6 +87,8 @@
         vscode
         warp
 
+        jetbrains-toolbox
+
         # language
         nushell
         harper hx-lsp
@@ -109,7 +111,7 @@
         gradle maven
         jdk11 jdk17 jdk25
         jdt-language-server google-java-format
-        kotlin kotlin-native kotlin-language-server kotlin-interactive-shell
+        kotlin kotlin-native
 
         gst_all_1.gst-devtools gst_all_1.gst-editing-services gst_all_1.gst-libav
         gst_all_1.gst-plugins-bad gst_all_1.gst-plugins-base
@@ -165,6 +167,7 @@
         refind
 
         # desktop
+        chayang
         cliphist
         niri
         waybar

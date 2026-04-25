@@ -12,9 +12,14 @@
             };
         };
 
-        displayManager.ly = {
-            enable = true;
-        };
+        displayManager.gdm.enable = true;
+        desktopManager.gnome.enable = true;
+        # To disable installing GNOME's suite of applications
+        # and only be left with GNOME shell.
+        gnome.core-apps.enable = true;
+        gnome.core-developer-tools.enable = true;
+        gnome.games.enable = false;
+
 
         flatpak.enable = true;
 
