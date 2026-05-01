@@ -12,6 +12,9 @@
             maple-mono.NormalNL-NF-unhinted
             lohit-fonts.nepali
             noto-fonts
+            noto-fonts-color-emoji
+            noto-fonts-cjk-sans
+            noto-fonts-cjk-serif
         ];
 
         fontconfig = {
@@ -24,74 +27,55 @@
     };
 
     programs.niri.enable = true;
+    programs.nix-ld.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        # core GUI apps, compat stuff, and useful GUI applications
         banana-cursor adwaita-icon-theme
-        alacritty
-        authenticator
-        censor
-        citations
-        eyedropper
-        foliate
-        fragments
-        gradia
-        gnome-calculator
-        gnome-calendar
-        gnome-characters
-        gnome-font-viewer
-        gnome-text-editor
-        gnome-software
-        inkscape
-        krita
-        libreoffice
-        nautilus
-        newsflash
-        paper-clip
-        papers
-        pdfarranger
-        planify
-        rnote
-        showtime
-        # tuba
-        warp
 
-        baobab file-roller gnome-disk-utility gsettings-desktop-schemas gnome-user-share # utils
-        gnome-keysign gnome-secrets # keys
+        alacritty authenticator fragments newsflash rnote warp # tuba
+
+        # docs
+        graphviz ghostscript 
+        citations foliate libreoffice
+        pandoc censor paper-clip papers pdfarranger
+        typst texlab tex-fmt texliveMedium bibtex-tidy
+
         dconf-editor refine # config
+        helix vscode zed-editor # editor
+        snapshot loupe switcheroo curtail gradia eyedropper # image
+        eartag blanket gapless gnome-podcasts mousai plattenalbum shortwave # audio
 
-        snapshot loupe switcheroo curtail # image
-        eartag blanket decibels gapless gnome-podcasts mousai plattenalbum shortwave # audio
-        helix android-studio-full android-studio-tools vscode zed-editor # editor
-        vscode zed-editor
+        gnome-keysign gnome-secrets # keys
+        gnome-calculator gnome-calendar # core good apps
+        gnome-font-viewer gnome-text-editor gnome-software # iffy but fine
+        nautilus gnome-characters gnome-control-center # necessary evils...
+        baobab file-roller gnome-disk-utility gsettings-desktop-schemas gnome-user-share # utils
 
         # random tools and stuff
         delta git
-        carapace carapace-bridge zoxide zellij # make cli good
-        dig monolith simple-http-server # networking
-        dua fd fzf ripgrep ripgrep-all grex # to work with files in cli
-        binsider btop television bat tokei fastfetch
-        hugo yazi pandoc # yt-dlp
-        ffmpeg ffmpegthumbnailer
         killall killport
+        hugo yazi # yt-dlp
+        ffmpeg ffmpegthumbnailer
         hyperfine stress # benchmark
-        eza tree file graphviz ghostscript unrar-wrapper unzip ouch p7zip # compat stuff and other
+        dig monolith simple-http-server # networking
+        binsider btop television bat tokei fastfetch
+        carapace carapace-bridge zoxide zellij # make cli good
+        dua fd fzf ripgrep ripgrep-all grex # to work with files in cli
+        eza tree file unrar-wrapper unzip ouch p7zip # compat stuff and other
 
         # language
         nushell python3
-        jq pre-commit harper hx-lsp marksman markdown-oxide
         yaml-language-server tombi
         devenv niv nixd nixfmt nh # nix
-
-        texlab tex-fmt texliveMedium bibtex-tidy
+        jq pre-commit harper hx-lsp marksman markdown-oxide
 
         # c/c++
         meson mesonlsp ninja
-        clang clang-tools libgccjit lldb libcxx libgcc
         pkg-config pkgconf gnumake cmake
         cmake-format cmake-language-server cmake-lint
+        clang clang-tools libgccjit lldb libcxx libgcc
 
         # jvm
         gradle maven jdk11 jdk17 jdk25
@@ -99,26 +83,17 @@
 
         # apparently i dont have these.
         gst_all_1.gst-devtools gst_all_1.gst-editing-services gst_all_1.gst-libav
-        gst_all_1.gst-plugins-bad gst_all_1.gst-plugins-base
-        gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly
-        gst_all_1.gstreamer gst_all_1.gstreamermm gst_all_1.gst-vaapi
-
-        # os
-        efibootmgr
-        refind
+        gst_all_1.gst-plugins-bad gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good
+        gst_all_1.gst-plugins-ugly gst_all_1.gstreamer gst_all_1.gstreamermm gst_all_1.gst-vaapi
 
         # desktop
         chayang
-        niri waybar fuzzel
-        swaybg swaylock swayidle
-        swaynotificationcenter libnotify
-        playerctl brightnessctl
-        cliphist wl-clipboard
-        wlsunset wl-mirror
+        niri waybar fuzzel swaybg swaylock swayidle
+        swaynotificationcenter libnotify playerctl brightnessctl
+        cliphist wl-clipboard wlsunset wl-mirror
 
-        # compat
-        xwayland
-        xwayland-satellite
+        efibootmgr refind # os
+        libXext libX11 libXrender libXtst xwayland xwayland-satellite # compat
 
         # personal
         (pkgs.stdenv.mkDerivation {
@@ -129,11 +104,7 @@
                 rev = "7809f55e0d4ac4296191046674a1e7e065466a34";
             };
             buildInputs = [ pkgs.tinyxml-2 ];
-            nativeBuildInputs = [
-                pkgs.meson
-                pkgs.ninja
-                pkgs.pkg-config
-            ];
+            nativeBuildInputs = [ pkgs.meson pkgs.ninja pkgs.pkg-config ];
         })
 
         (pkgs.stdenv.mkDerivation {
@@ -143,11 +114,7 @@
                 url = "https://github.com/sudanchapagain/unduck";
                 rev = "46dd5b7d1bd074b594e0bb83ef0de94e486bb8c6";
             };
-            nativeBuildInputs = [
-                pkgs.meson
-                pkgs.ninja
-                pkgs.pkg-config
-            ];
+            nativeBuildInputs = [ pkgs.meson pkgs.ninja pkgs.pkg-config ];
         })
 
         (pkgs.stdenv.mkDerivation {
@@ -157,11 +124,7 @@
                 url = "https://github.com/sudanchapagain/bikramsambat";
                 rev = "0ee00f3d8bc1cca0c01f12b6945ed9b1ec706de8";
             };
-            nativeBuildInputs = [
-                pkgs.meson
-                pkgs.ninja
-                pkgs.pkg-config
-            ];
+            nativeBuildInputs = [ pkgs.meson pkgs.ninja pkgs.pkg-config ];
         })
 
         (pkgs.stdenv.mkDerivation {
@@ -171,16 +134,8 @@
                 url = "https://github.com/sudanchapagain/dotf";
                 rev = "8c8007ab094f11ad5912ae70f2906ce8f75aa30e";
             };
-            buildInputs = [
-                pkgs.fmt
-                pkgs.argparse
-                pkgs.tomlplusplus
-            ];
-            nativeBuildInputs = [
-                pkgs.meson
-                pkgs.ninja
-                pkgs.pkg-config
-            ];
+            buildInputs = [ pkgs.fmt pkgs.argparse pkgs.tomlplusplus ];
+            nativeBuildInputs = [ pkgs.meson pkgs.ninja pkgs.pkg-config ];
         })
     ];
 }

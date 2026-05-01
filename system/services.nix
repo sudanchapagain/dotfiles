@@ -77,7 +77,10 @@
             enable = true;
             settings = {
                 Resolve = {
-                    dnsovertls = [ "9.9.9.9" "149.112.112.112" ];
+                    dnsovertls = [
+                        "9.9.9.9"
+                        "149.112.112.112"
+                    ];
                     fallbackDns = [ "1.1.1.1" ];
                 };
             };
@@ -93,15 +96,6 @@
                 };
             };
         };
-
-        displayManager.gdm.enable = true;
-        desktopManager.gnome.enable = true;
-        # To disable installing GNOME's suite of applications
-        # and only be left with GNOME shell.
-        gnome.core-apps.enable = true;
-        gnome.core-developer-tools.enable = true;
-        gnome.games.enable = false;
-
         flatpak.enable = true;
 
         pulseaudio.enable = false;
@@ -113,8 +107,6 @@
         };
         dbus.enable = true;
         gvfs.enable = true;
-        gnome.gnome-keyring.enable = true;
-        gnome.sushi.enable = true;
         devmon.enable = true; # monitors for new storage devices
         udisks2.enable = true; # allows apps like Nautilus to query and manipulate storage devices
         blueman.enable = true; # GUI Bluetooth manager
@@ -163,5 +155,44 @@
                 auto_update_depth = "10";
             };
         };
+
+        displayManager.gdm.enable = true;
+        desktopManager.gnome.enable = true;
+        # To disable installing GNOME's suite of applications
+        # and only be left with GNOME shell.
+        gnome = {
+            core-apps.enable = true;
+            core-developer-tools.enable = false;
+            games.enable = false;
+
+            gnome-browser-connector.enable = false;
+            gnome-initial-setup.enable = false;
+            # gnome-online-accounts.enable = false;
+            gnome-remote-desktop.enable = false;
+
+            gnome-keyring.enable = true;
+            sushi.enable = true;
+        };
     };
+
+    environment.gnome.excludePackages = with pkgs; [
+        gnome-tour
+        gnome-logs
+        gnome-weather
+        gnome-maps
+        gnome-contacts
+        gnome-user-docs
+        gnome-music
+        decibels
+        epiphany
+        simple-scan
+        yelp
+        geary
+        orca
+        gnome-shell-extensions
+        gnome-themes-extra
+        gnome-system-monitor
+        gnome-connections
+        gnome-console
+    ];
 }
