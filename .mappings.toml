@@ -2,8 +2,11 @@
 "home/alacritty/config.toml" = "~/.config/alacritty/alacritty.toml"
 "home/fuzzel/fuzzel.ini"     = "~/.config/fuzzel/fuzzel.ini"
 "home/git/config"            = "~/.config/git/config"
+# global ignore file
+"home/git/.gitignore"        = "~/.gitignore"
 "home/helix/config.toml"     = "~/.config/helix/config.toml"
 "home/helix/languages.toml"  = "~/.config/helix/languages.toml"
+"home/lldb/.lldbinit"        = "~/.lldbinit"
 "home/niri/config.kdl"       = "~/.config/niri/config.kdl"
 "home/nushell/alias.nu"      = "~/.config/nushell/alias.nu"
 "home/nushell/config.nu"     = "~/.config/nushell/config.nu"

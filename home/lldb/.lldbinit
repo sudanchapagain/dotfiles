@@ -1,0 +1,9 @@
+# break point at main
+breakpoint set --name main
+
+settings set target.x86-disassembly-flavor intel
+
+# show assembly by default
+# target stop-hook add -o "disassemble --pc --count 10"
+# target stop-hook add -o "disassemble --pk --count 7"
+target stop-hook add -o "disassemble"

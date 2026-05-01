@@ -28,139 +28,80 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        # cursor
-        banana-cursor
-
-        # apps
-        adwaita-icon-theme
+        # core GUI apps, compat stuff, and useful GUI applications
+        banana-cursor adwaita-icon-theme
         alacritty
-        baobab
         authenticator
-        blanket
+        censor
         citations
-        curtail
-        dconf-editor
-        decibels
-        eartag
-        errands
         eyedropper
-        file-roller
         foliate
         fragments
-        gapless
-        glib
+        gradia
         gnome-calculator
         gnome-calendar
         gnome-characters
-        gnome-disk-utility
         gnome-font-viewer
-        gnome-keyring
-        gnome-keysign
-        gnome-podcasts
-        gnome-secrets
-        gnome-software
         gnome-text-editor
-        gnome-user-share
-        gradia
-        gsettings-desktop-schemas
-        helix
-        hugo
-        keypunch
+        gnome-software
+        inkscape
+        krita
         libreoffice
-        loupe
-        mousai
         nautilus
         newsflash
         paper-clip
         papers
         pdfarranger
-        plattenalbum
-        refine
+        planify
         rnote
-        shortwave
         showtime
-        snapshot
-        gnome-solanum
-        sushi
-        switcheroo
-        tuba
-        vscode
+        # tuba
         warp
 
-        jetbrains-toolbox
+        baobab file-roller gnome-disk-utility gsettings-desktop-schemas gnome-user-share # utils
+        gnome-keysign gnome-secrets # keys
+        dconf-editor refine # config
+
+        snapshot loupe switcheroo curtail # image
+        eartag blanket decibels gapless gnome-podcasts mousai plattenalbum shortwave # audio
+        helix android-studio-full android-studio-tools vscode zed-editor # editor
+        vscode zed-editor
+
+        # random tools and stuff
+        delta git
+        carapace carapace-bridge zoxide zellij # make cli good
+        dig monolith simple-http-server # networking
+        dua fd fzf ripgrep ripgrep-all grex # to work with files in cli
+        binsider btop television bat tokei fastfetch
+        hugo yazi pandoc # yt-dlp
+        ffmpeg ffmpegthumbnailer
+        killall killport
+        hyperfine stress # benchmark
+        eza tree file graphviz ghostscript unrar-wrapper unzip ouch p7zip # compat stuff and other
 
         # language
-        nushell
-        harper hx-lsp
-        niv nixd nixfmt
-
-        marksman markdown-oxide
+        nushell python3
+        jq pre-commit harper hx-lsp marksman markdown-oxide
         yaml-language-server tombi
-        jq flatpak-xdg-utils flatpak-builder
+        devenv niv nixd nixfmt nh # nix
+
         texlab tex-fmt texliveMedium bibtex-tidy
 
-        bazel_9 bazel-buildtools
+        # c/c++
         meson mesonlsp ninja
-        pkg-config pkgconf gnumake just just-formatter just-lsp
         clang clang-tools libgccjit lldb libcxx libgcc
-        pre-commit devenv
-        cmake cmake-format cmake-language-server cmake-lint
+        pkg-config pkgconf gnumake cmake
+        cmake-format cmake-language-server cmake-lint
 
-        python3 zed-editor
-
-        gradle maven
-        jdk11 jdk17 jdk25
+        # jvm
+        gradle maven jdk11 jdk17 jdk25
         jdt-language-server google-java-format
-        kotlin kotlin-native
 
+        # apparently i dont have these.
         gst_all_1.gst-devtools gst_all_1.gst-editing-services gst_all_1.gst-libav
         gst_all_1.gst-plugins-bad gst_all_1.gst-plugins-base
         gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly
         gst_all_1.gstreamer gst_all_1.gstreamermm gst_all_1.gst-vaapi
-
-        # tools
-        carapace
-        carapace-bridge
-        binsider
-        btop
-        delta
-        dig
-        dua
-        eza
-        fastfetch
-        fd
-        ffmpeg ffmpegthumbnailer
-        file
-        fzf
-        ghostscript
-        git
-        graphviz
-        grex
-        hyperfine
-        killall
-        killport
-        monolith
-        mpd
-        mysql84
-        postgresql
-        nh
-        ouch
-        p7zip
-        pandoc
-        ripgrep
-        simple-http-server
-        sqlite
-        stress
-        television bat # i hate bat but need for TV to work.
-        tokei
-        tree
-        unrar-wrapper
-        unzip
-        wl-clipboard
-        yazi
-        yt-dlp
-        zellij
-        zoxide
 
         # os
         efibootmgr
@@ -168,24 +109,18 @@
 
         # desktop
         chayang
-        cliphist
-        niri
-        waybar
-        swaybg
-        swaylock
-        swayidle
-        swaynotificationcenter
-        libnotify
-        fuzzel
-        playerctl
-        brightnessctl
-        wl-clipboard
-        wlsunset
-        wl-mirror
+        niri waybar fuzzel
+        swaybg swaylock swayidle
+        swaynotificationcenter libnotify
+        playerctl brightnessctl
+        cliphist wl-clipboard
+        wlsunset wl-mirror
 
+        # compat
         xwayland
         xwayland-satellite
 
+        # personal
         (pkgs.stdenv.mkDerivation {
             pname = "chv";
             version = "1.0.0";

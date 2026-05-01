@@ -1,10 +1,92 @@
 { pkgs, ... }:
 
 {
+    security = {
+        rtkit.enable = true;
+        polkit.enable = true;
+    };
+
+    zramSwap = {
+        enable = true;
+        memoryPercent = 100;
+        priority = 100;
+        algorithm = "lz4";
+    };
+
+    hardware = {
+        bluetooth = {
+            enable = true;
+            powerOnBoot = false;
+        };
+
+        # Hardware acceleration.
+        graphics = {
+            enable = true;
+            extraPackages = with pkgs; [
+                intel-media-driver
+                libvdpau-va-gl
+            ];
+        };
+        enableAllFirmware = true;
+        enableRedistributableFirmware = true;
+    };
+
+    systemd = {
+        user = {
+            #startServices = "sd-switch";
+            services.polkit-gnome-authentication-agent-1 = {
+                description = "polkit-gnome-authentication-agent-1";
+                wantedBy = [ "graphical-session.target" ];
+                wants = [ "graphical-session.target" ];
+                after = [ "graphical-session.target" ];
+                serviceConfig = {
+                    Type = "simple";
+                    ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+                    Restart = "on-failure";
+                    RestartSec = 1;
+                    TimeoutStopSec = 10;
+                };
+            };
+        };
+    };
+
+    powerManagement = {
+        enable = true;
+        cpuFreqGovernor = "balanced";
+    };
+
+    networking = {
+        hostName = "crimson";
+        networkmanager = {
+            enable = true;
+        };
+        # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+        # Configure network proxy if necessary
+        # proxy.default = "http://user:password@proxy:port/";
+        # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+        enableIPv6 = false;
+        firewall = {
+            enable = true;
+            # allowedTCPPorts = [ 59010 59011 ];
+            # allowedUDPPorts = [ 59010 59011 ];
+        };
+    };
+
     services = {
+        resolved = {
+            enable = true;
+            settings = {
+                Resolve = {
+                    dnsovertls = [ "9.9.9.9" "149.112.112.112" ];
+                    fallbackDns = [ "1.1.1.1" ];
+                };
+            };
+        };
+
         logind = {
             settings = {
                 Login = {
+                    HandlePowerKey = "suspend";
                     HandleLidSwitchDocked = "suspend";
                     HandleLidSwitchExternalPower = "suspend";
                     HandleLidSwitch = "suspend";
@@ -20,7 +102,6 @@
         gnome.core-developer-tools.enable = true;
         gnome.games.enable = false;
 
-
         flatpak.enable = true;
 
         pulseaudio.enable = false;
@@ -33,6 +114,7 @@
         dbus.enable = true;
         gvfs.enable = true;
         gnome.gnome-keyring.enable = true;
+        gnome.sushi.enable = true;
         devmon.enable = true; # monitors for new storage devices
         udisks2.enable = true; # allows apps like Nautilus to query and manipulate storage devices
         blueman.enable = true; # GUI Bluetooth manager
@@ -40,9 +122,6 @@
             enable = true;
             interval = "monthly";
         }; # Trim SSD in the background, once every month.
-        logind.settings.Login = {
-            HandlePowerKey = "suspend";
-        };
 
         postgresql = {
             enable = true;
