@@ -93,7 +93,7 @@
         cliphist wl-clipboard wlsunset wl-mirror
 
         efibootmgr refind # os
-        libXext libX11 libXrender libXtst xwayland xwayland-satellite # compat
+        xwayland xwayland-satellite # compat
 
         # personal
         (pkgs.stdenv.mkDerivation {

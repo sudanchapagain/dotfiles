@@ -4,7 +4,7 @@ show-failed-attempts
 indicator-idle-visible
 line-uses-ring
 font=MapleMonoNormalNLNF
-image=/home/crimson/.local/share/backgrounds/field.jpg
+image=/home/crimson/.config/background.png
 indicator-radius=100
 indicator-thickness=15
 
