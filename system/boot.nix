@@ -63,7 +63,7 @@
 
         kernelParams = [
             # disable hibernate. # See: <https://en.wikipedia.org/wiki/Evil_maid_attack>
-            "nohibernate"
+            # "nohibernate" # if physically accessed then its over for my setup anyways. so meh.
 
             # Make stack-based attacks on the kernel harder.
             "randomize_kstack_offset=on"

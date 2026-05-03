@@ -1,4 +1,2 @@
-# grace timeout 3 sec, unlock monitor & lock user & off monitor, 
 timeout 15 'niri msg action power-off-monitors'
-timeout 18 'niri msg action power-on-monitors && swaylock -c ~/.config/swaylock/config && niri msg action power-off-monitors' resume 'niri msg action power-on-monitors'
-timeout 60 'systemctl suspend' before-sleep 'swaylock -C ~/.config/swaylock/config'
+timeout 18 'swaylock -c ~/.config/swaylock/config' resume 'niri msg action power-on-monitors'

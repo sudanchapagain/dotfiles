@@ -89,10 +89,15 @@
         logind = {
             settings = {
                 Login = {
-                    HandlePowerKey = "suspend";
-                    HandleLidSwitchDocked = "suspend";
-                    HandleLidSwitchExternalPower = "suspend";
-                    HandleLidSwitch = "suspend";
+                    extraConfig = "HibernateDelaySec=30min";
+                    HandlePowerKey = "suspend-then-hibernate";
+                    HandlePowerKeyLongPress = "poweroff";
+                    HandleLidSwitch = "suspend-then-hibernate";
+                    HandleLidSwitchExternalPower = "suspend-then-hibernate";
+                    HandleLidSwitchDocked = "suspend-then-hibernate";
+                    HoldoffTimeoutSec = "5s";
+                    IdleAction = "suspend-then-hibernate";
+                    IdleActionSec = "300s";
                 };
             };
         };
