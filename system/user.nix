@@ -14,6 +14,7 @@
                 "audio"
                 "video"
                 "root"
+                "docker"
             ];
         };
     };

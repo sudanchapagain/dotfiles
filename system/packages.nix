@@ -29,12 +29,27 @@
     programs.niri.enable = true;
     programs.nix-ld.enable = true;
 
+    virtualisation.docker = {
+        enable = true;
+        storageDriver = "btrfs";
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
+    };
+
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+        swift
+        swift-corelibs-libdispatch
+        swift-format
+        swiftformat
+        swiftpm
+        swiftlint
         banana-cursor adwaita-icon-theme
 
-        alacritty authenticator fragments newsflash rnote warp # tuba
+        alacritty authenticator fragments newsflash rnote warp tuba
 
         # docs
         graphviz ghostscript 
@@ -56,7 +71,7 @@
         # random tools and stuff
         delta git
         killall killport
-        hugo yazi # yt-dlp
+        hugo yazi yt-dlp
         ffmpeg ffmpegthumbnailer
         hyperfine stress # benchmark
         dig monolith simple-http-server # networking
@@ -87,7 +102,6 @@
         gst_all_1.gst-plugins-ugly gst_all_1.gstreamer gst_all_1.gstreamermm gst_all_1.gst-vaapi
 
         # desktop
-        chayang
         niri waybar fuzzel swaybg swaylock swayidle
         swaynotificationcenter libnotify playerctl brightnessctl
         cliphist wl-clipboard wlsunset wl-mirror

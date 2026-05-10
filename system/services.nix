@@ -167,7 +167,7 @@
         # and only be left with GNOME shell.
         gnome = {
             core-apps.enable = true;
-            core-developer-tools.enable = false;
+            core-developer-tools.enable = true;
             games.enable = false;
 
             gnome-browser-connector.enable = false;

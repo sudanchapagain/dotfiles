@@ -374,6 +374,16 @@ window-rule {
     open-floating true
 }
 
+layer-rule {
+    match namespace="^launcher$"
+
+    background-effect {
+        blur true
+        // xray false
+    }
+    geometry-corner-radius 12
+}
+
 window-rule {
     match app-id="Minecraft" title="^Minecraft"
     open-fullscreen true
