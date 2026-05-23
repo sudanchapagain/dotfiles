@@ -340,7 +340,7 @@ animations {
 }
 
 cursor {
-    xcursor-theme "Banana"
+    xcursor-theme "Adwaita"
     hide-when-typing
 }
 

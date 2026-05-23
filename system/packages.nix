@@ -41,18 +41,10 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        swift
-        swift-corelibs-libdispatch
-        swift-format
-        swiftformat
-        swiftpm
-        swiftlint
-        banana-cursor adwaita-icon-theme
-
         alacritty authenticator fragments newsflash rnote warp tuba
 
         # docs
-        graphviz ghostscript 
+        graphviz ghostscript
         citations foliate libreoffice
         pandoc censor paper-clip papers pdfarranger
         typst texlab tex-fmt texliveMedium bibtex-tidy
@@ -81,20 +73,14 @@
         eza tree file unrar-wrapper unzip ouch p7zip # compat stuff and other
 
         # language
-        nushell python3
-        yaml-language-server tombi
-        devenv niv nixd nixfmt nh # nix
-        jq pre-commit harper hx-lsp marksman markdown-oxide
-
+        nushell nu-lint nufmt python3 tombi
+        nixd nixfmt nh # nix
+        jq pre-commit harper hx-lsp marksman
         # c/c++
         meson mesonlsp ninja
         pkg-config pkgconf gnumake cmake
         cmake-format cmake-language-server cmake-lint
         clang clang-tools libgccjit lldb libcxx libgcc
-
-        # jvm
-        gradle maven jdk11 jdk17 jdk25
-        jdt-language-server google-java-format
 
         # apparently i dont have these.
         gst_all_1.gst-devtools gst_all_1.gst-editing-services gst_all_1.gst-libav
@@ -114,7 +100,7 @@
             pname = "chv";
             version = "1.0.0";
             src = fetchGit {
-                url = "https://github.com/sudanchapagain/call-history-viewer";
+                url = "https://codeberg.com/sudanchapagain/call-history-viewer";
                 rev = "7809f55e0d4ac4296191046674a1e7e065466a34";
             };
             buildInputs = [ pkgs.tinyxml-2 ];
@@ -125,7 +111,7 @@
             pname = "unduck";
             version = "1.0.0";
             src = fetchGit {
-                url = "https://github.com/sudanchapagain/unduck";
+                url = "https://codeberg.com/sudanchapagain/unduck";
                 rev = "46dd5b7d1bd074b594e0bb83ef0de94e486bb8c6";
             };
             nativeBuildInputs = [ pkgs.meson pkgs.ninja pkgs.pkg-config ];
@@ -135,7 +121,7 @@
             pname = "bikramsambat";
             version = "1.1.1";
             src = fetchGit {
-                url = "https://github.com/sudanchapagain/bikramsambat";
+                url = "https://codeberg.com/sudanchapagain/bikramsambat";
                 rev = "0ee00f3d8bc1cca0c01f12b6945ed9b1ec706de8";
             };
             nativeBuildInputs = [ pkgs.meson pkgs.ninja pkgs.pkg-config ];
@@ -145,7 +131,7 @@
             pname = "dotf";
             version = "3.0.0";
             src = fetchGit {
-                url = "https://github.com/sudanchapagain/dotf";
+                url = "https://codeberg.com/sudanchapagain/dotf";
                 rev = "8c8007ab094f11ad5912ae70f2906ce8f75aa30e";
             };
             buildInputs = [ pkgs.fmt pkgs.argparse pkgs.tomlplusplus ];
